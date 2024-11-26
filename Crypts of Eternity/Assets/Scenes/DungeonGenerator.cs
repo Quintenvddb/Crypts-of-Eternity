@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class DungeonGenerator : MonoBehaviour
 {
-    public int gridWidth = 20;
-    public int gridHeight = 20;
+    public int gridWidth = 400;
+    public int gridHeight = 400;
 
-    public int maxRooms = 10;
-    public int minRoomSize = 3;
-    public int maxRoomSize = 5;
+    public int maxRooms = 100;
+    public int minRoomSize = 20;
+    public int maxRoomSize = 50;
 
-    public GameObject floorPrefab;
-    public GameObject wallPrefab;
+    public Tilemap tilemap; // The Tilemap to paint on.
+    public TileBase[] floorTiles; // Array to hold floor tiles.
+    public TileBase[] wallTiles; // Array to hold wall tiles.
 
     private int[,] grid;
     private RoomGenerator roomGenerator;
@@ -58,23 +60,28 @@ public class DungeonGenerator : MonoBehaviour
     }
 
     void RenderDungeon()
-{
-    for (int x = 0; x < gridWidth; x++)
     {
-        for (int y = 0; y < gridHeight; y++)
+        for (int x = 0; x < gridWidth; x++)
         {
-            // Adjust coordinates to match Unity's world space.
-            Vector3 position = new Vector3(x - gridWidth/2, y - gridHeight/2, 0);  // x and y will now correspond to grid coordinates
+            for (int y = 0; y < gridHeight; y++)
+            {
+                Vector3Int tilePosition = new Vector3Int(x - gridWidth / 2, y - gridHeight / 2, 0);
 
-            if (grid[x, y] == 1) // Floor
-            {
-                Instantiate(floorPrefab, position, Quaternion.identity);
-            }
-            else if (grid[x, y] == 2) // Wall
-            {
-                Instantiate(wallPrefab, position, Quaternion.identity);
+                if (grid[x, y] == 1) // Floor
+                {
+                    tilemap.SetTile(tilePosition, GetRandomTile(floorTiles));
+                }
+                else if (grid[x, y] == 2) // Wall
+                {
+                    tilemap.SetTile(tilePosition, GetRandomTile(wallTiles));
+                }
             }
         }
     }
-}
+
+    TileBase GetRandomTile(TileBase[] tiles)
+    {
+        if (tiles.Length == 0) return null;
+        return tiles[Random.Range(0, tiles.Length)];
+    }
 }
