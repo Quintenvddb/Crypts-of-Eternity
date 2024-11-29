@@ -99,7 +99,7 @@ public class DungeonGenerator : MonoBehaviour
 
 void RenderDungeon()
 {
-    Debug.Log("Rendering Dungeon...");
+    // Debug.Log("Rendering Dungeon...");
 
     // Get the camera bounds in world space
     Camera mainCamera = Camera.main;
@@ -183,7 +183,7 @@ void RenderDungeon()
         }
     }
 
-    Debug.Log("Dungeon Rendered");
+    // Debug.Log("Dungeon Rendered");
 }
 
 // Helper function to check if a tile is within camera bounds
