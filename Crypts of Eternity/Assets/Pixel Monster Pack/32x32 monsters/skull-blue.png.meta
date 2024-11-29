@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      skull-blue_0: -8940289319049199950
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

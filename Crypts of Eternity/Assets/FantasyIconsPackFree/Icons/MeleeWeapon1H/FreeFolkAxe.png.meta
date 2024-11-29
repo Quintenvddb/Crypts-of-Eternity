@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FreeFolkAxe_0: -5920295840965662722
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

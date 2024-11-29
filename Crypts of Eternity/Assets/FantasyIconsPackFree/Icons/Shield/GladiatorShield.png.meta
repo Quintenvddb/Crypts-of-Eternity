@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GladiatorShield_0: -3358645793407632928
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

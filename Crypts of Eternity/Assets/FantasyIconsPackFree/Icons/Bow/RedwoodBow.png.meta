@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RedwoodBow_0: -3468404216753642802
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

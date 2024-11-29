@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AriostinGreatsword_0: -2990865643518836724
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

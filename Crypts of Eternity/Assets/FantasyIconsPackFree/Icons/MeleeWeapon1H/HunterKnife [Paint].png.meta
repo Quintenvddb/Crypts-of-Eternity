@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HunterKnife [Paint]_0: 8763490690887570161
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

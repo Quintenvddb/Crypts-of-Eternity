@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Extending Padlock - GREY - 0000_0: 8871322768506135112
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

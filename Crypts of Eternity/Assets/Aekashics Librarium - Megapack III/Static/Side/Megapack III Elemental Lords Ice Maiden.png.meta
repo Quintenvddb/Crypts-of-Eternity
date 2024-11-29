@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Megapack III Elemental Lords Ice Maiden_0: 8831227295753926632
+      Megapack III Elemental Lords Ice Maiden_1: 8471251436263382084
+      Megapack III Elemental Lords Ice Maiden_2: -3925161107858728474
+      Megapack III Elemental Lords Ice Maiden_3: -5674292106539971693
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

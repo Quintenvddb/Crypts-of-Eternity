@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Megpack III Drill Dwarf_0: -8774138257079819574
+      Megpack III Drill Dwarf_1: -8242559765934271984
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Megapack III Void Gargoyle_0: -942629326101257718
+      Megapack III Void Gargoyle_1: 1076325667643361532
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MarauderBow_0: 7307163566984172543
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

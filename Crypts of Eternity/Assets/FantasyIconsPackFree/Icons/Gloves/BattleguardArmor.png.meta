@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BattleguardArmor_0: -7297217709293447414
+      BattleguardArmor_1: 1431077910511163880
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

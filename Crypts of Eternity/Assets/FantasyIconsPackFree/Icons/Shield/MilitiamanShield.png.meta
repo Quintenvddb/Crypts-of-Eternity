@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MilitiamanShield_0: -3902762239587911007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

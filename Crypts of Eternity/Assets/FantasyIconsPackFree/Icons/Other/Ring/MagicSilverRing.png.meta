@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MagicSilverRing_0: -978606905857749664
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

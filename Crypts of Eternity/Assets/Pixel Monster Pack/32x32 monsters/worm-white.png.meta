@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      worm-white_0: 7808861003484466424
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

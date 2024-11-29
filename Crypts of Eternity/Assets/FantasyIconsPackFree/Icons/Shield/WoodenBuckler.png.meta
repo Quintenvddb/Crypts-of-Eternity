@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WoodenBuckler_0: -6071767431335420213
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

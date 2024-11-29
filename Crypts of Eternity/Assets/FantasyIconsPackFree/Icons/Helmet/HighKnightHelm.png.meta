@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HighKnightHelm_0: -9153596334979960160
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

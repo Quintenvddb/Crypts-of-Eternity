@@ -609,7 +609,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      small Potions_0: 1296918660627881746
+      small Potions_1: 5428478385590250758
+      small Potions_10: -5755120988163698468
+      small Potions_11: -3439145052481158905
+      small Potions_12: 6752121833756281046
+      small Potions_13: -8680539570106875598
+      small Potions_14: -7346722931137936603
+      small Potions_15: -8693364139409118009
+      small Potions_16: 3661867196374309545
+      small Potions_17: -316256590988918050
+      small Potions_18: -2255949038493041847
+      small Potions_19: 4290575805204785747
+      small Potions_2: 2099477600111394212
+      small Potions_3: -3920992865050213911
+      small Potions_4: 1282592493069875958
+      small Potions_5: -2147628338336461838
+      small Potions_6: -6778710943475153102
+      small Potions_7: -7041228624921578233
+      small Potions_8: 5776188847043940720
+      small Potions_9: -283611219758887782
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

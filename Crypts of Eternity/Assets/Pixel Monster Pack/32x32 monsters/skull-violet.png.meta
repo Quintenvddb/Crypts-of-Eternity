@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      skull-violet_0: 2945835398347440321
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BerserkAxe_0: -4411358595029670823
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

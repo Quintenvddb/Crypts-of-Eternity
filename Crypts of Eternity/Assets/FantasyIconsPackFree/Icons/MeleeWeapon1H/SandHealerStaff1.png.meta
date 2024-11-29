@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SandHealerStaff1_0: 8563316784920278966
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

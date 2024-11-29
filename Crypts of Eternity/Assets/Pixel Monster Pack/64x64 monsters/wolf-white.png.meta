@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wolf-white_0: 8629107680312550929
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

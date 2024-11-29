@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ManticoreHelmet_0: 2358612980966136533
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

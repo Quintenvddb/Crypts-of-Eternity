@@ -734,7 +734,32 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Key 13 - GREY - Spritesheet_0: 4669528892569815833
+      Key 13 - GREY - Spritesheet_1: -5229023484112909059
+      Key 13 - GREY - Spritesheet_10: 927999267876677792
+      Key 13 - GREY - Spritesheet_11: 8909937892336676317
+      Key 13 - GREY - Spritesheet_12: -2528930900231789601
+      Key 13 - GREY - Spritesheet_13: -5841812670132134149
+      Key 13 - GREY - Spritesheet_14: 2806768309028502495
+      Key 13 - GREY - Spritesheet_15: -7492635712629939100
+      Key 13 - GREY - Spritesheet_16: 4121237798525188503
+      Key 13 - GREY - Spritesheet_17: 3224776838740873896
+      Key 13 - GREY - Spritesheet_18: 52078361300837524
+      Key 13 - GREY - Spritesheet_19: 1006825119166211170
+      Key 13 - GREY - Spritesheet_2: -4550157637903295562
+      Key 13 - GREY - Spritesheet_20: 8979547931411803874
+      Key 13 - GREY - Spritesheet_21: -4033001848153052618
+      Key 13 - GREY - Spritesheet_22: 8639651701882849690
+      Key 13 - GREY - Spritesheet_23: -4515611081972327632
+      Key 13 - GREY - Spritesheet_24: -2374025590791756085
+      Key 13 - GREY - Spritesheet_3: 6043230927246575658
+      Key 13 - GREY - Spritesheet_4: 3744513877326978194
+      Key 13 - GREY - Spritesheet_5: -6380854709528434463
+      Key 13 - GREY - Spritesheet_6: 7869506893960755410
+      Key 13 - GREY - Spritesheet_7: 6862628804940578697
+      Key 13 - GREY - Spritesheet_8: -7439187468250773331
+      Key 13 - GREY - Spritesheet_9: 6695843972390760133
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

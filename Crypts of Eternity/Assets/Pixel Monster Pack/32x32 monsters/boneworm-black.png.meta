@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boneworm-black_0: -6338610821410135843
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

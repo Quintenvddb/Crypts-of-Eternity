@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MountainSword [Paint]_0: -5765672935186124105
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

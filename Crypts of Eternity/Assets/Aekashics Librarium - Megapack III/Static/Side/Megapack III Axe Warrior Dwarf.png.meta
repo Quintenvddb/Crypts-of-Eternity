@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Megapack III Axe Warrior Dwarf_0: 1189803723476586619
+      Megapack III Axe Warrior Dwarf_1: 3318247979570688814
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

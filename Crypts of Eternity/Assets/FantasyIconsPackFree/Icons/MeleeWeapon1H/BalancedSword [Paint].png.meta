@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BalancedSword [Paint]_0: 7629871360711618683
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

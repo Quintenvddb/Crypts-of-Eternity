@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bar_rounded_HCC_Vertical_0: 4367609593393954544
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

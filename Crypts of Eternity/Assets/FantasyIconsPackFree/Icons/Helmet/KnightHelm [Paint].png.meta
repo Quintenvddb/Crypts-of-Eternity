@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      KnightHelm [Paint]_0: -6102296517065244153
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GreyKnight_0: 4411648087972103025
+      GreyKnight_1: -564280117167378551
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

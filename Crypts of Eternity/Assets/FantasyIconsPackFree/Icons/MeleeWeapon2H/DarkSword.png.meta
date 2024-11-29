@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DarkSword_0: 7599561973494478690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

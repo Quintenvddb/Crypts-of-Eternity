@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Katana1 [Paint]_0: -5488921040926458067
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

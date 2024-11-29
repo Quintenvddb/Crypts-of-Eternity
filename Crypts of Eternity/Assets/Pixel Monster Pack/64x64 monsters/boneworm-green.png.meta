@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boneworm-green_0: -1630624418418028415
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

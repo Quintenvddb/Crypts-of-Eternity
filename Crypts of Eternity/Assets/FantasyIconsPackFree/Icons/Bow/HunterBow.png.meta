@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HunterBow_0: -1985447365691920559
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

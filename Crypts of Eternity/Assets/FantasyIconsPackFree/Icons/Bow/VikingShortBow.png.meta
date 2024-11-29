@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      VikingShortBow_0: -4739220918717113043
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

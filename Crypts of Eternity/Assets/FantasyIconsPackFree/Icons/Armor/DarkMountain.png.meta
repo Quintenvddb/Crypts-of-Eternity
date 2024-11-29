@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DarkMountain_0: 9083158208115367601
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

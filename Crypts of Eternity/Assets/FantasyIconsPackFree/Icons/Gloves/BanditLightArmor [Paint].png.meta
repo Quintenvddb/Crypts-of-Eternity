@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BanditLightArmor [Paint]_0: 7618251882285239222
+      BanditLightArmor [Paint]_1: 6248647340214659024
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

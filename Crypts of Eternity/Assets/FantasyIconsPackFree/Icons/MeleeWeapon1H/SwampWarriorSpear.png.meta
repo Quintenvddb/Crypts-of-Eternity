@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SwampWarriorSpear_0: -8408085884355301770
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AssassinDagger [Paint]_0: -1143635940908953465
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

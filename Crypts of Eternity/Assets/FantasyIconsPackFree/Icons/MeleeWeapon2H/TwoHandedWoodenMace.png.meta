@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TwoHandedWoodenMace_0: -8160985544840761582
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

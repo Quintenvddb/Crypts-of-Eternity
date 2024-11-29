@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spider-black_0: 8367905092702191459
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RoyalTunic_0: 6482956576948116751
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

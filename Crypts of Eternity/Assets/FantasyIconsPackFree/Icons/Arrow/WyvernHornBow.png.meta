@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WyvernHornBow_0: 3637157037116311049
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

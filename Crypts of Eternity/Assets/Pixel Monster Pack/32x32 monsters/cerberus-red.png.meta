@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cerberus-red_0: -7838864710010840994
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

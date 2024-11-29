@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HawkHelm_0: -6284248379828373653
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

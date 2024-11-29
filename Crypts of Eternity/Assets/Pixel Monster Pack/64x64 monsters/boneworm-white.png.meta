@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boneworm-white_0: -1191071816120735345
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
