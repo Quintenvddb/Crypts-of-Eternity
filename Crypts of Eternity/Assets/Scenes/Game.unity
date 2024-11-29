@@ -770,9 +770,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridWidth: 100
   gridHeight: 100
-  maxRooms: 100
-  minRoomSize: 10
-  maxRoomSize: 10
+  maxRooms: 20
+  minRoomSize: 7
+  maxRoomSize: 15
   tilemap: {fileID: 538638376}
   floorTiles:
   - {fileID: 11400000, guid: 7b6e368fc0ee90b4ca09e0f71344589a, type: 2}
@@ -784,9 +784,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 463040bb33823754e9e159a83e20321a, type: 2}
   - {fileID: 11400000, guid: cf6b59b7c1dad88438263b3160222715, type: 2}
   - {fileID: 11400000, guid: 5451d01092d6a0947a1059da45c09ebe, type: 2}
-  - {fileID: 11400000, guid: bcf612aaeb488bf48b64a976b440426d, type: 2}
-  - {fileID: 11400000, guid: c144af5afd6ab544390bce2a0d1ce972, type: 2}
-  - {fileID: 11400000, guid: b52eb31537a3c0f4d9b909925745af72, type: 2}
   wallTiles:
   - {fileID: 11400000, guid: f5945c4f4a016ae419bd0fb1152e2d1a, type: 2}
 --- !u!4 &809774870
@@ -891,7 +888,7 @@ Transform:
   m_GameObject: {fileID: 853536751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1048,7 +1045,7 @@ Transform:
   m_GameObject: {fileID: 1024529145}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1088,7 +1085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 30c54c9989006084cbb65147b1f3de4b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 30c54c9989006084cbb65147b1f3de4b, type: 3}
       propertyPath: m_LocalRotation.w
