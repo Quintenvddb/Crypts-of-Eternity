@@ -3,8 +3,8 @@ using UnityEngine.Tilemaps;
 
 public class DungeonGenerator : MonoBehaviour
 {
-    public int gridWidth = 100;
-    public int gridHeight = 100;
+    public int gridWidth = 50; // Total width of the grid.
+    public int gridHeight = 50; // Total height of the grid.
 
     public int maxRooms = 20;
     public int minRoomSize = 6;
@@ -21,8 +21,8 @@ public class DungeonGenerator : MonoBehaviour
     void Start()
     {
         Debug.Log("Starting Dungeon Generation...");
-        
-        grid = new int[gridWidth, gridHeight];
+
+        grid = new int[gridWidth, gridHeight]; // Positive-only grid.
         roomGenerator = new RoomGenerator(grid, gridWidth, gridHeight);
         hallwayGenerator = new HallwayGenerator(grid);
 
@@ -33,6 +33,10 @@ public class DungeonGenerator : MonoBehaviour
 
     void GenerateDungeon()
     {
+        Debug.Log("Generating Initial Spawn Room...");
+        GenerateSpawnRoom(-10, -10, 10, 10); // Define the spawn room area.
+        Debug.Log("Spawn Room Created.");
+
         Debug.Log("Generating Rooms...");
         roomGenerator.GenerateRooms(maxRooms, minRoomSize, maxRoomSize);
         Debug.Log($"Rooms Generated: {roomGenerator.Rooms.Count}");
@@ -44,6 +48,23 @@ public class DungeonGenerator : MonoBehaviour
         Debug.Log("Adding Walls...");
         AddWalls();
         Debug.Log("Walls Added");
+    }
+
+    void GenerateSpawnRoom(int startX, int startY, int endX, int endY)
+    {
+        for (int x = startX; x <= endX; x++)
+        {
+            for (int y = startY; y <= endY; y++)
+            {
+                int gridX = x + gridWidth / 2; // Convert world coordinates to grid indices.
+                int gridY = y + gridHeight / 2;
+
+                if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
+                {
+                    grid[gridX, gridY] = 1; // Mark as floor tile.
+                }
+            }
+        }
     }
 
     void AddWalls()
@@ -73,12 +94,16 @@ public class DungeonGenerator : MonoBehaviour
     void RenderDungeon()
     {
         Debug.Log("Rendering Dungeon...");
-        
+
         for (int x = 0; x < gridWidth; x++)
         {
             for (int y = 0; y < gridHeight; y++)
             {
-                Vector3Int tilePosition = new Vector3Int(x - gridWidth / 2, y - gridHeight / 2, 0);
+                // Center grid around (0,0).
+                int centeredX = x - gridWidth / 2;
+                int centeredY = y - gridHeight / 2;
+
+                Vector3Int tilePosition = new Vector3Int(centeredX, centeredY, 0);
 
                 if (grid[x, y] == 1) // Floor
                 {

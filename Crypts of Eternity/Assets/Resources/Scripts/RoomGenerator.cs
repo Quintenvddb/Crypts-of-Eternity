@@ -25,6 +25,21 @@ public class RoomGenerator
             int y = Random.Range(1, gridHeight - roomHeight - 1);
 
             Room newRoom = new Room(x, y, roomWidth, roomHeight);
+
+            // Convert grid coordinates to world coordinates for the spawn room check
+            int worldStartX = x - gridWidth / 2;
+            int worldEndX = worldStartX + roomWidth;
+            int worldStartY = y - gridHeight / 2;
+            int worldEndY = worldStartY + roomHeight;
+
+            // Check if the room overlaps with the spawn room (-10, -10) to (10, 10)
+            if (worldStartX < 11 && worldEndX > -11 && worldStartY < 11 && worldEndY > -11)
+            {
+                Debug.Log($"Skipped room at ({worldStartX}, {worldStartY}) because it overlaps the spawn room.");
+                continue; // Skip this room
+            }
+
+            // Check if the room overlaps any existing room
             if (!Rooms.Exists(r => r.Overlaps(newRoom)))
             {
                 Rooms.Add(newRoom);
@@ -32,7 +47,7 @@ public class RoomGenerator
                 {
                     for (int ry = y; ry < y + roomHeight; ry++)
                     {
-                        grid[rx, ry] = 1; // Floor
+                        grid[rx, ry] = 1; // Mark as floor
                     }
                 }
             }
