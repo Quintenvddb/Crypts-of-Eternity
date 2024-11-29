@@ -95,27 +95,51 @@ public class DungeonGenerator : MonoBehaviour
     {
         Debug.Log("Rendering Dungeon...");
 
-        for (int x = 0; x < gridWidth; x++)
+        // Get the camera bounds in world space
+        Camera mainCamera = Camera.main;
+        if (mainCamera == null)
         {
-            for (int y = 0; y < gridHeight; y++)
+            Debug.LogError("Main camera not found!");
+            return;
+        }
+
+        Vector3 cameraPos = mainCamera.transform.position;
+
+        float halfHeight = mainCamera.orthographicSize;
+        float halfWidth = mainCamera.aspect * halfHeight;
+
+        // Convert the camera bounds to grid coordinates
+        int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - 2; // Add 2-tile buffer
+        int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + 2;
+        int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - 2;
+        int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + 2;
+
+        // Ensure bounds do not exceed grid limits
+        minX = Mathf.Clamp(minX, -gridWidth / 2, gridWidth / 2);
+        maxX = Mathf.Clamp(maxX, -gridWidth / 2, gridWidth / 2);
+        minY = Mathf.Clamp(minY, -gridHeight / 2, gridHeight / 2);
+        maxY = Mathf.Clamp(maxY, -gridHeight / 2, gridHeight / 2);
+
+        // Render tiles within the bounds
+        for (int x = minX; x <= maxX; x++)
+        {
+            for (int y = minY; y <= maxY; y++)
             {
-                // Center grid around (0,0).
-                int centeredX = x - gridWidth / 2;
-                int centeredY = y - gridHeight / 2;
+                int gridX = x + gridWidth / 2;
+                int gridY = y + gridHeight / 2;
 
-                Vector3Int tilePosition = new Vector3Int(centeredX, centeredY, 0);
+                if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
+                {
+                    Vector3Int tilePosition = new Vector3Int(x, y, 0);
 
-                if (grid[x, y] == 1) // Floor
-                {
-                    var tile = GetRandomTile(floorTiles);
-                    tilemap.SetTile(tilePosition, tile);
-                    Debug.Log($"Placed Floor at {tilePosition}");
-                }
-                else if (grid[x, y] == 2) // Wall
-                {
-                    var tile = GetRandomTile(wallTiles);
-                    tilemap.SetTile(tilePosition, tile);
-                    Debug.Log($"Placed Wall at {tilePosition}");
+                    if (grid[gridX, gridY] == 1) // Floor
+                    {
+                       tilemap.SetTile(tilePosition, GetRandomTile(floorTiles));
+                    }
+                    else if (grid[gridX, gridY] == 2) // Wall
+                    {
+                        tilemap.SetTile(tilePosition, GetRandomTile(wallTiles));
+                    }
                 }
             }
         }
