@@ -946,7 +946,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf17d43846d7a04409a2eedb96e4c217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthSlider: {fileID: 593938636}
 --- !u!1 &657615462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,6 +1225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   maxHealth: 100
+  healthSlider: {fileID: 593938636}
 --- !u!1 &809774868
 GameObject:
   m_ObjectHideFlags: 0
