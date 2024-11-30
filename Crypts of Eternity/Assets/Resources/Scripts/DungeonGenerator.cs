@@ -145,7 +145,7 @@ void RenderDungeon()
                     // Un-render tile outside the bounds
                     tilemap.SetTile(tilePosition, null); // Remove the tile
                     renderedTiles[x, y] = false; // Mark as un-rendered
-                    Debug.Log($"Un-rendering tile at ({x}, {y})");
+                    // Debug.Log($"Un-rendering tile at ({x}, {y})");
                 }
             }
         }
@@ -177,7 +177,7 @@ void RenderDungeon()
 
                     // Mark the tile as rendered
                     renderedTiles[gridX, gridY] = true;
-                    Debug.Log($"Rendering tile at ({x}, {y})");
+                    // Debug.Log($"Rendering tile at ({x}, {y})");
                 }
             }
         }

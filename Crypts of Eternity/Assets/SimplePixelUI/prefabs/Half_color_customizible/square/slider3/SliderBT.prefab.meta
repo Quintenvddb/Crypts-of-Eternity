@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: 966d96f1321517c498ffc83be3871d3c
+guid: cfa04c92de5acc347b92ab7666c2a747
 PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 165012
+  packageName: Simple Free Pixel art styled UI pack
+  packageVersion: 1.15
+  assetPath: Assets/SimplePixelUI/prefabs/Half_color_customizible/square/slider3/SliderBT.prefab
+  uploadId: 362088

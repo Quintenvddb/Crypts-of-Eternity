@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Profiling;
 
-public class FPSCounter : MonoBehaviour
+public class ProfilerScript : MonoBehaviour
 {
     public TMP_Text fpsText;
     public TMP_Text cpuText;

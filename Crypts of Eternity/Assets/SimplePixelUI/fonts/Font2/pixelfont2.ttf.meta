@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f74b70990b0082f4cb22465eaad9b36f
+guid: a6dede01cb8e479429b8bc5253a2ad2f
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,6 +8,7 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
+  fontName: PixelFont2
   fontNames:
   - PixelFont2
   fallbackFontReferences: []
@@ -19,3 +20,10 @@ TrueTypeFontImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 165012
+  packageName: Simple Free Pixel art styled UI pack
+  packageVersion: 1.15
+  assetPath: Assets/SimplePixelUI/fonts/Font2/pixelfont2.ttf
+  uploadId: 362088

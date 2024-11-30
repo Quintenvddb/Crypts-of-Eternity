@@ -11,15 +11,30 @@ public class PlayerController : MonoBehaviour
     private int attackState = 1;
     private bool isAttacking = false;
 
+    public int maxHealth = 100;
+    private int currentHealth;
+
+    private bool isDead = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         animator = GetComponent<Animator>();
+        currentHealth = maxHealth;
+        LogHealth();
     }
 
     void Update()
     {
+        if (currentHealth <= 0 && !isDead)
+        {
+            TriggerDeath();
+            return;
+        }
+
+        if (isDead) return;
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
@@ -36,12 +51,36 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(AttackCoroutine());
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            animator.SetTrigger("Block");
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            animator.SetBool("IdleBlock", true);
+            moveSpeed = 1f;
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            animator.SetBool("IdleBlock", false);
+            moveSpeed = 5f;
+        }
     }
 
     void FixedUpdate()
     {
-        rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, movement.normalized * moveSpeed, 0.1f);
+        if (currentHealth > 0 && !isDead)
+        {
+            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, movement.normalized * moveSpeed, 0.1f);
+        }
     }
+
+    public int GetCurrentHealth()
+{
+    return currentHealth;
+}
 
     private IEnumerator AttackCoroutine()
     {
@@ -72,5 +111,43 @@ public class PlayerController : MonoBehaviour
     {
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         return stateInfo.length;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (currentHealth > 0 && !isDead)
+        {
+            int previousHealth = currentHealth;
+            currentHealth -= damage;
+            if (currentHealth < 0) currentHealth = 0;
+
+            if (previousHealth > currentHealth)
+            {
+                animator.SetTrigger("Hurt");
+            }
+
+            LogHealth();
+        }
+    }
+
+    private void TriggerDeath()
+    {
+        isDead = true;
+        animator.SetTrigger("Death");
+        rb.linearVelocity = Vector2.zero;
+    }
+
+    public void Heal(int healAmount)
+    {
+        if (isDead) return;
+
+        currentHealth += healAmount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        LogHealth();
+    }
+
+    private void LogHealth()
+    {
+        Debug.Log("Player Health: " + currentHealth + "/" + maxHealth);
     }
 }

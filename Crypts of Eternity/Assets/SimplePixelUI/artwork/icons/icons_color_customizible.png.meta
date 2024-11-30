@@ -1,154 +1,119 @@
 fileFormatVersion: 2
-guid: 184e1bd811104eb4da01791d5c7709f3
+guid: 2a01691a87fedbe4aa6de6f1c0c0f3d4
+AssetOrigin:
+  serializedVersion: 1
+  productId: 165012
+  packageName: Simple Free Pixel art styled UI pack
+  packageVersion: 1.15
+  assetPath: Assets/SimplePixelUI/artwork/icons/icons_color_customizible.png
+  uploadId: 362088
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7222659631609397881
-    second: icons_color_customizible_0
+      213: -3915288548941881612
+    second: isonswhite2_0
   - first:
-      213: -8788386244601396806
-    second: icons_color_customizible_1
+      213: -6064698589780549783
+    second: isonswhite2_1
   - first:
-      213: -8989319642473497037
-    second: icons_color_customizible_2
+      213: 4376132946644718016
+    second: isonswhite2_2
   - first:
-      213: -3237515202010269207
-    second: icons_color_customizible_3
+      213: 3943050131641414758
+    second: isonswhite2_3
   - first:
-      213: -6059853963304336427
-    second: icons_color_customizible_4
+      213: -2891059516951804756
+    second: isonswhite2_4
   - first:
-      213: 4551245732993018871
-    second: icons_color_customizible_5
+      213: 5548767936245927627
+    second: isonswhite2_5
   - first:
-      213: 759408047846458688
-    second: icons_color_customizible_6
+      213: -5900926969388301916
+    second: isonswhite2_6
   - first:
-      213: -2552172351590426123
-    second: icons_color_customizible_7
+      213: 1881423083123314185
+    second: isonswhite2_7
   - first:
-      213: 7703943193098897037
-    second: icons_color_customizible_8
+      213: -961280449010390996
+    second: isonswhite2_8
   - first:
-      213: 4391647020263599216
-    second: icons_color_customizible_9
+      213: -5474248854234790524
+    second: isonswhite2_9
   - first:
-      213: 4233804412399550376
-    second: icons_color_customizible_10
+      213: -5611136652117499180
+    second: isonswhite2_10
   - first:
-      213: 8105144744570070218
-    second: icons_color_customizible_11
+      213: -2024606662850549571
+    second: isonswhite2_11
   - first:
-      213: -6249599905947839303
-    second: icons_color_customizible_12
+      213: -2381500297140005776
+    second: isonswhite2_12
   - first:
-      213: 7751721018759728600
-    second: icons_color_customizible_13
+      213: -5908534354296120792
+    second: isonswhite2_13
   - first:
-      213: 6181561683567762225
-    second: icons_color_customizible_14
+      213: -1099396636000734626
+    second: isonswhite2_14
   - first:
-      213: -3936508533003825415
-    second: icons_color_customizible_15
+      213: -9147400036283487591
+    second: isonswhite2_15
   - first:
-      213: 6914606016048708471
-    second: icons_color_customizible_16
+      213: 107280097507075921
+    second: isonswhite2_16
   - first:
-      213: 8811793157615228726
-    second: icons_color_customizible_17
+      213: -3651824946001971164
+    second: isonswhite2_17
   - first:
-      213: -885958417105636718
-    second: icons_color_customizible_18
+      213: -5743856943257200401
+    second: isonswhite2_18
   - first:
-      213: 3710886308528195170
-    second: icons_color_customizible_19
+      213: -3970517187922480367
+    second: isonswhite2_19
   - first:
-      213: -382885540821136070
-    second: icons_color_customizible_20
+      213: 2773992808477904761
+    second: isonswhite2_20
   - first:
-      213: -6644015925602982154
-    second: icons_color_customizible_21
+      213: 2238386083235014152
+    second: isonswhite2_21
   - first:
-      213: -7891723480300383732
-    second: icons_color_customizible_22
+      213: -5305403707639393297
+    second: isonswhite2_22
   - first:
-      213: 8641663956306980521
-    second: icons_color_customizible_23
+      213: -7440971185202368722
+    second: isonswhite2_23
   - first:
-      213: -5470726946723199513
-    second: icons_color_customizible_24
+      213: -7062812790716468544
+    second: isonswhite2_24
   - first:
-      213: 2464682192309840433
-    second: icons_color_customizible_25
+      213: 97452308493143843
+    second: isonswhite2_25
   - first:
-      213: 1545177242876449005
-    second: icons_color_customizible_26
+      213: -4598059474086584248
+    second: isonswhite2_26
   - first:
-      213: 3291873732595565360
-    second: icons_color_customizible_27
+      213: 650022395868303075
+    second: isonswhite2_27
   - first:
-      213: -8381228532344900717
-    second: icons_color_customizible_28
+      213: 8733657598935678242
+    second: isonswhite2_28
   - first:
-      213: -7966012301608822527
-    second: icons_color_customizible_29
+      213: -8943924478185911527
+    second: isonswhite2_29
   - first:
-      213: -895656883692772887
-    second: icons_color_customizible_30
+      213: 2717596346815555612
+    second: isonswhite2_30
   - first:
-      213: 169862648252473091
-    second: icons_color_customizible_31
+      213: -1613750400487606341
+    second: isonswhite2_31
   - first:
-      213: 1317065560845463345
-    second: icons_color_customizible_32
+      213: -2308001801626795153
+    second: isonswhite2_32
   - first:
-      213: -4052028996733306360
-    second: icons_color_customizible_33
+      213: -6548008519882821858
+    second: isonswhite2_33
   - first:
-      213: 1260771069898291680
-    second: icons_color_customizible_34
-  - first:
-      213: 6949735022689898620
-    second: icons_color_customizible_35
-  - first:
-      213: 97460564044722380
-    second: icons_color_customizible_36
-  - first:
-      213: 6121574440398958696
-    second: icons_color_customizible_37
-  - first:
-      213: -4393413371124478316
-    second: icons_color_customizible_38
-  - first:
-      213: 5255487953583480970
-    second: icons_color_customizible_39
-  - first:
-      213: -1031625048381456847
-    second: icons_color_customizible_40
-  - first:
-      213: 2086842768600753113
-    second: icons_color_customizible_41
-  - first:
-      213: 7170007846774954253
-    second: icons_color_customizible_42
-  - first:
-      213: -1172134811354864395
-    second: icons_color_customizible_43
-  - first:
-      213: -8171156875693232271
-    second: icons_color_customizible_44
-  - first:
-      213: 8625118130333574791
-    second: icons_color_customizible_45
-  - first:
-      213: 7649218384974836617
-    second: icons_color_customizible_46
-  - first:
-      213: -1304199519305804916
-    second: icons_color_customizible_47
-  - first:
-      213: -8563820505314151065
-    second: icons_color_customizible_48
+      213: -1148617841872355270
+    second: isonswhite2_34
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -181,7 +146,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -197,7 +162,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -210,16 +175,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -232,7 +197,33 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -244,1079 +235,771 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: icons_color_customizible_0
+      name: isonswhite2_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 135
-        width: 18
-        height: 14
+        x: 0
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 78d3e541555f3cb90800000000000000
-      internalID: -7222659631609397881
+      spriteID: 380374744a704d747bbd1b37ee1c5b9c
+      internalID: -3915288548941881612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_1
+      name: isonswhite2_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 135
-        width: 23
-        height: 18
+        x: 32
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ab1ca9df541690680800000000000000
-      internalID: -8788386244601396806
+      spriteID: 973290eb2ffbb67469e3561373e9ec7c
+      internalID: -6064698589780549783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_2
+      name: isonswhite2_2
       rect:
         serializedVersion: 2
-        x: 69
-        y: 135
-        width: 20
-        height: 22
+        x: 64
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 33efce1a9658f3380800000000000000
-      internalID: -8989319642473497037
+      spriteID: f2361999df7161a4082d0f6aa6d3e4f9
+      internalID: 4376132946644718016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_3
+      name: isonswhite2_3
       rect:
         serializedVersion: 2
-        x: 101
-        y: 137
-        width: 21
-        height: 15
+        x: 96
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9e9304da3190213d0800000000000000
-      internalID: -3237515202010269207
+      spriteID: 5c6cc97f32cbec34f8a94089c7c9f937
+      internalID: 3943050131641414758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_4
+      name: isonswhite2_4
       rect:
         serializedVersion: 2
-        x: 134
-        y: 137
-        width: 21
-        height: 15
+        x: 128
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5d380864de217eba0800000000000000
-      internalID: -6059853963304336427
+      spriteID: 391cc8a1335fe724bb0fa0486fbd59cd
+      internalID: -2891059516951804756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_5
+      name: isonswhite2_5
       rect:
         serializedVersion: 2
-        x: 167
-        y: 145
-        width: 9
-        height: 10
+        x: 160
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7fbaf8071e5492f30800000000000000
-      internalID: 4551245732993018871
+      spriteID: 059c5a1250eb6ef499a6e15e612b06e5
+      internalID: 5548767936245927627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_6
+      name: isonswhite2_6
       rect:
         serializedVersion: 2
-        x: 167
-        y: 135
-        width: 9
-        height: 10
+        x: 192
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 04506739895f98a00800000000000000
-      internalID: 759408047846458688
+      spriteID: 3caf3b742d1d3b0459aafa9150fa744b
+      internalID: -5900926969388301916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_7
+      name: isonswhite2_7
       rect:
         serializedVersion: 2
-        x: 177
-        y: 145
-        width: 9
-        height: 10
+        x: 0
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5f911e9a4ccd49cd0800000000000000
-      internalID: -2552172351590426123
+      spriteID: 34bdb54141c168041a1c1ef6e5f8a954
+      internalID: 1881423083123314185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_8
+      name: isonswhite2_8
       rect:
         serializedVersion: 2
-        x: 177
-        y: 135
-        width: 9
-        height: 10
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d86c2725487e9ea60800000000000000
-      internalID: 7703943193098897037
+      spriteID: bb713cae8b0462240af6e75a14d041e1
+      internalID: -961280449010390996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_9
+      name: isonswhite2_9
       rect:
         serializedVersion: 2
-        x: 199
-        y: 133
-        width: 20
-        height: 21
+        x: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 07ce6bd62b342fc30800000000000000
-      internalID: 4391647020263599216
+      spriteID: c2a5967f5aef64745b9c0b898dc064c0
+      internalID: -5474248854234790524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_10
+      name: isonswhite2_10
       rect:
         serializedVersion: 2
-        x: 4
-        y: 100
-        width: 21
-        height: 25
+        x: 96
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8af7e817eae71ca30800000000000000
-      internalID: 4233804412399550376
+      spriteID: ec4499ce2d7c7d44590673c050aab104
+      internalID: -5611136652117499180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_11
+      name: isonswhite2_11
       rect:
         serializedVersion: 2
-        x: 39
-        y: 101
-        width: 19
-        height: 20
+        x: 128
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ac42939c3324b7070800000000000000
-      internalID: 8105144744570070218
+      spriteID: e04de316f4b953d45b28d39ed7c28799
+      internalID: -2024606662850549571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_12
+      name: isonswhite2_12
       rect:
         serializedVersion: 2
-        x: 72
-        y: 103
-        width: 16
-        height: 21
+        x: 160
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9b41aa15ff5f449a0800000000000000
-      internalID: -6249599905947839303
+      spriteID: 147d59b16680aac4c933bd79991a96fc
+      internalID: -2381500297140005776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_13
+      name: isonswhite2_13
       rect:
         serializedVersion: 2
-        x: 106
-        y: 103
-        width: 16
-        height: 21
+        x: 192
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8dd4a193235a39b60800000000000000
-      internalID: 7751721018759728600
+      spriteID: 2c04e30c14c5c374a8227e7c34ed142b
+      internalID: -5908534354296120792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_14
+      name: isonswhite2_14
       rect:
         serializedVersion: 2
-        x: 136
-        y: 103
-        width: 20
-        height: 19
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 13bd832999159c550800000000000000
-      internalID: 6181561683567762225
+      spriteID: 56890e59be1572b4c86fbb7ea9f7c20c
+      internalID: -1099396636000734626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_15
+      name: isonswhite2_15
       rect:
         serializedVersion: 2
-        x: 167
-        y: 109
-        width: 22
-        height: 9
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9fe43038856be59c0800000000000000
-      internalID: -3936508533003825415
+      spriteID: c596129714d483a49979ba1e1938d9bb
+      internalID: -9147400036283487591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_16
+      name: isonswhite2_16
       rect:
         serializedVersion: 2
-        x: 197
-        y: 101
-        width: 23
-        height: 24
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 77bbc54598d95ff50800000000000000
-      internalID: 6914606016048708471
+      spriteID: b21005b3bad5007438056bbeaccfcdf1
+      internalID: 107280097507075921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_17
+      name: isonswhite2_17
       rect:
         serializedVersion: 2
-        x: 8
-        y: 69
-        width: 18
-        height: 23
+        x: 96
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6379fd1a037c94a70800000000000000
-      internalID: 8811793157615228726
+      spriteID: d1d94e35d6b71a3419d282437b13a9f6
+      internalID: -3651824946001971164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_18
+      name: isonswhite2_18
       rect:
         serializedVersion: 2
-        x: 38
-        y: 43
-        width: 20
-        height: 47
+        x: 128
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 292b6ae738174b3f0800000000000000
-      internalID: -885958417105636718
+      spriteID: 14682209c130cba448b45090cd705733
+      internalID: -5743856943257200401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_19
+      name: isonswhite2_19
       rect:
         serializedVersion: 2
-        x: 70
-        y: 69
-        width: 20
-        height: 21
+        x: 160
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2660fadbf67bf7330800000000000000
-      internalID: 3710886308528195170
+      spriteID: da60c1460906de4449024d14170d72af
+      internalID: -3970517187922480367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_20
+      name: isonswhite2_20
       rect:
         serializedVersion: 2
-        x: 102
-        y: 83
-        width: 6
-        height: 7
+        x: 192
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a3d09b511a7bfaaf0800000000000000
-      internalID: -382885540821136070
+      spriteID: e6725aba4f848cb44a849f8915fd9d78
+      internalID: 2773992808477904761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_21
+      name: isonswhite2_21
       rect:
         serializedVersion: 2
-        x: 102
-        y: 77
-        width: 6
-        height: 7
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6f6656897b6bbc3a0800000000000000
-      internalID: -6644015925602982154
+      spriteID: c3dec9fa8f7e7084b9d24793b55210c3
+      internalID: 2238386083235014152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_22
+      name: isonswhite2_22
       rect:
         serializedVersion: 2
-        x: 108
-        y: 83
-        width: 14
-        height: 7
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c02161b8e47fa7290800000000000000
-      internalID: -7891723480300383732
+      spriteID: 871141ec4b3da3b4aaab3dfb446154a3
+      internalID: -5305403707639393297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_23
+      name: isonswhite2_23
       rect:
         serializedVersion: 2
-        x: 108
-        y: 77
-        width: 14
-        height: 7
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9ae69ff259b5de770800000000000000
-      internalID: 8641663956306980521
+      spriteID: de8516e44081f5043a2fce6db11b36e1
+      internalID: -7440971185202368722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_24
+      name: isonswhite2_24
       rect:
         serializedVersion: 2
-        x: 138
-        y: 69
-        width: 6
-        height: 21
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7e5086db3d21414b0800000000000000
-      internalID: -5470726946723199513
+      spriteID: a2c7e829eaf3a5544a2b53e848d04a4c
+      internalID: -7062812790716468544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_25
+      name: isonswhite2_25
       rect:
         serializedVersion: 2
-        x: 148
-        y: 69
-        width: 6
-        height: 21
+        x: 128
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 13aebdc356f443220800000000000000
-      internalID: 2464682192309840433
+      spriteID: 9b662050b3442b6468f4a8133fe23d9d
+      internalID: 97452308493143843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_26
+      name: isonswhite2_26
       rect:
         serializedVersion: 2
-        x: 166
-        y: 71
-        width: 20
-        height: 21
+        x: 160
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: de01ba40482917510800000000000000
-      internalID: 1545177242876449005
+      spriteID: 5659aef3343f69f4fa3375458f170acf
+      internalID: -4598059474086584248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_27
+      name: isonswhite2_27
       rect:
         serializedVersion: 2
-        x: 198
-        y: 70
-        width: 20
-        height: 23
+        x: 192
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0334cccf7b51fad20800000000000000
-      internalID: 3291873732595565360
+      spriteID: 8888b150c859d97459d080d8fc69e043
+      internalID: 650022395868303075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_28
+      name: isonswhite2_28
       rect:
         serializedVersion: 2
-        x: 102
-        y: 71
-        width: 6
-        height: 7
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 393b6343e05efab80800000000000000
-      internalID: -8381228532344900717
+      spriteID: 651e2e9f678c1c741a2e6a8dfee09bad
+      internalID: 8733657598935678242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_29
+      name: isonswhite2_29
       rect:
         serializedVersion: 2
-        x: 108
-        y: 71
-        width: 14
-        height: 7
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 109d636740a037190800000000000000
-      internalID: -7966012301608822527
+      spriteID: b8b38fe69498fe24a85d07cc7a4de4e5
+      internalID: -8943924478185911527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_30
+      name: isonswhite2_30
       rect:
         serializedVersion: 2
-        x: 8
-        y: 39
-        width: 18
-        height: 17
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9e1ebd64fccf193f0800000000000000
-      internalID: -895656883692772887
+      spriteID: 8b8d4b631551dae489b70bb3cf70fcca
+      internalID: 2717596346815555612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_31
+      name: isonswhite2_31
       rect:
         serializedVersion: 2
-        x: 72
-        y: 39
-        width: 18
-        height: 21
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 30f12b9bd297b5200800000000000000
-      internalID: 169862648252473091
+      spriteID: 27b958f102782484f9aff1336f0a8c99
+      internalID: -1613750400487606341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_32
+      name: isonswhite2_32
       rect:
         serializedVersion: 2
-        x: 105
-        y: 40
-        width: 13
-        height: 18
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 13f28144628274210800000000000000
-      internalID: 1317065560845463345
+      spriteID: 091d6ff2bd134c84bb3cad0990ac1f2a
+      internalID: -2308001801626795153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_33
+      name: isonswhite2_33
       rect:
         serializedVersion: 2
-        x: 142
-        y: 51
-        width: 6
-        height: 7
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 80af026981d44c7c0800000000000000
-      internalID: -4052028996733306360
+      spriteID: dd9859a2ed01cdb4a95677e734e595d5
+      internalID: -6548008519882821858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: icons_color_customizible_34
+      name: isonswhite2_34
       rect:
         serializedVersion: 2
-        x: 142
-        y: 45
-        width: 6
-        height: 7
+        x: 192
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0e97064bb982f7110800000000000000
-      internalID: 1260771069898291680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_35
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 39
-        width: 18
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c70d58e8e2b627060800000000000000
-      internalID: 6949735022689898620
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_36
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 6
-        width: 18
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc0be7bdddf3a5100800000000000000
-      internalID: 97460564044722380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_37
-      rect:
-        serializedVersion: 2
-        x: 142
-        y: 39
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8603712258334f450800000000000000
-      internalID: 6121574440398958696
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_38
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 5
-        width: 20
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 49e8ca6f0d57703c0800000000000000
-      internalID: -4393413371124478316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_39
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 5
-        width: 20
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a8020b2f27e3fe840800000000000000
-      internalID: 5255487953583480970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_40
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 6
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 13ef3d9fb7eeea1f0800000000000000
-      internalID: -1031625048381456847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_41
-      rect:
-        serializedVersion: 2
-        x: 77
-        y: 6
-        width: 6
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9d36a840174f5fc10800000000000000
-      internalID: 2086842768600753113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_42
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 6
-        width: 6
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d09d8c7f52cf08360800000000000000
-      internalID: 7170007846774954253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_43
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 6
-        width: 13
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5f4e25c699dbbbfe0800000000000000
-      internalID: -1172134811354864395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_44
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 6
-        width: 6
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17f605c3d183a9e80800000000000000
-      internalID: -8171156875693232271
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_45
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 6
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7866050ed3392b770800000000000000
-      internalID: 8625118130333574791
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_46
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 6
-        width: 10
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 983ffc5089b772a60800000000000000
-      internalID: 7649218384974836617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_47
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 6
-        width: 6
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c83da87727d86ede0800000000000000
-      internalID: -1304199519305804916
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: icons_color_customizible_48
-      rect:
-        serializedVersion: 2
-        x: 169
-        y: 6
-        width: 14
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7653b8c9f92372980800000000000000
-      internalID: -8563820505314151065
+      spriteID: cc89a7f20f54e764ababba8a3de80fe7
+      internalID: -1148617841872355270
       vertices: []
       indices: 
       edges: []
@@ -1325,7 +1008,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -1335,55 +1018,41 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      icons_color_customizible_0: -7222659631609397881
-      icons_color_customizible_1: -8788386244601396806
-      icons_color_customizible_10: 4233804412399550376
-      icons_color_customizible_11: 8105144744570070218
-      icons_color_customizible_12: -6249599905947839303
-      icons_color_customizible_13: 7751721018759728600
-      icons_color_customizible_14: 6181561683567762225
-      icons_color_customizible_15: -3936508533003825415
-      icons_color_customizible_16: 6914606016048708471
-      icons_color_customizible_17: 8811793157615228726
-      icons_color_customizible_18: -885958417105636718
-      icons_color_customizible_19: 3710886308528195170
-      icons_color_customizible_2: -8989319642473497037
-      icons_color_customizible_20: -382885540821136070
-      icons_color_customizible_21: -6644015925602982154
-      icons_color_customizible_22: -7891723480300383732
-      icons_color_customizible_23: 8641663956306980521
-      icons_color_customizible_24: -5470726946723199513
-      icons_color_customizible_25: 2464682192309840433
-      icons_color_customizible_26: 1545177242876449005
-      icons_color_customizible_27: 3291873732595565360
-      icons_color_customizible_28: -8381228532344900717
-      icons_color_customizible_29: -7966012301608822527
-      icons_color_customizible_3: -3237515202010269207
-      icons_color_customizible_30: -895656883692772887
-      icons_color_customizible_31: 169862648252473091
-      icons_color_customizible_32: 1317065560845463345
-      icons_color_customizible_33: -4052028996733306360
-      icons_color_customizible_34: 1260771069898291680
-      icons_color_customizible_35: 6949735022689898620
-      icons_color_customizible_36: 97460564044722380
-      icons_color_customizible_37: 6121574440398958696
-      icons_color_customizible_38: -4393413371124478316
-      icons_color_customizible_39: 5255487953583480970
-      icons_color_customizible_4: -6059853963304336427
-      icons_color_customizible_40: -1031625048381456847
-      icons_color_customizible_41: 2086842768600753113
-      icons_color_customizible_42: 7170007846774954253
-      icons_color_customizible_43: -1172134811354864395
-      icons_color_customizible_44: -8171156875693232271
-      icons_color_customizible_45: 8625118130333574791
-      icons_color_customizible_46: 7649218384974836617
-      icons_color_customizible_47: -1304199519305804916
-      icons_color_customizible_48: -8563820505314151065
-      icons_color_customizible_5: 4551245732993018871
-      icons_color_customizible_6: 759408047846458688
-      icons_color_customizible_7: -2552172351590426123
-      icons_color_customizible_8: 7703943193098897037
-      icons_color_customizible_9: 4391647020263599216
+      isonswhite2_0: -3915288548941881612
+      isonswhite2_1: -6064698589780549783
+      isonswhite2_10: -5611136652117499180
+      isonswhite2_11: -2024606662850549571
+      isonswhite2_12: -2381500297140005776
+      isonswhite2_13: -5908534354296120792
+      isonswhite2_14: -1099396636000734626
+      isonswhite2_15: -9147400036283487591
+      isonswhite2_16: 107280097507075921
+      isonswhite2_17: -3651824946001971164
+      isonswhite2_18: -5743856943257200401
+      isonswhite2_19: -3970517187922480367
+      isonswhite2_2: 4376132946644718016
+      isonswhite2_20: 2773992808477904761
+      isonswhite2_21: 2238386083235014152
+      isonswhite2_22: -5305403707639393297
+      isonswhite2_23: -7440971185202368722
+      isonswhite2_24: -7062812790716468544
+      isonswhite2_25: 97452308493143843
+      isonswhite2_26: -4598059474086584248
+      isonswhite2_27: 650022395868303075
+      isonswhite2_28: 8733657598935678242
+      isonswhite2_29: -8943924478185911527
+      isonswhite2_3: 3943050131641414758
+      isonswhite2_30: 2717596346815555612
+      isonswhite2_31: -1613750400487606341
+      isonswhite2_32: -2308001801626795153
+      isonswhite2_33: -6548008519882821858
+      isonswhite2_34: -1148617841872355270
+      isonswhite2_4: -2891059516951804756
+      isonswhite2_5: 5548767936245927627
+      isonswhite2_6: -5900926969388301916
+      isonswhite2_7: 1881423083123314185
+      isonswhite2_8: -961280449010390996
+      isonswhite2_9: -5474248854234790524
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

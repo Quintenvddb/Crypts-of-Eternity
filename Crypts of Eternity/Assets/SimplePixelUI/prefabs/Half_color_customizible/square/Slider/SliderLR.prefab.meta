@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: 8a36c7d6748e9fd4b91648b506e2cfd6
+guid: f50c718fa044d3c49ab1322e176439a9
 PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 165012
+  packageName: Simple Free Pixel art styled UI pack
+  packageVersion: 1.15
+  assetPath: Assets/SimplePixelUI/prefabs/Half_color_customizible/square/Slider/SliderLR.prefab
+  uploadId: 362088

@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: 2b80d6462c4b19c469c897dc889bc57f
+guid: e3c89eeb7cd05334298761e133959adb
 PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 165012
+  packageName: Simple Free Pixel art styled UI pack
+  packageVersion: 1.15
+  assetPath: Assets/SimplePixelUI/prefabs/Gray_black/rounded/InputField.prefab
+  uploadId: 362088

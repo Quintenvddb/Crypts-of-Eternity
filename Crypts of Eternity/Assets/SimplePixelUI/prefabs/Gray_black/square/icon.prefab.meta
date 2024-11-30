@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: bd6fb0e44c8b86e4c97e372ad35666af
+guid: d7c95b4cef8abb345b7a59354d1451fc
 PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 165012
+  packageName: Simple Free Pixel art styled UI pack
+  packageVersion: 1.15
+  assetPath: Assets/SimplePixelUI/prefabs/Gray_black/square/icon.prefab
+  uploadId: 362088
