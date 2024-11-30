@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour
@@ -16,13 +17,15 @@ public class PlayerController : MonoBehaviour
 
     private bool isDead = false;
 
+    public Slider healthSlider;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
-        LogHealth();
+        HealthChanged();
     }
 
     void Update()
@@ -78,9 +81,9 @@ public class PlayerController : MonoBehaviour
     }
 
     public int GetCurrentHealth()
-{
-    return currentHealth;
-}
+    {
+        return currentHealth;
+    }
 
     private IEnumerator AttackCoroutine()
     {
@@ -126,7 +129,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetTrigger("Hurt");
             }
 
-            LogHealth();
+            HealthChanged();
         }
     }
 
@@ -143,11 +146,16 @@ public class PlayerController : MonoBehaviour
 
         currentHealth += healAmount;
         if (currentHealth > maxHealth) currentHealth = maxHealth;
-        LogHealth();
+        HealthChanged();
     }
 
-    private void LogHealth()
+    private void HealthChanged()
     {
         Debug.Log("Player Health: " + currentHealth + "/" + maxHealth);
+
+        if (healthSlider != null)
+        {
+            healthSlider.value = (float)currentHealth / maxHealth;
+        }
     }
 }
