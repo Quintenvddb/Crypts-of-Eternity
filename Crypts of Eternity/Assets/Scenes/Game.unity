@@ -1712,7 +1712,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cf6b59b7c1dad88438263b3160222715, type: 2}
   - {fileID: 11400000, guid: 5451d01092d6a0947a1059da45c09ebe, type: 2}
   wallTiles:
-  - {fileID: 11400000, guid: 2e00748cc4924de42a59e142923a3df8, type: 2}
+  - {fileID: 11400000, guid: f5945c4f4a016ae419bd0fb1152e2d1a, type: 2}
 --- !u!4 &809774870
 Transform:
   m_ObjectHideFlags: 0
