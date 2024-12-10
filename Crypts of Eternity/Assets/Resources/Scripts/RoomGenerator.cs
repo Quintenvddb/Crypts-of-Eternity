@@ -7,6 +7,11 @@ public class RoomGenerator
     private int gridWidth, gridHeight;
     public List<Room> Rooms { get; private set; }
 
+    // Prefabs for Enemy, Loot, and Shop
+    public GameObject enemyPrefab;
+    public GameObject lootPrefab;
+    public GameObject shopPrefab;
+
     public RoomGenerator(int[,] grid, int width, int height)
     {
         this.grid = grid;
@@ -26,7 +31,7 @@ public class RoomGenerator
 
             Room newRoom = new Room(x, y, roomWidth, roomHeight);
 
-            // Convert grid coordinates to world coordinates for the spawn room check
+            // Convert grid coordinates to world coordinates
             int worldStartX = x - gridWidth / 2;
             int worldEndX = worldStartX + roomWidth;
             int worldStartY = y - gridHeight / 2;
@@ -50,7 +55,45 @@ public class RoomGenerator
                         grid[rx, ry] = 1; // Mark as floor
                     }
                 }
+
+                // Generate enemies, loot, and shops based on spawn chances
+                SpawnObjectsInRoom(newRoom, x, y, roomWidth, roomHeight);
             }
         }
+    }
+
+    private void SpawnObjectsInRoom(Room room, int roomStartX, int roomStartY, int roomWidth, int roomHeight)
+    {
+        // 40% chance for enemy
+        if (Random.Range(0f, 1f) < 0.35f)
+        {
+            SpawnPrefab(enemyPrefab, roomStartX, roomStartY, roomWidth, roomHeight);
+        }
+
+        // 40% chance for loot
+        if (Random.Range(0f, 1f) < 0.35f)
+        {
+            SpawnPrefab(lootPrefab, roomStartX, roomStartY, roomWidth, roomHeight);
+        }
+
+        // 20% chance for shop
+        if (Random.Range(0f, 1f) < 0.3f)
+        {
+            SpawnPrefab(shopPrefab, roomStartX, roomStartY, roomWidth, roomHeight);
+        }
+    }
+
+    private void SpawnPrefab(GameObject prefab, int roomStartX, int roomStartY, int roomWidth, int roomHeight)
+    {
+        // Random position inside the room (taking into account negative and positive room positions)
+        int spawnX = Random.Range(roomStartX, roomStartX + roomWidth);
+        int spawnY = Random.Range(roomStartY, roomStartY + roomHeight);
+
+        // Convert grid coordinates to world space
+        float worldPosX = spawnX - gridWidth / 2f;  // Correct for negative grid position
+        float worldPosY = spawnY - gridHeight / 2f; // Correct for negative grid position
+
+        // Spawn the prefab at the world position
+        GameObject.Instantiate(prefab, new Vector3(worldPosX, worldPosY, 0), Quaternion.identity);
     }
 }

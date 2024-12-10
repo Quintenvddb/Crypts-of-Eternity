@@ -516,7 +516,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fedab419fdbdeea488795e51c83727c9, type: 2}
   - {fileID: 11400000, guid: 54b6893f2afe6354ebdccde3f53a6a65, type: 2}
   wallTiles:
-  - {fileID: 11400000, guid: a3de9d9dc10987d4ca90defb86d72c0b, type: 2}
+  - {fileID: 11400000, guid: f5945c4f4a016ae419bd0fb1152e2d1a, type: 2}
 --- !u!4 &507666108
 Transform:
   m_ObjectHideFlags: 0
@@ -1755,6 +1755,9 @@ MonoBehaviour:
   maxRooms: 20
   minRoomSize: 7
   maxRoomSize: 15
+  enemyPrefab: {fileID: 529721178849006507, guid: a2138e1b16a959b4ea9d52e44ce993c9, type: 3}
+  lootPrefab: {fileID: 5790048036885523910, guid: d334d547dd0a7214e9e6950cd73e2258, type: 3}
+  shopPrefab: {fileID: 3742164553007408510, guid: da416309b78fa5c449b58939901f3c30, type: 3}
 --- !u!4 &809774870
 Transform:
   m_ObjectHideFlags: 0

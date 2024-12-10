@@ -9,19 +9,31 @@ public class DungeonGenerator : MonoBehaviour
     public int minRoomSize = 7;
     public int maxRoomSize = 15;
 
-    private int[,] grid; // Holds dungeon data
+    private int[,] grid;
     private RoomGenerator roomGenerator;
     private HallwayGenerator hallwayGenerator;
 
-    public int[,] Grid => grid; // Public getter to access the grid
+    // Expose grid-related data
+    public int[,] Grid => grid;
     public int GridWidth => gridWidth;
     public int GridHeight => gridHeight;
+
+    // Public Prefabs for Enemy, Loot, and Shop
+    public GameObject enemyPrefab;
+    public GameObject lootPrefab;
+    public GameObject shopPrefab;
 
     void Start()
     {
         Debug.Log("Starting Dungeon Generation...");
+
         grid = new int[gridWidth, gridHeight];
-        roomGenerator = new RoomGenerator(grid, gridWidth, gridHeight);
+        roomGenerator = new RoomGenerator(grid, gridWidth, gridHeight)
+        {
+            enemyPrefab = enemyPrefab,
+            lootPrefab = lootPrefab,
+            shopPrefab = shopPrefab
+        };
         hallwayGenerator = new HallwayGenerator(grid);
 
         GenerateDungeon();
@@ -31,7 +43,7 @@ public class DungeonGenerator : MonoBehaviour
     void GenerateDungeon()
     {
         Debug.Log("Generating Initial Spawn Room...");
-        GenerateSpawnRoom(-10, -10, 10, 10);
+        GenerateSpawnRoom(-10, -10, 10, 10); // Define the spawn room area
         Debug.Log("Spawn Room Created.");
 
         Debug.Log("Generating Rooms...");
@@ -58,7 +70,7 @@ public class DungeonGenerator : MonoBehaviour
 
                 if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
                 {
-                    grid[gridX, gridY] = 1;
+                    grid[gridX, gridY] = 1; // Mark as floor tile
                 }
             }
         }
@@ -70,7 +82,7 @@ public class DungeonGenerator : MonoBehaviour
         {
             for (int y = 0; y < gridHeight; y++)
             {
-                if (grid[x, y] == 1)
+                if (grid[x, y] == 1) // Floor
                 {
                     for (int dx = -1; dx <= 1; dx++)
                     {
@@ -79,7 +91,7 @@ public class DungeonGenerator : MonoBehaviour
                             int nx = x + dx, ny = y + dy;
                             if (nx >= 0 && ny >= 0 && nx < gridWidth && ny < gridHeight && grid[nx, ny] == 0)
                             {
-                                grid[nx, ny] = 2;
+                                grid[nx, ny] = 2; // Mark as wall
                             }
                         }
                     }
