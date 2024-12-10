@@ -12,6 +12,11 @@ public class RoomGenerator
     public GameObject lootPrefab;
     public GameObject shopPrefab;
 
+    // Counters for spawned objects
+    private int enemyCount = 0;
+    private int lootCount = 0;
+    private int shopCount = 0;
+
     public RoomGenerator(int[,] grid, int width, int height)
     {
         this.grid = grid;
@@ -60,26 +65,34 @@ public class RoomGenerator
                 SpawnObjectsInRoom(newRoom, x, y, roomWidth, roomHeight);
             }
         }
+
+        // Debug the totals after all rooms are generated
+        Debug.Log($"Total Enemies Spawned: {enemyCount}");
+        Debug.Log($"Total Loot Spawned: {lootCount}");
+        Debug.Log($"Total Shops Spawned: {shopCount}");
     }
 
     private void SpawnObjectsInRoom(Room room, int roomStartX, int roomStartY, int roomWidth, int roomHeight)
     {
         // 40% chance for enemy
-        if (Random.Range(0f, 1f) < 0.35f)
+        if (Random.Range(0f, 1f) < 0.4f)
         {
             SpawnPrefab(enemyPrefab, roomStartX, roomStartY, roomWidth, roomHeight);
+            enemyCount++; // Increment enemy count
         }
 
         // 40% chance for loot
-        if (Random.Range(0f, 1f) < 0.35f)
+        if (Random.Range(0f, 1f) < 0.4f)
         {
             SpawnPrefab(lootPrefab, roomStartX, roomStartY, roomWidth, roomHeight);
+            lootCount++; // Increment loot count
         }
 
         // 20% chance for shop
-        if (Random.Range(0f, 1f) < 0.3f)
+        if (Random.Range(0f, 1f) < 0.2f)
         {
             SpawnPrefab(shopPrefab, roomStartX, roomStartY, roomWidth, roomHeight);
+            shopCount++; // Increment shop count
         }
     }
 
