@@ -2,6 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
+[System.Serializable]
+public class Item
+{
+    public string itemName;
+    public Sprite itemIcon;
+}
+
 public class PlayerController : MonoBehaviour
 {
     private float moveSpeed = 4f;
@@ -30,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
     public Sprite slotTexture;
     public float slotSpacing = 8f;
+
+    private Item[] inventoryItems = new Item[inventoryRows * inventoryColumns];
 
     void Start()
     {
@@ -196,57 +205,97 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-private void InitializeInventory()
-{
-    GridLayoutGroup gridLayout = inventoryGrid.GetComponent<GridLayoutGroup>();
-    if (gridLayout == null)
+    private void InitializeInventory()
     {
-        gridLayout = inventoryGrid.AddComponent<GridLayoutGroup>();
-    }
-
-    gridLayout.cellSize = new Vector2(60, 60);
-    gridLayout.spacing = new Vector2(slotSpacing, slotSpacing);
-    gridLayout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
-    gridLayout.constraintCount = inventoryColumns;
-
-    for (int i = 0; i < inventoryRows * inventoryColumns; i++)
-    {
-        GameObject slot = new GameObject($"InventorySlot{i}");
-        Image image = slot.AddComponent<Image>();
-        if (slotTexture != null)
+        GridLayoutGroup gridLayout = inventoryGrid.GetComponent<GridLayoutGroup>();
+        if (gridLayout == null)
         {
-            image.sprite = slotTexture;
+            gridLayout = inventoryGrid.AddComponent<GridLayoutGroup>();
         }
-        image.color = new Color(1f, 1f, 1f, 0.95f);
-        slot.transform.SetParent(inventoryGrid.transform, false);
-    }
-}
 
-private void InitializeEquipmentSlots()
-{
-    GridLayoutGroup gridLayout = equipmentSlots.GetComponent<GridLayoutGroup>();
-    if (gridLayout == null)
-    {
-        gridLayout = equipmentSlots.AddComponent<GridLayoutGroup>();
-    }
+        gridLayout.cellSize = new Vector2(60, 60);
+        gridLayout.spacing = new Vector2(slotSpacing, slotSpacing);
+        gridLayout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+        gridLayout.constraintCount = inventoryColumns;
 
-    gridLayout.cellSize = new Vector2(60, 60);
-    gridLayout.spacing = new Vector2(slotSpacing, slotSpacing);
-    gridLayout.constraint = GridLayoutGroup.Constraint.FixedRowCount;
-    gridLayout.constraintCount = 1;
-
-    for (int i = 0; i < 8; i++)
-    {
-        GameObject slot = new GameObject($"EquipmentSlot{i}");
-        Image image = slot.AddComponent<Image>();
-        if (slotTexture != null)
+        for (int i = 0; i < inventoryRows * inventoryColumns; i++)
         {
-            image.sprite = slotTexture;
+            GameObject slot = new GameObject($"InventorySlot{i}");
+            Image image = slot.AddComponent<Image>();
+            if (slotTexture != null)
+            {
+                image.sprite = slotTexture;
+            }
+            image.color = new Color(1f, 1f, 1f, 0.95f);
+            slot.transform.SetParent(inventoryGrid.transform, false);
         }
-        image.color = new Color(1f, 1f, 1f, 0.95f);
-        slot.transform.SetParent(equipmentSlots.transform, false);
     }
-}
 
+    private void InitializeEquipmentSlots()
+    {
+        GridLayoutGroup gridLayout = equipmentSlots.GetComponent<GridLayoutGroup>();
+        if (gridLayout == null)
+        {
+            gridLayout = equipmentSlots.AddComponent<GridLayoutGroup>();
+        }
 
+        gridLayout.cellSize = new Vector2(60, 60);
+        gridLayout.spacing = new Vector2(slotSpacing, slotSpacing);
+        gridLayout.constraint = GridLayoutGroup.Constraint.FixedRowCount;
+        gridLayout.constraintCount = 1;
+
+        for (int i = 0; i < 8; i++)
+        {
+            GameObject slot = new GameObject($"EquipmentSlot{i}");
+            Image image = slot.AddComponent<Image>();
+            if (slotTexture != null)
+            {
+                image.sprite = slotTexture;
+            }
+            image.color = new Color(1f, 1f, 1f, 0.95f);
+            slot.transform.SetParent(equipmentSlots.transform, false);
+        }
+    }
+
+    public bool AddItem(Item item)
+    {
+        for (int i = 0; i < inventoryItems.Length; i++)
+        {
+            if (inventoryItems[i] == null)
+            {
+                inventoryItems[i] = item;
+                UpdateSlot(i);
+                return true;
+            }
+        }
+        Debug.Log("Inventory is full!");
+        return false;
+    }
+
+    public void RemoveItem(int slotIndex)
+    {
+        if (slotIndex < 0 || slotIndex >= inventoryItems.Length) return;
+
+        inventoryItems[slotIndex] = null;
+        UpdateSlot(slotIndex);
+    }
+
+    private void UpdateSlot(int slotIndex)
+    {
+        if (slotIndex < 0 || slotIndex >= inventoryItems.Length) return;
+
+        Transform slotTransform = inventoryGrid.transform.GetChild(slotIndex);
+        Image slotImage = slotTransform.GetComponent<Image>();
+
+        if (inventoryItems[slotIndex] != null)
+        {
+            slotImage.sprite = inventoryItems[slotIndex].itemIcon;
+            slotImage.color = Color.white;
+        }
+        else
+        {
+            slotImage.sprite = null;
+            slotImage.color = new Color(1f, 1f, 1f, 0.5f);
+        }
+    }
 }
