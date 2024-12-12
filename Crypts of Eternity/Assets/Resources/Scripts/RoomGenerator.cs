@@ -6,7 +6,9 @@ public class RoomGenerator
     private int[,] grid;
     private int gridWidth, gridHeight;
     public List<Room> Rooms { get; private set; }
-    public List<GameObject> SpawnedObjects { get; private set; }
+    
+    // Store spawned objects
+    public List<GameObject> spawnedObjects { get; private set; } = new List<GameObject>();
 
     // Prefabs for Enemy, Loot, and Shop
     public GameObject enemyPrefab;
@@ -24,7 +26,6 @@ public class RoomGenerator
         this.gridWidth = width;
         this.gridHeight = height;
         Rooms = new List<Room>();
-        SpawnedObjects = new List<GameObject>();
     }
 
     public void GenerateRooms(int maxRooms, int minSize, int maxSize)
@@ -79,37 +80,51 @@ public class RoomGenerator
         // 40% chance for enemy
         if (Random.Range(0f, 1f) < 0.4f)
         {
-            SpawnPrefab(enemyPrefab, roomStartX, roomStartY, roomWidth, roomHeight);
+            GameObject enemy = SpawnPrefab(enemyPrefab, roomStartX, roomStartY, roomWidth, roomHeight);
             enemyCount++; // Increment enemy count
+            spawnedObjects.Add(enemy); // Track spawned object
         }
 
         // 40% chance for loot
         if (Random.Range(0f, 1f) < 0.4f)
         {
-            SpawnPrefab(lootPrefab, roomStartX, roomStartY, roomWidth, roomHeight);
+            GameObject loot = SpawnPrefab(lootPrefab, roomStartX, roomStartY, roomWidth, roomHeight);
             lootCount++; // Increment loot count
+            spawnedObjects.Add(loot); // Track spawned object
         }
 
         // 20% chance for shop
         if (Random.Range(0f, 1f) < 0.2f)
         {
-            SpawnPrefab(shopPrefab, roomStartX, roomStartY, roomWidth, roomHeight);
+            GameObject shop = SpawnPrefab(shopPrefab, roomStartX, roomStartY, roomWidth, roomHeight);
             shopCount++; // Increment shop count
+            spawnedObjects.Add(shop); // Track spawned object
         }
     }
 
-    private void SpawnPrefab(GameObject prefab, int roomStartX, int roomStartY, int roomWidth, int roomHeight)
+    private GameObject SpawnPrefab(GameObject prefab, int roomStartX, int roomStartY, int roomWidth, int roomHeight)
     {
-        // Random position inside the room
-        int spawnX = Random.Range(roomStartX, roomStartX + roomWidth);
-        int spawnY = Random.Range(roomStartY, roomStartY + roomHeight);
+        // Try to find a valid floor position for the spawn
+        bool spawned = false;
+        GameObject spawnedObject = null;
+        while (!spawned)
+        {
+            // Random position inside the room (aligned with grid)
+            int spawnX = Random.Range(roomStartX, roomStartX + roomWidth);
+            int spawnY = Random.Range(roomStartY, roomStartY + roomHeight);
 
-        // Convert grid coordinates to world space
-        float worldPosX = spawnX - gridWidth / 2f;  // Correct for negative grid position
-        float worldPosY = spawnY - gridHeight / 2f; // Correct for negative grid position
+            // Ensure it's a valid floor tile (grid value is 1)
+            if (grid[spawnX, spawnY] == 1)
+            {
+                // Convert grid coordinates to world space
+                float worldPosX = spawnX - gridWidth / 2f;  // Correct for negative grid position
+                float worldPosY = spawnY - gridHeight / 2f; // Correct for negative grid position
 
-        // Spawn the prefab at the world position
-        GameObject spawnedObject = GameObject.Instantiate(prefab, new Vector3(worldPosX, worldPosY, -10), Quaternion.identity);
-        SpawnedObjects.Add(spawnedObject); // Add to the list of spawned objects
+                // Spawn the prefab at the world position
+                spawnedObject = GameObject.Instantiate(prefab, new Vector3(worldPosX, worldPosY, -10), Quaternion.identity);
+                spawned = true; // Successfully spawned the object
+            }
+        }
+        return spawnedObject;
     }
 }

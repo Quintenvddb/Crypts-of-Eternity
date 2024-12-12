@@ -22,13 +22,14 @@ public class DungeonRenderer : MonoBehaviour
     void Update()
     {
         RenderDungeon();
+        RenderObjects();
     }
 
     void RenderDungeon()
     {
-        if (generator == null)
+        if (generator == null || generator.roomGenerator == null)
         {
-            Debug.LogError("DungeonGenerator is not assigned!");
+            Debug.LogError("RoomGenerator is not assigned!");
             return;
         }
 
@@ -44,6 +45,7 @@ public class DungeonRenderer : MonoBehaviour
         }
 
         Vector3 cameraPos = mainCamera.transform.position;
+
         float halfHeight = mainCamera.orthographicSize;
         float halfWidth = mainCamera.aspect * halfHeight;
 
@@ -62,7 +64,25 @@ public class DungeonRenderer : MonoBehaviour
             renderedTiles = new bool[gridWidth, gridHeight];
         }
 
-        // Render Tiles (Floor and Walls)
+        // Remove non-visible tiles
+        for (int x = 0; x < gridWidth; x++)
+        {
+            for (int y = 0; y < gridHeight; y++)
+            {
+                if (renderedTiles[x, y])
+                {
+                    Vector3Int tilePosition = new Vector3Int(x - gridWidth / 2, y - gridHeight / 2, 0);
+                    if (!IsTileWithinBounds(tilePosition, minX, maxX, minY, maxY))
+                    {
+                        floorTilemap.SetTile(tilePosition, null);
+                        wallTilemap.SetTile(tilePosition, null);
+                        renderedTiles[x, y] = false;
+                    }
+                }
+            }
+        }
+
+        // Render visible tiles
         for (int x = minX; x <= maxX; x++)
         {
             for (int y = minY; y <= maxY; y++)
@@ -90,34 +110,56 @@ public class DungeonRenderer : MonoBehaviour
                 }
             }
         }
+    }
 
-        // Render Enemies, Loot, and Shops (based on visibility)
-        foreach (var obj in generator.roomGenerator.SpawnedObjects)
+    void RenderObjects()
+    {
+        if (generator == null || generator.roomGenerator == null)
         {
-            // Check if the object is within the camera's view
-            Vector3 screenPos = mainCamera.WorldToScreenPoint(obj.transform.position);
+            return;
+        }
 
-            if (screenPos.x >= 0 && screenPos.x <= Screen.width && screenPos.y >= 0 && screenPos.y <= Screen.height)
+        Camera mainCamera = Camera.main;
+        if (mainCamera == null)
+        {
+            Debug.LogError("Main camera not found!");
+            return;
+        }
+
+        Vector3 cameraPos = mainCamera.transform.position;
+        float halfHeight = mainCamera.orthographicSize;
+        float halfWidth = mainCamera.aspect * halfHeight;
+
+        int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - 1;
+        int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + 1;
+        int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - 1;
+        int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + 1;
+
+        // Render each spawned object within view
+        foreach (var obj in generator.roomGenerator.spawnedObjects)
+        {
+            Vector3 objPosition = obj.transform.position;
+            if (objPosition.x >= minX && objPosition.x <= maxX && objPosition.y >= minY && objPosition.y <= maxY)
             {
-                // Only render the object if it's within the screen bounds
-                obj.SetActive(true); // Or other logic to enable rendering
+                obj.SetActive(true);
             }
             else
             {
-                obj.SetActive(false); // Hide the object when it's outside the view
+                obj.SetActive(false);
             }
         }
     }
 
-    TileBase GetRandomTile(TileBase[] tiles, bool isWall = false)
+    bool IsTileWithinBounds(Vector3Int tilePosition, int minX, int maxX, int minY, int maxY)
     {
-        if (tiles.Length == 0)
-        {
-            Debug.LogWarning("Tile array is empty!");
-            return null;
-        }
+        int x = tilePosition.x;
+        int y = tilePosition.y;
 
-        TileBase selectedTile = tiles[Random.Range(0, tiles.Length)];
-        return selectedTile;
+        return x >= minX && x <= maxX && y >= minY && y <= maxY;
+    }
+
+    TileBase GetRandomTile(TileBase[] tiles, bool randomize = false)
+    {
+        return randomize ? tiles[Random.Range(0, tiles.Length)] : tiles[0];
     }
 }
