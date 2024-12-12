@@ -1,23 +1,23 @@
-using UnityEngine;
+    using UnityEngine;
 
-public class DamageTest : MonoBehaviour
-{
-    public int damageAmount = 10;
-
-    private void OnTriggerEnter2D(Collider2D other)
+    public class DamageTest : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+        public int damageAmount = 10;
+
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            ApplyDamageToPlayer();
+            if (other.CompareTag("Player"))
+            {
+                ApplyDamageToPlayer();
+            }
+        }
+
+        private void ApplyDamageToPlayer()
+        {
+            PlayerController player = Object.FindFirstObjectByType<PlayerController>();
+            if (player != null)
+            {
+                player.TakeDamage(damageAmount);
+            }
         }
     }
-
-    private void ApplyDamageToPlayer()
-    {
-        PlayerController player = Object.FindFirstObjectByType<PlayerController>();
-        if (player != null)
-        {
-            player.TakeDamage(damageAmount);
-        }
-    }
-}
