@@ -6,6 +6,7 @@ public class RoomGenerator
     private int[,] grid;
     private int gridWidth, gridHeight;
     public List<Room> Rooms { get; private set; }
+    public List<GameObject> SpawnedObjects { get; private set; }
 
     // Prefabs for Enemy, Loot, and Shop
     public GameObject enemyPrefab;
@@ -23,6 +24,7 @@ public class RoomGenerator
         this.gridWidth = width;
         this.gridHeight = height;
         Rooms = new List<Room>();
+        SpawnedObjects = new List<GameObject>();
     }
 
     public void GenerateRooms(int maxRooms, int minSize, int maxSize)
@@ -98,7 +100,7 @@ public class RoomGenerator
 
     private void SpawnPrefab(GameObject prefab, int roomStartX, int roomStartY, int roomWidth, int roomHeight)
     {
-        // Random position inside the room (taking into account negative and positive room positions)
+        // Random position inside the room
         int spawnX = Random.Range(roomStartX, roomStartX + roomWidth);
         int spawnY = Random.Range(roomStartY, roomStartY + roomHeight);
 
@@ -107,6 +109,7 @@ public class RoomGenerator
         float worldPosY = spawnY - gridHeight / 2f; // Correct for negative grid position
 
         // Spawn the prefab at the world position
-        GameObject.Instantiate(prefab, new Vector3(worldPosX, worldPosY, 0), Quaternion.identity);
+        GameObject spawnedObject = GameObject.Instantiate(prefab, new Vector3(worldPosX, worldPosY, -10), Quaternion.identity);
+        SpawnedObjects.Add(spawnedObject); // Add to the list of spawned objects
     }
 }

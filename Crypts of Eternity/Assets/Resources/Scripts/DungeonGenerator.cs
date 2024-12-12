@@ -10,7 +10,7 @@ public class DungeonGenerator : MonoBehaviour
     public int maxRoomSize = 15;
 
     private int[,] grid;
-    private RoomGenerator roomGenerator;
+    public RoomGenerator roomGenerator;
     private HallwayGenerator hallwayGenerator;
 
     // Expose grid-related data
@@ -23,12 +23,28 @@ public class DungeonGenerator : MonoBehaviour
     public GameObject lootPrefab;
     public GameObject shopPrefab;
 
+    void Awake()
+    {
+        Debug.Log("Initializing Dungeon Generator...");
+
+        grid = new int[gridWidth, gridHeight];
+        roomGenerator = new RoomGenerator(grid, gridWidth, gridHeight)
+        {
+            enemyPrefab = enemyPrefab,
+            lootPrefab = lootPrefab,
+            shopPrefab = shopPrefab
+        };
+        hallwayGenerator = new HallwayGenerator(grid);
+
+        Debug.Log("DungeonGenerator Awake called.");
+    }
+
     void Start()
     {
         Debug.Log("Starting Dungeon Generation...");
 
         grid = new int[gridWidth, gridHeight];
-        roomGenerator = new RoomGenerator(grid, gridWidth, gridHeight)
+        roomGenerator = new RoomGenerator(grid, gridWidth, gridHeight)  // Ensure this is initialized
         {
             enemyPrefab = enemyPrefab,
             lootPrefab = lootPrefab,

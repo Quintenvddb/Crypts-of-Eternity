@@ -4,13 +4,20 @@ using UnityEngine.Tilemaps;
 public class DungeonRenderer : MonoBehaviour
 {
     public DungeonGenerator generator;
-
     public Tilemap floorTilemap;
     public Tilemap wallTilemap;
     public TileBase[] floorTiles;
     public TileBase[] wallTiles;
 
     private bool[,] renderedTiles;
+
+    void Start()
+    {
+        if (generator == null)
+        {
+            Debug.LogError("DungeonGenerator is not assigned!");
+        }
+    }
 
     void Update()
     {
@@ -37,7 +44,6 @@ public class DungeonRenderer : MonoBehaviour
         }
 
         Vector3 cameraPos = mainCamera.transform.position;
-
         float halfHeight = mainCamera.orthographicSize;
         float halfWidth = mainCamera.aspect * halfHeight;
 
@@ -56,23 +62,7 @@ public class DungeonRenderer : MonoBehaviour
             renderedTiles = new bool[gridWidth, gridHeight];
         }
 
-        for (int x = 0; x < gridWidth; x++)
-        {
-            for (int y = 0; y < gridHeight; y++)
-            {
-                if (renderedTiles[x, y])
-                {
-                    Vector3Int tilePosition = new Vector3Int(x - gridWidth / 2, y - gridHeight / 2, 0);
-                    if (!IsTileWithinBounds(tilePosition, minX, maxX, minY, maxY))
-                    {
-                        floorTilemap.SetTile(tilePosition, null);
-                        wallTilemap.SetTile(tilePosition, null);
-                        renderedTiles[x, y] = false;
-                    }
-                }
-            }
-        }
-
+        // Render Tiles (Floor and Walls)
         for (int x = minX; x <= maxX; x++)
         {
             for (int y = minY; y <= maxY; y++)
@@ -100,13 +90,23 @@ public class DungeonRenderer : MonoBehaviour
                 }
             }
         }
-    }
 
-    bool IsTileWithinBounds(Vector3Int tilePosition, int minX, int maxX, int minY, int maxY)
-    {
-        int x = tilePosition.x;
-        int y = tilePosition.y;
-        return (x >= minX && x <= maxX && y >= minY && y <= maxY);
+        // Render Enemies, Loot, and Shops (based on visibility)
+        foreach (var obj in generator.roomGenerator.SpawnedObjects)
+        {
+            // Check if the object is within the camera's view
+            Vector3 screenPos = mainCamera.WorldToScreenPoint(obj.transform.position);
+
+            if (screenPos.x >= 0 && screenPos.x <= Screen.width && screenPos.y >= 0 && screenPos.y <= Screen.height)
+            {
+                // Only render the object if it's within the screen bounds
+                obj.SetActive(true); // Or other logic to enable rendering
+            }
+            else
+            {
+                obj.SetActive(false); // Hide the object when it's outside the view
+            }
+        }
     }
 
     TileBase GetRandomTile(TileBase[] tiles, bool isWall = false)
