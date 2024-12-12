@@ -19,12 +19,17 @@ public class PlayerController : MonoBehaviour
 
     public Slider healthSlider;
 
+    public GameObject inventory;
+
+    private bool inventoryToggled = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
+        inventory.SetActive(inventoryToggled);
         HealthChanged();
     }
 
@@ -69,6 +74,10 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("IdleBlock", false);
             moveSpeed = 5f;
+        }
+        if (Input.GetKeyDown("e"))
+        {
+            ToggleInventory();
         }
     }
 
@@ -158,4 +167,20 @@ public class PlayerController : MonoBehaviour
             healthSlider.value = (float)currentHealth / maxHealth;
         }
     }
+
+private void ToggleInventory()
+{
+    inventoryToggled = !inventoryToggled;
+    inventory.SetActive(inventoryToggled);
+
+    if (inventoryToggled)
+    {
+        Debug.Log("Inventory on");
+    }
+    else
+    {
+        Debug.Log("Inventory off");
+    }
+}
+
 }
