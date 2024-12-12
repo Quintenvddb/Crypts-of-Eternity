@@ -1750,8 +1750,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2b5345f4598964eba43be42ec18402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridWidth: 100
-  gridHeight: 100
+  gridWidth: 200
+  gridHeight: 200
   maxRooms: 20
   minRoomSize: 7
   maxRoomSize: 15
