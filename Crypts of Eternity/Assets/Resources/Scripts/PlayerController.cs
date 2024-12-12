@@ -4,7 +4,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    private float moveSpeed = 4f;
     private Rigidbody2D rb;
     private Vector2 movement;
     private Animator animator;
@@ -19,9 +19,17 @@ public class PlayerController : MonoBehaviour
 
     public Slider healthSlider;
 
-    public GameObject inventory;
+    public GameObject inventoryUI;
+    public GameObject inventoryGrid;
+    public GameObject equipmentSlots;
 
     private bool inventoryToggled = false;
+
+    private const int inventoryRows = 3;
+    private const int inventoryColumns = 8;
+
+    public Sprite slotTexture;
+    public float slotSpacing = 8f;
 
     void Start()
     {
@@ -29,8 +37,11 @@ public class PlayerController : MonoBehaviour
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
-        inventory.SetActive(inventoryToggled);
+        inventoryUI.SetActive(inventoryToggled);
         HealthChanged();
+
+        InitializeInventory();
+        InitializeEquipmentSlots();
     }
 
     void Update()
@@ -73,7 +84,7 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetMouseButtonUp(1))
         {
             animator.SetBool("IdleBlock", false);
-            moveSpeed = 5f;
+            moveSpeed = 4f;
         }
         if (Input.GetKeyDown("e"))
         {
@@ -168,19 +179,74 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-private void ToggleInventory()
-{
-    inventoryToggled = !inventoryToggled;
-    inventory.SetActive(inventoryToggled);
+    private void ToggleInventory()
+    {
+        inventoryToggled = !inventoryToggled;
+        inventoryUI.SetActive(inventoryToggled);
 
-    if (inventoryToggled)
-    {
-        Debug.Log("Inventory on");
+        if (inventoryToggled)
+        {
+            Debug.Log("Inventory on");
+            moveSpeed = 2f;
+        }
+        else
+        {
+            Debug.Log("Inventory off");
+            moveSpeed = 4f;
+        }
     }
-    else
+
+private void InitializeInventory()
+{
+    GridLayoutGroup gridLayout = inventoryGrid.GetComponent<GridLayoutGroup>();
+    if (gridLayout == null)
     {
-        Debug.Log("Inventory off");
+        gridLayout = inventoryGrid.AddComponent<GridLayoutGroup>();
+    }
+
+    gridLayout.cellSize = new Vector2(60, 60);
+    gridLayout.spacing = new Vector2(slotSpacing, slotSpacing);
+    gridLayout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+    gridLayout.constraintCount = inventoryColumns;
+
+    for (int i = 0; i < inventoryRows * inventoryColumns; i++)
+    {
+        GameObject slot = new GameObject($"InventorySlot{i}");
+        Image image = slot.AddComponent<Image>();
+        if (slotTexture != null)
+        {
+            image.sprite = slotTexture;
+        }
+        image.color = new Color(1f, 1f, 1f, 0.95f);
+        slot.transform.SetParent(inventoryGrid.transform, false);
     }
 }
+
+private void InitializeEquipmentSlots()
+{
+    GridLayoutGroup gridLayout = equipmentSlots.GetComponent<GridLayoutGroup>();
+    if (gridLayout == null)
+    {
+        gridLayout = equipmentSlots.AddComponent<GridLayoutGroup>();
+    }
+
+    gridLayout.cellSize = new Vector2(60, 60);
+    gridLayout.spacing = new Vector2(slotSpacing, slotSpacing);
+    gridLayout.constraint = GridLayoutGroup.Constraint.FixedRowCount;
+    gridLayout.constraintCount = 1;
+
+    for (int i = 0; i < 8; i++)
+    {
+        GameObject slot = new GameObject($"EquipmentSlot{i}");
+        Image image = slot.AddComponent<Image>();
+        if (slotTexture != null)
+        {
+            image.sprite = slotTexture;
+        }
+        image.color = new Color(1f, 1f, 1f, 0.95f);
+        slot.transform.SetParent(equipmentSlots.transform, false);
+    }
+}
+
 
 }
