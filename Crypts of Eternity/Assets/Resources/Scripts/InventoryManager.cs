@@ -73,20 +73,24 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void SwapItems(int fromIndex, int toIndex)
+    {
+        if (fromIndex < 0 || fromIndex >= inventoryItems.Length ||
+            toIndex < 0 || toIndex >= inventoryItems.Length) return;
+
+        Item temp = inventoryItems[fromIndex];
+        inventoryItems[fromIndex] = inventoryItems[toIndex];
+        inventoryItems[toIndex] = temp;
+
+        UpdateSlot(fromIndex);
+        UpdateSlot(toIndex);
+    }
+
     private void UpdateSlot(int slotIndex)
     {
         Transform slot = inventoryGrid.transform.GetChild(slotIndex);
-        Image slotImage = slot.GetComponent<Image>();
-        if (inventoryItems[slotIndex] != null)
-        {
-            slotImage.sprite = inventoryItems[slotIndex].icon;
-            slotImage.color = Color.white;
-        }
-        else
-        {
-            slotImage.sprite = slotTexture;
-            slotImage.color = new Color(1f, 1f, 1f, 0.95f);
-        }
+        InventorySlot inventorySlot = slot.GetComponent<InventorySlot>();
+        inventorySlot.UpdateSlot(inventoryItems[slotIndex]);
     }
 
     private void InitializeInventory()
@@ -113,6 +117,10 @@ public class InventoryManager : MonoBehaviour
                 image.sprite = slotTexture;
             }
             image.color = new Color(1f, 1f, 1f, 0.95f);
+
+            InventorySlot slotComponent = slot.AddComponent<InventorySlot>();
+            slotComponent.slotIndex = i;
+
             slot.transform.SetParent(inventoryGrid.transform, false);
         }
     }
@@ -159,5 +167,4 @@ public class InventoryManager : MonoBehaviour
             playerController.moveSpeed = 4f;
         }
     }
-
 }
