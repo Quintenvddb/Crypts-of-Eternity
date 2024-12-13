@@ -12,15 +12,24 @@ public class ItemPickupTest : MonoBehaviour
 
             if (playerController != null)
             {
-                bool added = playerController.AddItem(itemToGive);
+                InventoryManager inventoryManager = collision.GetComponentInChildren<InventoryManager>();
 
-                if (added)
+                if (inventoryManager != null)
                 {
-                    Debug.Log($"Picked up {itemToGive.itemName}");
+                    bool added = inventoryManager.AddItem(itemToGive);
+
+                    if (added)
+                    {
+                        Debug.Log($"Picked up {itemToGive.itemName}");
+                    }
+                    else
+                    {
+                        Debug.Log("Inventory is full!");
+                    }
                 }
                 else
                 {
-                    Debug.Log("Inventory is full!");
+                    Debug.LogError("InventoryManager not found on Player!");
                 }
             }
         }

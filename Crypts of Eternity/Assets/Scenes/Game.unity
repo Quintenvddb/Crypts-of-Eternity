@@ -1596,6 +1596,7 @@ GameObject:
   - component: {fileID: 809075075}
   - component: {fileID: 809075077}
   - component: {fileID: 809075078}
+  - component: {fileID: 809075079}
   m_Layer: 0
   m_Name: HeroKnight_0
   m_TagString: Player
@@ -1780,13 +1781,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ce8563e4fa19a4a8bc07e1ddd5c713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 4
   maxHealth: 100
   healthSlider: {fileID: 593938636}
+--- !u!114 &809075079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809075071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af300f9efbaf08a4aa60780eb5b1e76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 809075078}
   inventoryUI: {fileID: 499686453}
   inventoryGrid: {fileID: 1632330607}
   equipmentSlots: {fileID: 1927361781}
-  slotTexture: {fileID: 21300000, guid: ab03c476b4151f543989da24826e87c7, type: 3}
+  slotTexture: {fileID: 21300000, guid: ab1037114fbed5141883fe36c5c1055d, type: 3}
   slotSpacing: 8
+  inventory: []
+  maxInventorySize: 24
 --- !u!1 &809774868
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,7 +3114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemToGive:
     itemName: Sword
-    itemIcon: {fileID: -2990865643518836724, guid: 18274758fdd6f3b44b0929a3a9ec8124, type: 3}
+    icon: {fileID: -2990865643518836724, guid: 18274758fdd6f3b44b0929a3a9ec8124, type: 3}
+    maxStackSize: 1
 --- !u!61 &1969102244
 BoxCollider2D:
   m_ObjectHideFlags: 0
