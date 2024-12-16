@@ -7,6 +7,7 @@ public class Dev : MonoBehaviour
 
     void Start()
     {
+        DevPlayground.SetActive(false);
         if (Player == null)
         {
             Debug.LogWarning("Player GameObject is not assigned.");

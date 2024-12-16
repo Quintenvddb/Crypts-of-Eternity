@@ -5,6 +5,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 4f;
+    public int attackDamage = 5;
     private Rigidbody2D rb;
     private Vector2 movement;
     private Animator animator;
