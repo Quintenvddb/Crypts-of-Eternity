@@ -11,48 +11,84 @@ public class HallwayGenerator
     }
 
     public void ConnectRooms(List<Room> rooms)
-{
-    for (int i = 1; i < rooms.Count; i++)
     {
-        Room current = rooms[i];
-        Room previous = rooms[i - 1];
-
-        Vector2Int currentCenter = new Vector2Int(
-            current.x + current.width / 2,
-            current.y + current.height / 2
-        );
-        Vector2Int previousCenter = new Vector2Int(
-            previous.x + previous.width / 2,
-            previous.y + previous.height / 2
-        );
-
-        // Create a horizontal hallway (3 tiles wide)
-        for (int x = Mathf.Min(currentCenter.x, previousCenter.x); x <= Mathf.Max(currentCenter.x, previousCenter.x); x++)
+        for (int i = 1; i < rooms.Count; i++)
         {
-            // Create a 3-tile wide corridor at this x position
+            Room current = rooms[i];
+            Room previous = rooms[i - 1];
+
+            Vector2Int currentCenter = GetRoomCenter(current);
+            Vector2Int previousCenter = GetRoomCenter(previous);
+
+            // Create horizontal hallway first
+            CreateHorizontalHallway(previousCenter.x, currentCenter.x, previousCenter.y);
+
+            // Add corner where the horizontal and vertical hallways meet
+            CreateCorner(currentCenter.x, previousCenter.y);
+
+            // Create vertical hallway second
+            CreateVerticalHallway(previousCenter.y, currentCenter.y, currentCenter.x);
+        }
+    }
+
+    private Vector2Int GetRoomCenter(Room room)
+    {
+        return new Vector2Int(
+            room.x + room.width / 2,
+            room.y + room.height / 2
+        );
+    }
+
+    private void CreateHorizontalHallway(int startX, int endX, int fixedY)
+    {
+        for (int x = Mathf.Min(startX, endX); x <= Mathf.Max(startX, endX); x++)
+        {
             for (int dy = -1; dy <= 1; dy++)
             {
-                int yPos = previousCenter.y + dy;
-                if (yPos >= 0 && yPos < grid.GetLength(1))  // Ensure the yPos is within bounds
+                int yPos = fixedY + dy;
+                if (IsWithinBounds(x, yPos))
                 {
-                    grid[x, yPos] = 1;
-                }
-            }
-        }
-
-        // Create a vertical hallway (3 tiles wide)
-        for (int y = Mathf.Min(currentCenter.y, previousCenter.y); y <= Mathf.Max(currentCenter.y, previousCenter.y); y++)
-        {
-            // Create a 3-tile wide corridor at this y position
-            for (int dx = -1; dx <= 1; dx++)
-            {
-                int xPos = currentCenter.x + dx;
-                if (xPos >= 0 && xPos < grid.GetLength(0))  // Ensure the xPos is within bounds
-                {
-                    grid[xPos, y] = 1;
+                    grid[x, yPos] = 1; // Mark as hallway
                 }
             }
         }
     }
-}
+
+    private void CreateVerticalHallway(int startY, int endY, int fixedX)
+    {
+        for (int y = Mathf.Min(startY, endY); y <= Mathf.Max(startY, endY); y++)
+        {
+            for (int dx = -1; dx <= 1; dx++)
+            {
+                int xPos = fixedX + dx;
+                if (IsWithinBounds(xPos, y))
+                {
+                    grid[xPos, y] = 1; // Mark as hallway
+                }
+            }
+        }
+    }
+
+    private void CreateCorner(int cornerX, int cornerY)
+    {
+        // Create a 3x3 square for the corner at (cornerX, cornerY)
+        for (int dx = -1; dx <= 1; dx++)
+        {
+            for (int dy = -1; dy <= 1; dy++)
+            {
+                int xPos = cornerX + dx;
+                int yPos = cornerY + dy;
+
+                if (IsWithinBounds(xPos, yPos))
+                {
+                    grid[xPos, yPos] = 1; // Mark as hallway
+                }
+            }
+        }
+    }
+
+    private bool IsWithinBounds(int x, int y)
+    {
+        return x >= 0 && x < grid.GetLength(0) && y >= 0 && y < grid.GetLength(1);
+    }
 }
