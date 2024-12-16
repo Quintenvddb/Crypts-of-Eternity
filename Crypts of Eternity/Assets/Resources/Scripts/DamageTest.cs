@@ -14,7 +14,7 @@ public class DamageTest : MonoBehaviour
             }
         }
 
-        private void ApplyDamageToPlayer()
+        void ApplyDamageToPlayer()
         {
             PlayerController player = Object.FindFirstObjectByType<PlayerController>();
             if (player != null)
@@ -23,3 +23,4 @@ public class DamageTest : MonoBehaviour
             }
         }
     }
+}
