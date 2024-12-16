@@ -10,6 +10,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     private Transform player;            // Reference to the player
     private bool isAttacking = false;    // Whether the enemy is currently attacking
+    private float checkInterval = 0.2f;  // Check every 0.2 seconds
+    private float nextCheckTime = 0f;
 
     void Start()
     {
@@ -23,21 +25,18 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (player != null)
+        if (Time.time >= nextCheckTime)
         {
+            nextCheckTime = Time.time + checkInterval;
+
+            if (player == null) return;
+
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-            if (distanceToPlayer <= attackRange)
-            {
-                if (!isAttacking)
-                {
-                    StartCoroutine(Attack());
-                }
-            }
+            if (distanceToPlayer <= attackRange && !isAttacking)
+                StartCoroutine(Attack());
             else
-            {
                 MoveTowardsPlayer();
-            }
         }
     }
 
