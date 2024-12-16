@@ -698,7 +698,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fedab419fdbdeea488795e51c83727c9, type: 2}
   - {fileID: 11400000, guid: 54b6893f2afe6354ebdccde3f53a6a65, type: 2}
   wallRuleTile: {fileID: 11400000, guid: 1fab1fbae6db4fc4ab6f705e46b1dbfc, type: 2}
-  bgTile: {fileID: 11400000, guid: 603359f03d298e1479ef4bc9950ee8a6, type: 2}
+  bgTiles:
+  - {fileID: 11400000, guid: ed03a7e54beccb54c987a930aa3d36cc, type: 2}
+  - {fileID: 11400000, guid: ed03a7e54beccb54c987a930aa3d36cc, type: 2}
+  - {fileID: 11400000, guid: ed03a7e54beccb54c987a930aa3d36cc, type: 2}
+  - {fileID: 11400000, guid: ed03a7e54beccb54c987a930aa3d36cc, type: 2}
+  - {fileID: 11400000, guid: 8d4a8a1282407524787c54f4560ab8e6, type: 2}
+  - {fileID: 11400000, guid: 8d4a8a1282407524787c54f4560ab8e6, type: 2}
+  - {fileID: 11400000, guid: 8d4a8a1282407524787c54f4560ab8e6, type: 2}
+  - {fileID: 11400000, guid: 8d4a8a1282407524787c54f4560ab8e6, type: 2}
+  - {fileID: 11400000, guid: 0dc5598a19062ea418f949c2486ecfd6, type: 2}
+  - {fileID: 11400000, guid: 5d6edc6cbe65dfa48b32b2e1b19b49c9, type: 2}
+  - {fileID: 11400000, guid: c01a72d217f5b334fac57a5f96e36671, type: 2}
 --- !u!4 &507666108
 Transform:
   m_ObjectHideFlags: 0
@@ -1952,8 +1963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2b5345f4598964eba43be42ec18402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridWidth: 200
-  gridHeight: 200
+  gridWidth: 150
+  gridHeight: 150
   maxRooms: 20
   minRoomSize: 7
   maxRoomSize: 15

@@ -23,6 +23,8 @@ public class DungeonGenerator : MonoBehaviour
     public GameObject lootPrefab;
     public GameObject shopPrefab;
 
+    private Room mainRoom;
+
     void Awake()
     {
         Debug.Log("Initializing Dungeon Generator...");
@@ -34,37 +36,22 @@ public class DungeonGenerator : MonoBehaviour
             lootPrefab = lootPrefab,
             shopPrefab = shopPrefab
         };
-        hallwayGenerator = new HallwayGenerator(grid);
-
-        Debug.Log("DungeonGenerator Awake called.");
     }
 
     void Start()
     {
         Debug.Log("Starting Dungeon Generation...");
 
-        grid = new int[gridWidth, gridHeight];
-        roomGenerator = new RoomGenerator(grid, gridWidth, gridHeight)  // Ensure this is initialized
-        {
-            enemyPrefab = enemyPrefab,
-            lootPrefab = lootPrefab,
-            shopPrefab = shopPrefab
-        };
-        hallwayGenerator = new HallwayGenerator(grid);
-
-        GenerateDungeon();
-        DebugGrid();
-    }
-
-    void GenerateDungeon()
-    {
-        Debug.Log("Generating Initial Spawn Room...");
+        // Generate the spawn room and set it as the main room
         GenerateSpawnRoom(-10, -10, 10, 10); // Define the spawn room area
         Debug.Log("Spawn Room Created.");
 
-        Debug.Log("Generating Rooms...");
+        // Generate the rooms
         roomGenerator.GenerateRooms(maxRooms, minRoomSize, maxRoomSize);
         Debug.Log($"Rooms Generated: {roomGenerator.Rooms.Count}");
+
+        // Create HallwayGenerator with the mainRoom
+        hallwayGenerator = new HallwayGenerator(grid, mainRoom);
 
         Debug.Log("Connecting Rooms with Hallways...");
         hallwayGenerator.ConnectRooms(roomGenerator.Rooms);
@@ -77,19 +64,26 @@ public class DungeonGenerator : MonoBehaviour
 
     void GenerateSpawnRoom(int startX, int startY, int endX, int endY)
     {
-        for (int x = startX; x <= endX; x++)
-        {
-            for (int y = startY; y <= endY; y++)
-            {
-                int gridX = x + gridWidth / 2;
-                int gridY = y + gridHeight / 2;
+    int gridCenterX = gridWidth / 2;
+    int gridCenterY = gridHeight / 2;
 
-                if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
-                {
-                    grid[gridX, gridY] = 1; // Mark as floor tile
-                }
+    // Create the spawn room in the center of the grid
+    for (int x = startX; x <= endX; x++)
+    {
+        for (int y = startY; y <= endY; y++)
+        {
+            int gridX = x + gridCenterX; // Offset by center
+            int gridY = y + gridCenterY;
+
+            if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
+            {
+                grid[gridX, gridY] = 1; // Mark as floor tile
             }
         }
+    }
+
+    // Define the spawn room (main room)
+    mainRoom = new Room(gridCenterX + startX, gridCenterY + startY, endX - startX + 1, endY - startY + 1);
     }
 
     void AddWalls()

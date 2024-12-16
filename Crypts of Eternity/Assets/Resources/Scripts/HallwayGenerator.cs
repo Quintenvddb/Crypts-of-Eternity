@@ -1,43 +1,63 @@
-using System.Collections.Generic;
+using System.Collections.Generic; 
 using UnityEngine;
 
 public class HallwayGenerator
 {
     private int[,] grid;
+    private Room mainRoom;
 
-    public HallwayGenerator(int[,] grid)
+    public HallwayGenerator(int[,] grid, Room mainRoom)
     {
         this.grid = grid;
+        this.mainRoom = mainRoom;
     }
 
     public void ConnectRooms(List<Room> rooms)
     {
-        for (int i = 1; i < rooms.Count; i++)
-        {
-            Room current = rooms[i];
-            Room previous = rooms[i - 1];
+    // Get the center of the main room (spawn room)
+    Vector2Int mainRoomCenter = GetRoomCenter(mainRoom);
 
-            Vector2Int currentCenter = GetRoomCenter(current);
-            Vector2Int previousCenter = GetRoomCenter(previous);
+    // Start by generating hallways from the main room to all other rooms
+    foreach (Room room in rooms)
+    {
+        if (room == mainRoom) continue; // Skip the main room
 
-            // Create horizontal hallway first
-            CreateHorizontalHallway(previousCenter.x, currentCenter.x, previousCenter.y);
+        Vector2Int roomCenter = GetRoomCenter(room);
 
-            // Add corner where the horizontal and vertical hallways meet
-            CreateCorner(currentCenter.x, previousCenter.y);
+        // Debug: Log room and center positions
+        Debug.Log($"Connecting room at {room.x}, {room.y} to spawn room at {mainRoom.x}, {mainRoom.y}");
 
-            // Create vertical hallway second
-            CreateVerticalHallway(previousCenter.y, currentCenter.y, currentCenter.x);
-        }
+        // Create a hallway from the main room to this room
+        CreateHallway(mainRoomCenter, roomCenter);
+    }
     }
 
     private Vector2Int GetRoomCenter(Room room)
     {
-        return new Vector2Int(
-            room.x + room.width / 2,
-            room.y + room.height / 2
-        );
+    // Room center calculation: Start point + half of width/height
+    return new Vector2Int(room.x + room.width / 2, room.y + room.height / 2);
     }
+
+    private void CreateHallway(Vector2Int start, Vector2Int end)
+    {
+    // Randomize whether to go horizontally or vertically first
+    bool goHorizontalFirst = Random.Range(0, 2) == 0;
+
+    if (goHorizontalFirst)
+    {
+        // Horizontal first
+        CreateHorizontalHallway(start.x, end.x, start.y);
+        CreateCorner(end.x, start.y);
+        CreateVerticalHallway(start.y, end.y, end.x);
+    }
+    else
+    {
+        // Vertical first
+        CreateVerticalHallway(start.y, end.y, start.x);
+        CreateCorner(start.x, end.y);
+        CreateHorizontalHallway(start.x, end.x, end.y);
+    }
+}   
 
     private void CreateHorizontalHallway(int startX, int endX, int fixedY)
     {
@@ -90,5 +110,12 @@ public class HallwayGenerator
     private bool IsWithinBounds(int x, int y)
     {
         return x >= 0 && x < grid.GetLength(0) && y >= 0 && y < grid.GetLength(1);
+    }
+
+    private void CreateRoomBetween(Room room1, Room room2)
+    {
+        // Logic for creating a room between two existing rooms
+        // Can spawn a new room at an appropriate position based on room1 and room2's location
+        // Or can leave it empty if just connecting with a hallway
     }
 }

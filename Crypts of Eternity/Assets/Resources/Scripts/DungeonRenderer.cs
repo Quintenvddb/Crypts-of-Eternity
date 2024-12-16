@@ -6,13 +6,13 @@ public class DungeonRenderer : MonoBehaviour
     public DungeonGenerator generator;
     public Tilemap floorTilemap;
     public Tilemap wallTilemap;
-    public Tilemap bgtilemap; // Background tilemap
+    public Tilemap bgtilemap;
     public TileBase[] floorTiles;
-    public RuleTile wallRuleTile; // Rule Tile for walls
-    public TileBase bgTile; // Background tile
+    public RuleTile wallRuleTile;
+    public TileBase[] bgTiles;
 
     private bool[,] renderedTiles;
-    private bool[,] renderedBackgroundTiles; // Tracks rendered background tiles
+    private bool[,] renderedBackgroundTiles;
 
     void Start()
     {
@@ -53,10 +53,10 @@ public class DungeonRenderer : MonoBehaviour
         float halfHeight = mainCamera.orthographicSize;
         float halfWidth = mainCamera.aspect * halfHeight;
 
-        int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - 2;
-        int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + 2;
-        int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - 2;
-        int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + 2;
+        int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - 10;
+        int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + 10;
+        int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - 10;
+        int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + 10;
 
         minX = Mathf.Clamp(minX, -gridWidth / 2, gridWidth / 2 - 1);
         maxX = Mathf.Clamp(maxX, -gridWidth / 2, gridWidth / 2 - 1);
@@ -134,10 +134,10 @@ public class DungeonRenderer : MonoBehaviour
         float halfHeight = mainCamera.orthographicSize;
         float halfWidth = mainCamera.aspect * halfHeight;
 
-        int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - 1;
-        int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + 1;
-        int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - 1;
-        int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + 1;
+        int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - 5;
+        int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + 5;
+        int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - 5;
+        int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + 5;
 
         // Render each spawned object within view
         foreach (var obj in generator.roomGenerator.spawnedObjects)
@@ -155,80 +155,81 @@ public class DungeonRenderer : MonoBehaviour
     }
 
     void RenderBackground()
+{
+    if (bgtilemap == null || bgTiles == null || bgTiles.Length == 0 || generator == null)
     {
-        if (bgtilemap == null || bgTile == null || generator == null)
+        return;
+    }
+
+    Camera mainCamera = Camera.main;
+    if (mainCamera == null)
+    {
+        Debug.LogError("Main camera not found!");
+        return;
+    }
+
+    Vector3 cameraPos = mainCamera.transform.position;
+
+    float halfHeight = mainCamera.orthographicSize;
+    float halfWidth = mainCamera.aspect * halfHeight;
+
+    int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - 2;
+    int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + 2;
+    int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - 2;
+    int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + 2;
+
+    int gridWidth = generator.GridWidth;
+    int gridHeight = generator.GridHeight;
+
+    if (renderedBackgroundTiles == null)
+    {
+        renderedBackgroundTiles = new bool[gridWidth, gridHeight];
+    }
+
+    // Unrender background tiles that are no longer visible
+    for (int x = 0; x < gridWidth; x++)
+    {
+        for (int y = 0; y < gridHeight; y++)
         {
-            return;
-        }
-
-        Camera mainCamera = Camera.main;
-        if (mainCamera == null)
-        {
-            Debug.LogError("Main camera not found!");
-            return;
-        }
-
-        Vector3 cameraPos = mainCamera.transform.position;
-
-        float halfHeight = mainCamera.orthographicSize;
-        float halfWidth = mainCamera.aspect * halfHeight;
-
-        int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - 2;
-        int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + 2;
-        int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - 2;
-        int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + 2;
-
-        int gridWidth = generator.GridWidth;
-        int gridHeight = generator.GridHeight;
-
-        if (renderedBackgroundTiles == null)
-        {
-            renderedBackgroundTiles = new bool[gridWidth, gridHeight];
-        }
-
-        // Unrender background tiles that are no longer visible
-        for (int x = 0; x < gridWidth; x++)
-        {
-            for (int y = 0; y < gridHeight; y++)
+            if (renderedBackgroundTiles[x, y])
             {
-                if (renderedBackgroundTiles[x, y])
+                Vector3Int tilePosition = new Vector3Int(x - gridWidth / 2, y - gridHeight / 2, 0);
+                if (!IsTileWithinBounds(tilePosition, minX, maxX, minY, maxY))
                 {
-                    Vector3Int tilePosition = new Vector3Int(x - gridWidth / 2, y - gridHeight / 2, 0);
-                    if (!IsTileWithinBounds(tilePosition, minX, maxX, minY, maxY))
-                    {
-                        bgtilemap.SetTile(tilePosition, null);
-                        renderedBackgroundTiles[x, y] = false;
-                    }
-                }
-            }
-        }
-
-        // Render visible background tiles
-        for (int x = minX; x <= maxX; x++)
-        {
-            for (int y = minY; y <= maxY; y++)
-            {
-                int gridX = x + gridWidth / 2;
-                int gridY = y + gridHeight / 2;
-
-                if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
-                {
-                    if (generator.Grid[gridX, gridY] == 1 || generator.Grid[gridX, gridY] == 2)
-                    {
-                        continue; // Skip walls and floors
-                    }
-                }
-
-                Vector3Int tilePosition = new Vector3Int(x, y, 0);
-
-                if (!renderedBackgroundTiles[gridX, gridY])
-                {
-                    bgtilemap.SetTile(tilePosition, bgTile);
-                    renderedBackgroundTiles[gridX, gridY] = true;
+                    bgtilemap.SetTile(tilePosition, null);
+                    renderedBackgroundTiles[x, y] = false;
                 }
             }
         }
     }
+
+    // Render visible background tiles
+    for (int x = minX; x <= maxX; x++)
+    {
+        for (int y = minY; y <= maxY; y++)
+        {
+            int gridX = x + gridWidth / 2;
+            int gridY = y + gridHeight / 2;
+
+            if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
+            {
+                if (generator.Grid[gridX, gridY] == 1 || generator.Grid[gridX, gridY] == 2)
+                {
+                    continue; // Skip walls and floors
+                }
+            }
+
+            Vector3Int tilePosition = new Vector3Int(x, y, 0);
+
+            if (!renderedBackgroundTiles[gridX, gridY])
+            {
+                bgtilemap.SetTile(tilePosition, GetRandomTile(bgTiles, true)); // Randomize background tiles
+                renderedBackgroundTiles[gridX, gridY] = true;
+            }
+        }
+    }
+}
+
 
     bool IsTileWithinBounds(Vector3Int tilePosition, int minX, int maxX, int minY, int maxY)
     {
