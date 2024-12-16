@@ -6,9 +6,9 @@ public class DungeonRenderer : MonoBehaviour
     public DungeonGenerator generator;
     public Tilemap floorTilemap;
     public Tilemap wallTilemap;
-    public Tilemap bgtilemap; // New tilemap for the background
+    public Tilemap bgtilemap; // Background tilemap
     public TileBase[] floorTiles;
-    public TileBase[] wallTiles;
+    public RuleTile wallRuleTile; // Rule Tile for walls
     public TileBase bgTile; // Background tile
 
     private bool[,] renderedTiles;
@@ -106,7 +106,7 @@ public class DungeonRenderer : MonoBehaviour
                         }
                         else if (grid[gridX, gridY] == 2) // Wall
                         {
-                            wallTilemap.SetTile(tilePosition, GetRandomTile(wallTiles, true));
+                            wallTilemap.SetTile(tilePosition, wallRuleTile); // Use Rule Tile
                         }
 
                         renderedTiles[gridX, gridY] = true;

@@ -697,8 +697,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6a5be8683b2bb5c4cafdd9a8407e5654, type: 2}
   - {fileID: 11400000, guid: fedab419fdbdeea488795e51c83727c9, type: 2}
   - {fileID: 11400000, guid: 54b6893f2afe6354ebdccde3f53a6a65, type: 2}
-  wallTiles:
-  - {fileID: 11400000, guid: f5945c4f4a016ae419bd0fb1152e2d1a, type: 2}
+  wallRuleTile: {fileID: 11400000, guid: 1fab1fbae6db4fc4ab6f705e46b1dbfc, type: 2}
   bgTile: {fileID: 11400000, guid: 603359f03d298e1479ef4bc9950ee8a6, type: 2}
 --- !u!4 &507666108
 Transform:
