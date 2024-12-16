@@ -4,7 +4,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 4f;
     private Rigidbody2D rb;
     private Vector2 movement;
     private Animator animator;
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetMouseButtonUp(1))
         {
             animator.SetBool("IdleBlock", false);
-            moveSpeed = 5f;
+            moveSpeed = 4f;
         }
     }
 

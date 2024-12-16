@@ -8,6 +8,8 @@ public class ProfilerScript : MonoBehaviour
     public TMP_Text cpuText;
     public TMP_Text gpuText;
     public TMP_Text ramText;
+
+    public GameObject profilerGroup;
     private float deltaTime = 0.0f;
     private float timer = 0.0f;
     private int frameCount = 0;
@@ -23,6 +25,7 @@ public class ProfilerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             statsEnabled = !statsEnabled;
+            profilerGroup.SetActive(statsEnabled);
         }
 
         if (statsEnabled)
