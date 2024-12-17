@@ -5,10 +5,14 @@ public class MenuController : MonoBehaviour
 {
     public GameObject menu;
     public Button quitButton;
+    public Button fullscreenToggleButton;
+
+    private bool isFullscreen = true;
 
     void Start()
     {
         quitButton.onClick.AddListener(QuitGame);
+        fullscreenToggleButton.onClick.AddListener(ToggleFullscreen);
     }
 
     void Update()
@@ -23,5 +27,12 @@ public class MenuController : MonoBehaviour
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #endif
+    }
+
+    void ToggleFullscreen()
+    {
+        isFullscreen = !isFullscreen;
+        Screen.fullScreenMode = isFullscreen ? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed;
+        Screen.fullScreen = isFullscreen;
     }
 }
