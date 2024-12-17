@@ -2038,9 +2038,9 @@ MonoBehaviour:
   maxRooms: 20
   minRoomSize: 11
   maxRoomSize: 15
-  enemyPrefab: {fileID: 529721178849006507, guid: a2138e1b16a959b4ea9d52e44ce993c9, type: 3}
-  lootPrefab: {fileID: 5790048036885523910, guid: d334d547dd0a7214e9e6950cd73e2258, type: 3}
-  shopPrefab: {fileID: 3742164553007408510, guid: da416309b78fa5c449b58939901f3c30, type: 3}
+  enemyPrefab: {fileID: 529721178849006507, guid: b64617f68c5a9bd46ac8dc6c0b8f7045, type: 3}
+  lootPrefab: {fileID: 5790048036885523910, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+  shopPrefab: {fileID: 3742164553007408510, guid: 32f3f8d594dee2247b6589734e9e259a, type: 3}
 --- !u!4 &809774870
 Transform:
   m_ObjectHideFlags: 0
@@ -3392,7 +3392,7 @@ Transform:
   m_GameObject: {fileID: 1641083560}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -300, y: 140, z: -10.937284}
+  m_LocalPosition: {x: -300, y: 165.3, z: -10.937284}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -22,37 +22,51 @@ public class PlayerController : MonoBehaviour
 
     public Collider2D attackCollider;
 
+    private Vector3 defaultScale;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
-        HealthChanged();
+        defaultScale = transform.localScale;
+        UpdateHealthUI();
     }
 
     void Update()
     {
-        if (currentHealth <= 0 && !isDead)
-        {
-            TriggerDeath();
-            return;
-        }
-
         if (isDead) return;
 
+        HandleMovementInput();
+        HandleActions();
+    }
+
+    void FixedUpdate()
+    {
+        if (!isDead)
+        {
+            rb.linearVelocity = movement.normalized * moveSpeed;
+        }
+    }
+
+    private void HandleMovementInput()
+    {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (movement.x != 0)
+        if (movement.x != 0 && Mathf.Sign(transform.localScale.x) != Mathf.Sign(movement.x))
         {
-            transform.localScale = new Vector3(Mathf.Sign(movement.x), 1, 1);
+            transform.localScale = new Vector3(Mathf.Sign(movement.x) * defaultScale.x, defaultScale.y, defaultScale.z);
         }
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+    }
 
+    private void HandleActions()
+    {
         if (Input.GetMouseButtonDown(0) && !isAttacking)
         {
             StartCoroutine(AttackCoroutine());
@@ -75,66 +89,76 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-        if (currentHealth > 0 && !isDead)
-        {
-            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, movement.normalized * moveSpeed, 0.1f);
-        }
-    }
-
-    public int GetCurrentHealth()
-    {
-        return currentHealth;
-    }
-
     private IEnumerator AttackCoroutine()
     {
         isAttacking = true;
 
-        if (attackState == 1)
+        switch (attackState)
         {
-            animator.SetTrigger("Attack1");
-            attackState = 2;
-        }
-        else if (attackState == 2)
-        {
-            animator.SetTrigger("Attack2");
-            attackState = 3;
-        }
-        else if (attackState == 3)
-        {
-            animator.SetTrigger("Attack3");
-            attackState = 1;
+            case 1:
+                animator.SetTrigger("Attack1");
+                attackState = 2;
+                break;
+            case 2:
+                animator.SetTrigger("Attack2");
+                attackState = 3;
+                break;
+            case 3:
+                animator.SetTrigger("Attack3");
+                attackState = 1;
+                break;
         }
 
-        StartCoroutine(ToggleAttackCollider());
+        if (attackCollider != null)
+        {
+            attackCollider.enabled = true;
+        }
 
         yield return new WaitForSeconds(GetAttackAnimationLength());
+
+        if (attackCollider != null)
+        {
+            attackCollider.enabled = false;
+        }
 
         isAttacking = false;
     }
 
     private float GetAttackAnimationLength()
     {
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        return stateInfo.length;
+        return animator.GetCurrentAnimatorStateInfo(0).length;
     }
 
     public void TakeDamage(int damage)
     {
-        if (currentHealth > 0 && !isDead)
+        if (isDead || currentHealth <= 0) return;
+
+        currentHealth -= damage;
+        currentHealth = Mathf.Max(currentHealth, 0);
+
+        animator.SetTrigger("Hurt");
+        UpdateHealthUI();
+
+        if (currentHealth <= 0)
         {
-            int previousHealth = currentHealth;
-            currentHealth -= damage;
-            if (currentHealth < 0) currentHealth = 0;
+            TriggerDeath();
+        }
+    }
 
-            if (previousHealth > currentHealth)
-            {
-                animator.SetTrigger("Hurt");
-            }
+    public void Heal(int healAmount)
+    {
+        if (isDead) return;
 
-            HealthChanged();
+        currentHealth += healAmount;
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
+        UpdateHealthUI();
+    }
+
+    private void UpdateHealthUI()
+    {
+        if (healthSlider != null)
+        {
+            healthSlider.value = (float)currentHealth / maxHealth;
         }
     }
 
@@ -144,35 +168,6 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Death");
         rb.linearVelocity = Vector2.zero;
         Destroy(gameObject, 2f);
-    }
-
-    public void Heal(int healAmount)
-    {
-        if (isDead) return;
-
-        currentHealth += healAmount;
-        if (currentHealth > maxHealth) currentHealth = maxHealth;
-        HealthChanged();
-    }
-
-    private void HealthChanged()
-    {
-        Debug.Log("Player Health: " + currentHealth + "/" + maxHealth);
-
-        if (healthSlider != null)
-        {
-            healthSlider.value = (float)currentHealth / maxHealth;
-        }
-    }
-
-    private IEnumerator ToggleAttackCollider()
-    {
-        if (attackCollider != null)
-        {
-            attackCollider.enabled = true;
-            yield return new WaitForSeconds(1f);
-            attackCollider.enabled = false;
-        }
     }
 
     // private void OnTriggerEnter2D(Collider2D other)
