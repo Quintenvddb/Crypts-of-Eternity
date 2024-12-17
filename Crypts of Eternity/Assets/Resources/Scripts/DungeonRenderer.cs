@@ -12,7 +12,6 @@ public class DungeonRenderer : MonoBehaviour
     public TileBase[] bgTiles;
 
     private bool[,] renderedTiles;
-    private bool[,] renderedBackgroundTiles;
 
     void Start()
     {
@@ -26,7 +25,6 @@ public class DungeonRenderer : MonoBehaviour
     {
         RenderDungeon();
         RenderObjects();
-        RenderBackground();
     }
 
     void RenderDungeon()
@@ -80,6 +78,7 @@ public class DungeonRenderer : MonoBehaviour
                     {
                         floorTilemap.SetTile(tilePosition, null);
                         wallTilemap.SetTile(tilePosition, null);
+                        bgtilemap.SetTile(tilePosition, null);
                         renderedTiles[x, y] = false;
                     }
                 }
@@ -100,13 +99,19 @@ public class DungeonRenderer : MonoBehaviour
 
                     if (!renderedTiles[gridX, gridY])
                     {
-                        if (grid[gridX, gridY] == 1) // Floor
+                        int tileType = grid[gridX, gridY];
+
+                        switch (tileType)
                         {
-                            floorTilemap.SetTile(tilePosition, GetRandomTile(floorTiles, true));
-                        }
-                        else if (grid[gridX, gridY] == 2) // Wall
-                        {
-                            wallTilemap.SetTile(tilePosition, wallRuleTile); // Use Rule Tile
+                            case 0: // Background
+                                bgtilemap.SetTile(tilePosition, GetRandomTile(bgTiles, true));
+                                break;
+                            case 1: // Floor
+                                floorTilemap.SetTile(tilePosition, GetRandomTile(floorTiles, true));
+                                break;
+                            case 2: // Wall
+                                wallTilemap.SetTile(tilePosition, wallRuleTile); // Use Rule Tile
+                                break;
                         }
 
                         renderedTiles[gridX, gridY] = true;
@@ -153,83 +158,6 @@ public class DungeonRenderer : MonoBehaviour
             }
         }
     }
-
-    void RenderBackground()
-{
-    if (bgtilemap == null || bgTiles == null || bgTiles.Length == 0 || generator == null)
-    {
-        return;
-    }
-
-    Camera mainCamera = Camera.main;
-    if (mainCamera == null)
-    {
-        Debug.LogError("Main camera not found!");
-        return;
-    }
-
-    Vector3 cameraPos = mainCamera.transform.position;
-
-    float halfHeight = mainCamera.orthographicSize;
-    float halfWidth = mainCamera.aspect * halfHeight;
-
-    int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - 2;
-    int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + 2;
-    int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - 2;
-    int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + 2;
-
-    int gridWidth = generator.GridWidth;
-    int gridHeight = generator.GridHeight;
-
-    if (renderedBackgroundTiles == null)
-    {
-        renderedBackgroundTiles = new bool[gridWidth, gridHeight];
-    }
-
-    // Unrender background tiles that are no longer visible
-    for (int x = 0; x < gridWidth; x++)
-    {
-        for (int y = 0; y < gridHeight; y++)
-        {
-            if (renderedBackgroundTiles[x, y])
-            {
-                Vector3Int tilePosition = new Vector3Int(x - gridWidth / 2, y - gridHeight / 2, 0);
-                if (!IsTileWithinBounds(tilePosition, minX, maxX, minY, maxY))
-                {
-                    bgtilemap.SetTile(tilePosition, null);
-                    renderedBackgroundTiles[x, y] = false;
-                }
-            }
-        }
-    }
-
-    // Render visible background tiles
-    for (int x = minX; x <= maxX; x++)
-    {
-        for (int y = minY; y <= maxY; y++)
-        {
-            int gridX = x + gridWidth / 2;
-            int gridY = y + gridHeight / 2;
-
-            if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
-            {
-                if (generator.Grid[gridX, gridY] == 1 || generator.Grid[gridX, gridY] == 2)
-                {
-                    continue; // Skip walls and floors
-                }
-            }
-
-            Vector3Int tilePosition = new Vector3Int(x, y, 0);
-
-            if (!renderedBackgroundTiles[gridX, gridY])
-            {
-                bgtilemap.SetTile(tilePosition, GetRandomTile(bgTiles, true)); // Randomize background tiles
-                renderedBackgroundTiles[gridX, gridY] = true;
-            }
-        }
-    }
-}
-
 
     bool IsTileWithinBounds(Vector3Int tilePosition, int minX, int maxX, int minY, int maxY)
     {
