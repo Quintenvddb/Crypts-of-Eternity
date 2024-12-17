@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     public Slider healthSlider;
 
+    public Collider2D attackCollider;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -106,6 +108,8 @@ public class PlayerController : MonoBehaviour
             attackState = 1;
         }
 
+        StartCoroutine(ToggleAttackCollider());
+
         yield return new WaitForSeconds(GetAttackAnimationLength());
 
         isAttacking = false;
@@ -139,6 +143,7 @@ public class PlayerController : MonoBehaviour
         isDead = true;
         animator.SetTrigger("Death");
         rb.linearVelocity = Vector2.zero;
+        Destroy(gameObject, 2f);
     }
 
     public void Heal(int healAmount)
@@ -159,4 +164,26 @@ public class PlayerController : MonoBehaviour
             healthSlider.value = (float)currentHealth / maxHealth;
         }
     }
+
+    private IEnumerator ToggleAttackCollider()
+    {
+        if (attackCollider != null)
+        {
+            attackCollider.enabled = true;
+            yield return new WaitForSeconds(1f);
+            attackCollider.enabled = false;
+        }
+    }
+
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.CompareTag("Enemy"))
+    //     {
+    //         EnemyBehaviour enemy = other.GetComponent<EnemyBehaviour>();
+    //         if (enemy != null)
+    //         {
+    //             enemy.TakeDamage(attackDamage);
+    //         }
+    //     }
+    // }
 }
