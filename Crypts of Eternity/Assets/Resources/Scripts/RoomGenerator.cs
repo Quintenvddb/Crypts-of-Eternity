@@ -56,7 +56,7 @@ public class RoomGenerator
             int worldEndY = worldStartY + roomHeight;
 
             // Check if the room overlaps with the spawn room (-10, -10) to (10, 10)
-            if (worldStartX < 11 && worldEndX > -11 && worldStartY < 11 && worldEndY > -11)
+            if (worldStartX < 13 && worldEndX > -13 && worldStartY < 13 && worldEndY > -13)
             {
                 Debug.Log($"Skipped room at ({worldStartX}, {worldStartY}) because it overlaps the spawn room.");
                 continue; // Skip this room

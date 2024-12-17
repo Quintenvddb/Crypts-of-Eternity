@@ -1966,7 +1966,7 @@ MonoBehaviour:
   gridWidth: 150
   gridHeight: 150
   maxRooms: 20
-  minRoomSize: 7
+  minRoomSize: 11
   maxRoomSize: 15
   enemyPrefab: {fileID: 529721178849006507, guid: a2138e1b16a959b4ea9d52e44ce993c9, type: 3}
   lootPrefab: {fileID: 5790048036885523910, guid: d334d547dd0a7214e9e6950cd73e2258, type: 3}

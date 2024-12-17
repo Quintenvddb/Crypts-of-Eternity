@@ -112,10 +112,4 @@ public class HallwayGenerator
         return x >= 0 && x < grid.GetLength(0) && y >= 0 && y < grid.GetLength(1);
     }
 
-    private void CreateRoomBetween(Room room1, Room room2)
-    {
-        // Logic for creating a room between two existing rooms
-        // Can spawn a new room at an appropriate position based on room1 and room2's location
-        // Or can leave it empty if just connecting with a hallway
-    }
 }
