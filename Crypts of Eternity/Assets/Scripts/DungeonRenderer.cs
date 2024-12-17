@@ -8,8 +8,11 @@ public class DungeonRenderer : MonoBehaviour
     public Tilemap wallTilemap;
     public Tilemap bgtilemap;
     public TileBase[] floorTiles;
-    public RuleTile wallRuleTile;
     public TileBase[] bgTiles;
+    public RuleTile wallRuleTile;
+
+    [SerializeField] private int tileBuffer = 10; // Adjustable in Editor for RenderDungeon
+    [SerializeField] private int objectBuffer = 5; // Adjustable in Editor for RenderObjects
 
     private bool[,] renderedTiles;
 
@@ -51,10 +54,10 @@ public class DungeonRenderer : MonoBehaviour
         float halfHeight = mainCamera.orthographicSize;
         float halfWidth = mainCamera.aspect * halfHeight;
 
-        int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - 10;
-        int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + 10;
-        int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - 10;
-        int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + 10;
+        int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - tileBuffer;
+        int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + tileBuffer;
+        int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - tileBuffer;
+        int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + tileBuffer;
 
         minX = Mathf.Clamp(minX, -gridWidth / 2, gridWidth / 2 - 1);
         maxX = Mathf.Clamp(maxX, -gridWidth / 2, gridWidth / 2 - 1);
@@ -139,10 +142,10 @@ public class DungeonRenderer : MonoBehaviour
         float halfHeight = mainCamera.orthographicSize;
         float halfWidth = mainCamera.aspect * halfHeight;
 
-        int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - 5;
-        int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + 5;
-        int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - 5;
-        int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + 5;
+        int minX = Mathf.FloorToInt(cameraPos.x - halfWidth) - objectBuffer;
+        int maxX = Mathf.CeilToInt(cameraPos.x + halfWidth) + objectBuffer;
+        int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - objectBuffer;
+        int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + objectBuffer;
 
         // Render each spawned object within view
         foreach (var obj in generator.roomGenerator.spawnedObjects)

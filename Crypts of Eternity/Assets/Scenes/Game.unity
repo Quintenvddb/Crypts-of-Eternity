@@ -718,7 +718,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88988f11faf9d0b4189b7fbe88f50976, type: 2}
   - {fileID: 11400000, guid: e9a9f17ee012d6d48a76c6d87339ae21, type: 2}
   - {fileID: 11400000, guid: abd55f284bfd44c44b9c1547f5538143, type: 2}
-  wallRuleTile: {fileID: 11400000, guid: 1fab1fbae6db4fc4ab6f705e46b1dbfc, type: 2}
   bgTiles:
   - {fileID: 11400000, guid: 3b4c8e557cd0929419be4419b8bb55f5, type: 2}
   - {fileID: 11400000, guid: 3b4c8e557cd0929419be4419b8bb55f5, type: 2}
@@ -731,6 +730,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a8948cbc5a489a14ebb0c8ac6fa09b6b, type: 2}
   - {fileID: 11400000, guid: 92883b82a7df78042bfb3feac8154120, type: 2}
   - {fileID: 11400000, guid: e4f6d2dd3d6cfe14e8cd142b4501986d, type: 2}
+  wallRuleTile: {fileID: 11400000, guid: 1fab1fbae6db4fc4ab6f705e46b1dbfc, type: 2}
+  tileBuffer: 5
+  objectBuffer: 2
 --- !u!4 &507666108
 Transform:
   m_ObjectHideFlags: 0
