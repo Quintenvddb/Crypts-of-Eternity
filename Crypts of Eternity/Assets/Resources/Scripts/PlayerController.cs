@@ -170,15 +170,12 @@ public class PlayerController : MonoBehaviour
         Destroy(gameObject, 2f);
     }
 
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("Enemy"))
-    //     {
-    //         EnemyBehaviour enemy = other.GetComponent<EnemyBehaviour>();
-    //         if (enemy != null)
-    //         {
-    //             enemy.TakeDamage(attackDamage);
-    //         }
-    //     }
-    // }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        IDamageable damageable = other.GetComponent<IDamageable>();
+        if (damageable != null)
+        {
+            damageable.TakeDamage(attackDamage);
+        }
+    }
 }

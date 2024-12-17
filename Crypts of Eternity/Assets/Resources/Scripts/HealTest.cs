@@ -8,16 +8,11 @@ public class HealTest : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            ApplyHealToPlayer();
-        }
-    }
-
-    private void ApplyHealToPlayer()
-    {
-        PlayerController player = Object.FindFirstObjectByType<PlayerController>();
-        if (player != null)
-        {
-            player.Heal(healAmount);
+            PlayerController player = Object.FindFirstObjectByType<PlayerController>();
+            if (player != null)
+            {
+                player.Heal(healAmount);
+            }
         }
     }
 }
