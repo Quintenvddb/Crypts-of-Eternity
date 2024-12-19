@@ -12,7 +12,6 @@ public class DungeonGenerator : MonoBehaviour
     private int[,] grid;
     public RoomGenerator roomGenerator;
     private HallwayGenerator hallwayGenerator;
-    private BossRoomGenerator bossRoomGenerator;
 
     // Expose grid-related data
     public int[,] Grid => grid;
@@ -48,18 +47,10 @@ public class DungeonGenerator : MonoBehaviour
         GenerateSpawnRoom(-10, -10, 10, 10);
         Debug.Log("Spawn Room Created.");
 
-        // Generate the boss room
-        GameObject bossRoomObject = new GameObject("BossRoomGenerator");
-        bossRoomGenerator = bossRoomObject.AddComponent<BossRoomGenerator>();
-        bossRoomGenerator.Initialize(grid, gridWidth, gridHeight); // Add an Initialize method to BossRoomGenerator
-
-        PlaceTeleportDoor();
-        Debug.Log("Boss Room Generated and Linked.");
-
-        // Generate the rooms
+        // Generate the dungeon rooms
         roomGenerator.GenerateRooms(maxRooms, minRoomSize, maxRoomSize);
         Debug.Log($"Rooms Generated: {roomGenerator.Rooms.Count}");
-
+        
         // Create HallwayGenerator with the mainRoom
         hallwayGenerator = new HallwayGenerator(grid, mainRoom);
 
@@ -67,22 +58,14 @@ public class DungeonGenerator : MonoBehaviour
         hallwayGenerator.ConnectRooms(roomGenerator.Rooms);
         Debug.Log("Hallways Connected");
 
+        // Expand the grid and add the boss room
+        GenerateBossRoom(78, -10, 98, 10); // Place at (100, 0) relative to the grid's center
+        Debug.Log("Boss Room Created at (100, 0).");
+
+
         Debug.Log("Adding Walls...");
         AddWalls();
         Debug.Log("Walls Added");
-
-        
-        // Pass the teleport door prefab to the boss room generator
-        bossRoomGenerator.teleportDoorPrefab = teleportDoorPrefab;
-
-        int bossRoomStartX = 400; // Fixed location for boss room
-        int bossRoomStartY = 400;
-        int bossRoomWidth = 20;
-        int bossRoomHeight = 20;
-
-        bossRoomGenerator.GenerateBossRoom(bossRoomStartX, bossRoomStartY, bossRoomWidth, bossRoomHeight);
-
-        
     }
 
     void GenerateSpawnRoom(int startX, int startY, int endX, int endY)
@@ -109,15 +92,77 @@ public class DungeonGenerator : MonoBehaviour
         mainRoom = new Room(gridCenterX + startX, gridCenterY + startY, endX - startX + 1, endY - startY + 1);
     }
 
-    public void PlaceTeleportDoor()
+    void GenerateBossRoom(int startX, int startY, int endX, int endY)
+{
+    // Expand the grid to ensure enough space for the boss room
+    ExpandGrid(60, 0);
+
+    int gridCenterX = gridWidth / 2;
+    int gridCenterY = gridHeight / 2;
+
+    // Generate the boss room at a fixed position relative to the dungeon
+    for (int x = startX; x <= endX; x++)
     {
-        // Set the fixed position for the door (world coordinates)
-        Vector3 doorWorldPosition = new Vector3(10, 0, -10); // Fixed world position for the door
+        for (int y = startY; y <= endY; y++)
+        {
+            int gridX = x + gridCenterX; // Offset by center
+            int gridY = y + gridCenterY;
 
-        // Ensure the door prefab is placed correctly without affecting the grid tile
-        Instantiate(teleportDoorPrefab, doorWorldPosition, Quaternion.identity);
+            if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
+            {
+                grid[gridX, gridY] = 1; // Mark as floor tile
+            }
+            else
+            {
+                Debug.LogWarning($"Boss room tile ({gridX}, {gridY}) is outside the grid bounds.");
+            }
+        }
+    }
 
-        Debug.Log("Teleport Door placed at " + doorWorldPosition);
+    // Place the teleport door leading to the boss room
+    PlaceTeleportDoor(new Vector3(10, 8, -10)); // Adjust as needed
+}
+
+void PlaceTeleportDoor(Vector3 doorWorldPosition)
+{
+    // Ensure the door prefab is instantiated at the correct position
+    GameObject door = Instantiate(teleportDoorPrefab, doorWorldPosition, Quaternion.identity);
+
+    // Set the target position for the teleport to the center of the boss room
+    TeleportDoor teleportDoor = door.GetComponent<TeleportDoor>();
+    if (teleportDoor != null)
+    {
+        teleportDoor.SetTargetPosition(new Vector3(80, 0, -10));
+        Debug.Log("Teleport Door target set for Boss Room.");
+    }
+}
+
+    void ExpandGrid(int expandWidth, int expandHeight)
+    {
+        Debug.Log($"Expanding grid by Width: {expandWidth}, Height: {expandHeight}");
+
+        int newWidth = gridWidth + expandWidth;
+        int newHeight = gridHeight + expandHeight;
+
+        int[,] newGrid = new int[newWidth, newHeight];
+        int offsetX = expandWidth / 2;
+        int offsetY = expandHeight / 2;
+
+        // Copy existing grid to the new grid
+        for (int x = 0; x < gridWidth; x++)
+        {
+            for (int y = 0; y < gridHeight; y++)
+            {
+                newGrid[x + offsetX, y + offsetY] = grid[x, y];
+            }
+        }
+
+        // Update grid dimensions
+        gridWidth = newWidth;
+        gridHeight = newHeight;
+        grid = newGrid;
+
+        Debug.Log($"Grid expanded to Width: {gridWidth}, Height: {gridHeight}");
     }
 
     void AddWalls()
@@ -142,20 +187,5 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
-    }
-
-    void DebugGrid()
-    {
-        Debug.Log("Grid Layout:");
-        string gridString = "";
-        for (int y = 0; y < gridHeight; y++)
-        {
-            for (int x = 0; x < gridWidth; x++)
-            {
-                gridString += grid[x, y] + " ";
-            }
-            gridString += "\n";
-        }
-        Debug.Log(gridString);
     }
 }

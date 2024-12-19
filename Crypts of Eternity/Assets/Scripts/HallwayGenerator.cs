@@ -24,9 +24,6 @@ public class HallwayGenerator
 
         Vector2Int roomCenter = GetRoomCenter(room);
 
-        // Debug: Log room and center positions
-        Debug.Log($"Connecting room at {room.x}, {room.y} to spawn room at {mainRoom.x}, {mainRoom.y}");
-
         // Create a hallway from the main room to this room
         CreateHallway(mainRoomCenter, roomCenter);
     }

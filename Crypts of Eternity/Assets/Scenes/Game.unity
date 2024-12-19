@@ -731,7 +731,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 92883b82a7df78042bfb3feac8154120, type: 2}
   - {fileID: 11400000, guid: e4f6d2dd3d6cfe14e8cd142b4501986d, type: 2}
   wallRuleTile: {fileID: 11400000, guid: 1fab1fbae6db4fc4ab6f705e46b1dbfc, type: 2}
-  tileBuffer: 3
+  tileBuffer: 300
   objectBuffer: 2
 --- !u!4 &507666108
 Transform:
