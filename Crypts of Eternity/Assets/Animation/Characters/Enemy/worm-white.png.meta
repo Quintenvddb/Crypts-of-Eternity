@@ -153,6 +153,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -609,7 +622,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      worm-white_0: 7808861003484466424
+      worm-white_1: 6310305720667909304
+      worm-white_10: -417014918033444008
+      worm-white_11: -188700861216045433
+      worm-white_12: -7995827326990650338
+      worm-white_13: -5163812721223901851
+      worm-white_14: -1549137291518978343
+      worm-white_15: -2769096045305073353
+      worm-white_16: -2862756976012205933
+      worm-white_17: -3902926776044459745
+      worm-white_18: 435237028507531431
+      worm-white_19: -3024026607144080620
+      worm-white_2: 928993793757882661
+      worm-white_3: -7518868303976195582
+      worm-white_4: 8928820964511173843
+      worm-white_5: 3703344998871334637
+      worm-white_6: -3992254484527035578
+      worm-white_7: 7435985670247479711
+      worm-white_8: -1038648600292742148
+      worm-white_9: -5785143835057914746
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
