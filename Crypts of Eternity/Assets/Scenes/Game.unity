@@ -731,7 +731,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 92883b82a7df78042bfb3feac8154120, type: 2}
   - {fileID: 11400000, guid: e4f6d2dd3d6cfe14e8cd142b4501986d, type: 2}
   wallRuleTile: {fileID: 11400000, guid: 1fab1fbae6db4fc4ab6f705e46b1dbfc, type: 2}
-  tileBuffer: 5
+  tileBuffer: 3
   objectBuffer: 2
 --- !u!4 &507666108
 Transform:
@@ -1756,6 +1756,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 529721178849006507, guid: b64617f68c5a9bd46ac8dc6c0b8f7045, type: 3}
   lootPrefab: {fileID: 5790048036885523910, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
   shopPrefab: {fileID: 3742164553007408510, guid: 32f3f8d594dee2247b6589734e9e259a, type: 3}
+  teleportDoorPrefab: {fileID: 3964646405665900980, guid: 4fe826e9e0183d74195af1e96bf1981f, type: 3}
 --- !u!4 &809774870
 Transform:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class DungeonGenerator : MonoBehaviour
     private int[,] grid;
     public RoomGenerator roomGenerator;
     private HallwayGenerator hallwayGenerator;
+    private BossRoomGenerator bossRoomGenerator;
 
     // Expose grid-related data
     public int[,] Grid => grid;
@@ -22,6 +23,7 @@ public class DungeonGenerator : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject lootPrefab;
     public GameObject shopPrefab;
+    public GameObject teleportDoorPrefab;
 
     private Room mainRoom;
 
@@ -43,8 +45,16 @@ public class DungeonGenerator : MonoBehaviour
         Debug.Log("Starting Dungeon Generation...");
 
         // Generate the spawn room and set it as the main room
-        GenerateSpawnRoom(-10, -10, 10, 10); // Define the spawn room area
+        GenerateSpawnRoom(-10, -10, 10, 10);
         Debug.Log("Spawn Room Created.");
+
+        // Generate the boss room
+        GameObject bossRoomObject = new GameObject("BossRoomGenerator");
+        bossRoomGenerator = bossRoomObject.AddComponent<BossRoomGenerator>();
+        bossRoomGenerator.Initialize(grid, gridWidth, gridHeight); // Add an Initialize method to BossRoomGenerator
+
+        PlaceTeleportDoor();
+        Debug.Log("Boss Room Generated and Linked.");
 
         // Generate the rooms
         roomGenerator.GenerateRooms(maxRooms, minRoomSize, maxRoomSize);
@@ -60,30 +70,54 @@ public class DungeonGenerator : MonoBehaviour
         Debug.Log("Adding Walls...");
         AddWalls();
         Debug.Log("Walls Added");
+
+        
+        // Pass the teleport door prefab to the boss room generator
+        bossRoomGenerator.teleportDoorPrefab = teleportDoorPrefab;
+
+        int bossRoomStartX = 400; // Fixed location for boss room
+        int bossRoomStartY = 400;
+        int bossRoomWidth = 20;
+        int bossRoomHeight = 20;
+
+        bossRoomGenerator.GenerateBossRoom(bossRoomStartX, bossRoomStartY, bossRoomWidth, bossRoomHeight);
+
+        
     }
 
     void GenerateSpawnRoom(int startX, int startY, int endX, int endY)
     {
-    int gridCenterX = gridWidth / 2;
-    int gridCenterY = gridHeight / 2;
+        int gridCenterX = gridWidth / 2;
+        int gridCenterY = gridHeight / 2;
 
-    // Create the spawn room in the center of the grid
-    for (int x = startX; x <= endX; x++)
-    {
-        for (int y = startY; y <= endY; y++)
+        // Create the spawn room in the center of the grid
+        for (int x = startX; x <= endX; x++)
         {
-            int gridX = x + gridCenterX; // Offset by center
-            int gridY = y + gridCenterY;
-
-            if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
+            for (int y = startY; y <= endY; y++)
             {
-                grid[gridX, gridY] = 1; // Mark as floor tile
+                int gridX = x + gridCenterX; // Offset by center
+                int gridY = y + gridCenterY;
+
+                if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
+                {
+                    grid[gridX, gridY] = 1; // Mark as floor tile
+                }
             }
         }
+
+        // Define the spawn room (main room)
+        mainRoom = new Room(gridCenterX + startX, gridCenterY + startY, endX - startX + 1, endY - startY + 1);
     }
 
-    // Define the spawn room (main room)
-    mainRoom = new Room(gridCenterX + startX, gridCenterY + startY, endX - startX + 1, endY - startY + 1);
+    public void PlaceTeleportDoor()
+    {
+        // Set the fixed position for the door (world coordinates)
+        Vector3 doorWorldPosition = new Vector3(10, 0, -10); // Fixed world position for the door
+
+        // Ensure the door prefab is placed correctly without affecting the grid tile
+        Instantiate(teleportDoorPrefab, doorWorldPosition, Quaternion.identity);
+
+        Debug.Log("Teleport Door placed at " + doorWorldPosition);
     }
 
     void AddWalls()
