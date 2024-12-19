@@ -2,21 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-[System.Serializable]
-public class Item
-{
-    public string itemName;
-    public Sprite icon;
-    public int maxStackSize = 1;
-
-    public Item(string name, Sprite icon, int stackSize = 1)
-    {
-        itemName = name;
-        this.icon = icon;
-        maxStackSize = stackSize;
-    }
-}
-
 public class InventoryManager : MonoBehaviour
 {
     public PlayerController playerController;
