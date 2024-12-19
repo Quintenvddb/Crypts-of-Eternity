@@ -147,9 +147,18 @@ public class DungeonRenderer : MonoBehaviour
         int minY = Mathf.FloorToInt(cameraPos.y - halfHeight) - objectBuffer;
         int maxY = Mathf.CeilToInt(cameraPos.y + halfHeight) + objectBuffer;
 
-        // Render each spawned object within view
-        foreach (var obj in generator.roomGenerator.spawnedObjects)
+        // Use a loop to check each object in the list
+        for (int i = generator.roomGenerator.spawnedObjects.Count - 1; i >= 0; i--)
         {
+            var obj = generator.roomGenerator.spawnedObjects[i];
+
+            // Skip if the object is null (destroyed)
+            if (obj == null)
+            {
+                generator.roomGenerator.spawnedObjects.RemoveAt(i);
+                continue;
+            }
+
             Vector3 objPosition = obj.transform.position;
             if (objPosition.x >= minX && objPosition.x <= maxX && objPosition.y >= minY && objPosition.y <= maxY)
             {
