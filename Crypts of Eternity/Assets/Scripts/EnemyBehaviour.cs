@@ -1,39 +1,30 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour, IDamageable
 {
-    [Header("Enemy Settings")]
-    public float moveSpeed = 3f;          // Speed of the enemy's movement
-    public float attackRange = 1.5f;     // Range within which the enemy can attack
-    public float attackCooldown = 2f;    // Time between attacks
-    public int damageAmount = 10;        // Damage dealt to the player
-    public int health = 50;              // Enemy health
-
-    // References and state
-    private Transform player;            // Reference to the player
-    private bool isAttacking = false;    // Whether the enemy is currently attacking
-    private float checkInterval = 0.2f;  // Check interval for updates
-    private float nextCheckTime = 0f;
-
-    // Damage feedback
+    private Transform player;
+    public float speed = 1.5f;
+    private Vector2 currentDirection;
+    private float lastUpdateTime = 0f;
+    public float minUpdateInterval = 0.4f;
+    private float updateInterval;
+    public int health = 50;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
 
+    public int damageAmount = 10;
+
     void Start()
     {
-        // Find the player
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {
             player = playerObject.transform;
         }
-        else
-        {
-            Debug.LogError("Player not found! Make sure your player has the 'Player' tag.");
-        }
 
-        // Initialize sprite renderer for damage feedback
+        updateInterval = Random.Range(0f, 0.5f) + minUpdateInterval;
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
@@ -43,57 +34,15 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     void Update()
     {
-        if (Time.time >= nextCheckTime)
+        if (Time.time - lastUpdateTime >= updateInterval)
         {
-            nextCheckTime = Time.time + checkInterval;
-
-            if (player == null) return;
-
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-            if (distanceToPlayer <= attackRange && !isAttacking)
-            {
-                StartCoroutine(Attack());
-            }
-            else
-            {
-                MoveTowardsPlayer();
-            }
+            currentDirection = (player.position - transform.position).normalized;
+            lastUpdateTime = Time.time;
         }
+
+        transform.position += (Vector3)currentDirection * speed * Time.deltaTime;
     }
 
-    void MoveTowardsPlayer()
-    {
-        if (player == null) return;
-
-        Vector3 direction = (player.position - transform.position).normalized;
-        transform.position += direction * moveSpeed * Time.deltaTime;
-    }
-
-    IEnumerator Attack()
-    {
-        isAttacking = true;
-
-        Debug.Log("Enemy attacks the player!");
-
-        // Apply damage to the player
-        ApplyDamageToPlayer();
-
-        yield return new WaitForSeconds(attackCooldown);
-        isAttacking = false;
-    }
-
-    private void ApplyDamageToPlayer()
-    {
-        // Find the player controller (replace PlayerController with your actual player script name)
-        PlayerController playerController = Object.FindFirstObjectByType<PlayerController>();
-        if (playerController != null)
-        {
-            playerController.TakeDamage(damageAmount);
-        }
-    }
-
-    // IDamageable implementation: Take damage
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -119,9 +68,22 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     {
         if (spriteRenderer != null)
         {
-            spriteRenderer.color = Color.red;
+            Color flashColor = Color.red;
+            spriteRenderer.color = flashColor;
             yield return new WaitForSeconds(duration);
             spriteRenderer.color = originalColor;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            PlayerController player = Object.FindFirstObjectByType<PlayerController>();
+            if (player != null)
+            {
+                player.TakeDamage(damageAmount);
+            }
         }
     }
 }

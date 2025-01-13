@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 defaultScale;
 
+    public AudioSource audioSource;
+    public AudioClip clip;
+    public float volume=0.5f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -97,14 +101,17 @@ public class PlayerController : MonoBehaviour
         {
             case 1:
                 animator.SetTrigger("Attack1");
+                audioSource.PlayOneShot(clip, volume);
                 attackState = 2;
                 break;
             case 2:
                 animator.SetTrigger("Attack2");
+                audioSource.PlayOneShot(clip, volume);
                 attackState = 3;
                 break;
             case 3:
                 animator.SetTrigger("Attack3");
+                audioSource.PlayOneShot(clip, volume);
                 attackState = 1;
                 break;
         }
