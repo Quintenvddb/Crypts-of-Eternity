@@ -14,17 +14,33 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     private Color originalColor;
 
     public int damageAmount = 10;
+    private Rigidbody2D rb;
 
     void Start()
     {
+        // Initialize Rigidbody2D
+        rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+        }
+
+        // Configure Rigidbody2D for physics-based movement
+        rb.isKinematic = false;
+        rb.gravityScale = 0;
+        rb.freezeRotation = true;
+
+        // Find the player object by tag
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {
             player = playerObject.transform;
         }
 
+        // Set update interval for movement direction changes
         updateInterval = Random.Range(0f, 0.5f) + minUpdateInterval;
 
+        // Setup SpriteRenderer and original color for damage effect
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
@@ -34,13 +50,18 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     void Update()
     {
+        // Update the movement direction periodically
         if (Time.time - lastUpdateTime >= updateInterval)
         {
-            currentDirection = (player.position - transform.position).normalized;
-            lastUpdateTime = Time.time;
+            if (player != null)
+            {
+                currentDirection = (player.position - transform.position).normalized;
+                lastUpdateTime = Time.time;
+            }
         }
 
-        transform.position += (Vector3)currentDirection * speed * Time.deltaTime;
+        // Apply movement using Rigidbody2D (respects collisions)
+        rb.linearVelocity = currentDirection * speed;
     }
 
     public void TakeDamage(int damage)
