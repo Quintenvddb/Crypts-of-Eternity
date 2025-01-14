@@ -25,8 +25,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 defaultScale;
 
     public AudioSource audioSource;
-    public AudioClip clip;
-    public float volume=0.5f;
+    public AudioClip attackAudio;
+    public AudioClip blockAudio;
+    public float volume = 2.0f;
+    public float stepVolume = 4.0f;
+
+    public AudioClip[] footstepSounds;  // Array for footstep sounds
+    private bool isPlayingFootstep = false;
 
     void Start()
     {
@@ -51,6 +56,7 @@ public class PlayerController : MonoBehaviour
         if (!isDead)
         {
             rb.linearVelocity = movement.normalized * moveSpeed;
+            HandleFootsteps();
         }
     }
 
@@ -79,6 +85,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             animator.SetTrigger("Block");
+            audioSource.PlayOneShot(blockAudio, volume);
         }
 
         if (Input.GetMouseButton(1))
@@ -101,17 +108,17 @@ public class PlayerController : MonoBehaviour
         {
             case 1:
                 animator.SetTrigger("Attack1");
-                audioSource.PlayOneShot(clip, volume);
+                audioSource.PlayOneShot(attackAudio, volume);
                 attackState = 2;
                 break;
             case 2:
                 animator.SetTrigger("Attack2");
-                audioSource.PlayOneShot(clip, volume);
+                audioSource.PlayOneShot(attackAudio, volume);
                 attackState = 3;
                 break;
             case 3:
                 animator.SetTrigger("Attack3");
-                audioSource.PlayOneShot(clip, volume);
+                audioSource.PlayOneShot(attackAudio, volume);
                 attackState = 1;
                 break;
         }
@@ -184,5 +191,29 @@ public class PlayerController : MonoBehaviour
         {
             damageable.TakeDamage(attackDamage);
         }
+    }
+
+    private void HandleFootsteps()
+    {
+        if (movement.sqrMagnitude > 0.1f && !isAttacking && !isPlayingFootstep)  
+        {
+            StartCoroutine(PlayFootstep());
+        }
+    }
+
+    private IEnumerator PlayFootstep()
+    {
+        isPlayingFootstep = true;
+
+        if (footstepSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, footstepSounds.Length);
+            audioSource.pitch = Random.Range(0.9f, 1.1f);  // Random pitch for variation
+            audioSource.PlayOneShot(footstepSounds[randomIndex], stepVolume);
+        }
+
+        yield return new WaitForSeconds(0.4f); // Adjust footstep timing
+
+        isPlayingFootstep = false;
     }
 }
