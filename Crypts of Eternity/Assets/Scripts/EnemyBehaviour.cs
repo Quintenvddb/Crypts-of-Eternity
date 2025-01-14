@@ -25,7 +25,6 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
             rb = gameObject.AddComponent<Rigidbody2D>();
         }
 
-//
         // Configure Rigidbody2D for physics-based movement
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 0;

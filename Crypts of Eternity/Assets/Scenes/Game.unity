@@ -2053,6 +2053,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5180516462067648392, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
+      propertyPath: hurtAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: bbe26cd3ac0a73b4cab0c601f87887de, type: 3}
+    - target: {fileID: 5180516462067648392, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
       propertyPath: blockAudio
       value: 
       objectReference: {fileID: 8300000, guid: 03dbe9c79fd996342811425744058536, type: 3}
@@ -2064,6 +2068,10 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1544213163}
+    - target: {fileID: 5180516462067648392, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
+      propertyPath: blockVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5180516462067648392, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
       propertyPath: healthSlider
       value: 

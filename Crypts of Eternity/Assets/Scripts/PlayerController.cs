@@ -27,10 +27,13 @@ public class PlayerController : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip attackAudio;
     public AudioClip blockAudio;
-    public float volume = 2.0f;
+    public AudioClip hurtAudio;
+    public float blockVolume = 1.0f;
+    public float attackVolume = 2.0f;
+    public float hurtVolume = 1.0f;
     public float stepVolume = 4.0f;
 
-    public AudioClip[] footstepSounds;  // Array for footstep sounds
+    public AudioClip[] footstepSounds;
     private bool isPlayingFootstep = false;
 
     void Start()
@@ -85,7 +88,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             animator.SetTrigger("Block");
-            audioSource.PlayOneShot(blockAudio, volume);
+            audioSource.PlayOneShot(blockAudio, blockVolume);
         }
 
         if (Input.GetMouseButton(1))
@@ -108,17 +111,17 @@ public class PlayerController : MonoBehaviour
         {
             case 1:
                 animator.SetTrigger("Attack1");
-                audioSource.PlayOneShot(attackAudio, volume);
+                audioSource.PlayOneShot(attackAudio, attackVolume);
                 attackState = 2;
                 break;
             case 2:
                 animator.SetTrigger("Attack2");
-                audioSource.PlayOneShot(attackAudio, volume);
+                audioSource.PlayOneShot(attackAudio, attackVolume);
                 attackState = 3;
                 break;
             case 3:
                 animator.SetTrigger("Attack3");
-                audioSource.PlayOneShot(attackAudio, volume);
+                audioSource.PlayOneShot(attackAudio, attackVolume);
                 attackState = 1;
                 break;
         }
@@ -151,6 +154,7 @@ public class PlayerController : MonoBehaviour
         currentHealth = Mathf.Max(currentHealth, 0);
 
         animator.SetTrigger("Hurt");
+        audioSource.PlayOneShot(hurtAudio, hurtVolume);
         UpdateHealthUI();
 
         if (currentHealth <= 0)
@@ -208,11 +212,11 @@ public class PlayerController : MonoBehaviour
         if (footstepSounds.Length > 0)
         {
             int randomIndex = Random.Range(0, footstepSounds.Length);
-            audioSource.pitch = Random.Range(0.9f, 1.1f);  // Random pitch for variation
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
             audioSource.PlayOneShot(footstepSounds[randomIndex], stepVolume);
         }
 
-        yield return new WaitForSeconds(0.4f); // Adjust footstep timing
+        yield return new WaitForSeconds(0.4f);
 
         isPlayingFootstep = false;
     }
