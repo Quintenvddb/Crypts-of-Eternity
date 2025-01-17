@@ -8,13 +8,12 @@ public class Item
     public string type;
     public int rarity;
     public string description;
+    public int damage;
     public int value;
-    public int maxStackSize = 1;
 
-    public Item(string name, Sprite icon, int stackSize = 1)
+    public Item(string name, Sprite icon)
     {
         itemName = name;
         this.icon = icon;
-        maxStackSize = stackSize;
     }
 }
