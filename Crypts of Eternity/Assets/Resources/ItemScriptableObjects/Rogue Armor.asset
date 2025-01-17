@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 707d3ea80a8292a4fa6e9aceb8ed79e8, type: 3}
+  m_Name: Rogue Armor
+  m_EditorClassIdentifier: 
+  itemName: Rogue Armor
+  icon: {fileID: 9083158208115367601, guid: dd48a09987b2cbc43ba933c4a14482c3, type: 3}
+  rarity: 20
+  value: 80
+  description: 
+  itemPrefab: {fileID: 4439635003457354420, guid: 9bb2c895105a7814d92ff118bb7e6b63, type: 3}

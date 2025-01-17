@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 707d3ea80a8292a4fa6e9aceb8ed79e8, type: 3}
+  m_Name: Spear
+  m_EditorClassIdentifier: 
+  itemName: Spear
+  icon: {fileID: -8408085884355301770, guid: d6b4e94420b5ab643b6f6e0ea16e4011, type: 3}
+  rarity: 15
+  value: 150
+  description: 
+  itemPrefab: {fileID: 28132383695398287, guid: 1c352830adcce3842b3198ddbd1c85da, type: 3}
