@@ -1753,7 +1753,8 @@ MonoBehaviour:
   maxRooms: 20
   minRoomSize: 11
   maxRoomSize: 15
-  enemyPrefab: {fileID: 529721178849006507, guid: b64617f68c5a9bd46ac8dc6c0b8f7045, type: 3}
+  enemyPrefabs:
+  - {fileID: 529721178849006507, guid: b64617f68c5a9bd46ac8dc6c0b8f7045, type: 3}
   lootPrefab: {fileID: 6650320610758518852, guid: a43b5f29b2146a549973ed37f01af9ec, type: 3}
   shopPrefab: {fileID: 3742164553007408510, guid: 32f3f8d594dee2247b6589734e9e259a, type: 3}
   teleportDoorPrefab: {fileID: 3964646405665900980, guid: 4fe826e9e0183d74195af1e96bf1981f, type: 3}
