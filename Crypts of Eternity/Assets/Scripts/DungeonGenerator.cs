@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class DungeonGenerator : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class DungeonGenerator : MonoBehaviour
     public int GridHeight => gridHeight;
 
     // Public Prefabs for Enemy, Loot, and Shop
-    public GameObject enemyPrefab;
+    public List<GameObject> enemyPrefabs;
     public GameObject lootPrefab;
     public GameObject shopPrefab;
     public GameObject teleportDoorPrefab;
@@ -33,7 +34,7 @@ public class DungeonGenerator : MonoBehaviour
         grid = new int[gridWidth, gridHeight];
         roomGenerator = new RoomGenerator(grid, gridWidth, gridHeight)
         {
-            enemyPrefab = enemyPrefab,
+            enemyPrefabs = enemyPrefabs,
             lootPrefab = lootPrefab,
             shopPrefab = shopPrefab
         };
