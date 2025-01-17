@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7758554884464851429}
+  - component: {fileID: -2913600490489954586}
   - component: {fileID: 6513273823052991076}
-  - component: {fileID: 4327401707154418429}
   - component: {fileID: 273813232833024256}
   - component: {fileID: -718057486588886569}
   - component: {fileID: 7668239810721595189}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: Worm 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,6 +36,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2913600490489954586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529721178849006507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b28fd68978dd744385fa986df25a8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+  minUpdateInterval: 0.4
+  health: 50
+  damageAmount: 10
+  prefabsToSpawn:
+  - {fileID: 8165695579985975029, guid: 0c77a15294c7a2a4bb194b6ffa1c7f34, type: 3}
+  - {fileID: 8623933502706714662, guid: b26552d14af1d5748a89ed401af1fcd4, type: 3}
+  - {fileID: 5544578079056438603, guid: 3c2c0600305ced146b18068bb83e3ec3, type: 3}
+  - {fileID: 5287067110980331293, guid: d65cb9ff7318e5242ba3d094f059a294, type: 3}
+  - {fileID: 5547999887131454018, guid: 4c841388aa52d4144ae8be7f1b1f8cc2, type: 3}
 --- !u!212 &6513273823052991076
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -91,22 +113,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4327401707154418429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529721178849006507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b28fd68978dd744385fa986df25a8f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  minUpdateInterval: 1
-  health: 50
-  damageAmount: 10
 --- !u!61 &273813232833024256
 BoxCollider2D:
   m_ObjectHideFlags: 0
