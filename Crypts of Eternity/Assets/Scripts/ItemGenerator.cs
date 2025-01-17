@@ -27,7 +27,6 @@ public class ItemGenerator : MonoBehaviour
         {
             GameObject itemObject = Instantiate(generatedItem.itemPrefab, position, Quaternion.identity);
             // Assuming the prefab has a script to display item details
-            itemObject.transform.localScale = scale;
             itemObject.GetComponent<ItemDisplay>().Setup(generatedItem);
         }
     }
