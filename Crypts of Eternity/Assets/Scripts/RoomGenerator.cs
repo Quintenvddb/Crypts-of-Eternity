@@ -99,7 +99,11 @@ public class RoomGenerator
         // Ensure at least 3 enemies
         while (enemyCount < 3)
         {
-            SpawnRandomEnemy(0, 0, 0, 0); // Call SpawnRandomEnemy with dummy values for coordinates
+            // Pick a random enemy prefab from the list
+            GameObject selectedEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+    
+            // Spawn the selected enemy
+            SpawnInRandomRoom(selectedEnemyPrefab, enemyParent); // Call SpawnRandomEnemy with dummy values for coordinates
             enemyCount++;
         }
 
