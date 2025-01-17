@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707d3ea80a8292a4fa6e9aceb8ed79e8, type: 3}
   m_Name: Coconut
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
-  rarity: 0
-  value: 0
+  itemName: Coconut
+  icon: {fileID: -7377819553374844296, guid: 7bfd56392dc1ec04cb2b3c108aaf56bf, type: 3}
+  rarity: 25
+  value: 15
   description: 
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 5287067110980331293, guid: d65cb9ff7318e5242ba3d094f059a294, type: 3}

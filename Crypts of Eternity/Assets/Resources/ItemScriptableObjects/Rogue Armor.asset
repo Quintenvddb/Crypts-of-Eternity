@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707d3ea80a8292a4fa6e9aceb8ed79e8, type: 3}
   m_Name: Rogue Armor
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
-  rarity: 0
-  value: 0
+  itemName: Rogue Armor
+  icon: {fileID: 9083158208115367601, guid: dd48a09987b2cbc43ba933c4a14482c3, type: 3}
+  rarity: 20
+  value: 80
   description: 
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 4439635003457354420, guid: 9bb2c895105a7814d92ff118bb7e6b63, type: 3}

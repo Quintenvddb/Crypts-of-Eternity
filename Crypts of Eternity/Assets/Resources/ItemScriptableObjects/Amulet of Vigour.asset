@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707d3ea80a8292a4fa6e9aceb8ed79e8, type: 3}
   m_Name: Amulet of Vigour
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
-  rarity: 0
-  value: 0
+  itemName: Amulet of Vigour
+  icon: {fileID: 210295133, guid: 137a4eb7be9f2264b94945af68989053, type: 3}
+  rarity: 5
+  value: 300
   description: 
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 8267086134582239212, guid: 3fdcf2ab9a12fbe4991390e9dc974c58, type: 3}

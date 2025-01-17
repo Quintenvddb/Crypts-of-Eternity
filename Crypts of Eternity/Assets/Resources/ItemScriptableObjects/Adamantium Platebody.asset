@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Adamantium Platebody
   m_EditorClassIdentifier: 
   itemName: Adamantium Platebody
-  icon: {fileID: 0}
-  rarity: 10
-  value: 250
+  icon: {fileID: 4411648087972103025, guid: ac6f68bf07badfb45a86f48629d42c0b, type: 3}
+  rarity: 2
+  value: 750
   description: 
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 8039014538911479557, guid: e1c73d7ddef9b4d41838be51a0acc2a8, type: 3}

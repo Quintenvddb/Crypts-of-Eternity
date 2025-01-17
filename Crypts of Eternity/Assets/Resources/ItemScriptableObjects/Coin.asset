@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Coin
   icon: {fileID: -3338749442709606003, guid: e03195bea5c2bd7418cfeac2ec557703, type: 3}
-  rarity: 20
+  rarity: 50
   value: 1
   description: Shiny loot!
   itemPrefab: {fileID: -2253911629886400664, guid: 07e21747322f4e040849c82681528770, type: 3}

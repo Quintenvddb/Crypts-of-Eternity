@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707d3ea80a8292a4fa6e9aceb8ed79e8, type: 3}
   m_Name: Iron Platebody
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
-  rarity: 0
-  value: 0
+  itemName: Iron Platebody
+  icon: {fileID: -7297217709293447414, guid: b6b125c8d7ab2a940bf194043a6a78bd, type: 3}
+  rarity: 10
+  value: 200
   description: 
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 4358974601121928364, guid: a8fd4c175b72247459138f03fa75211a, type: 3}

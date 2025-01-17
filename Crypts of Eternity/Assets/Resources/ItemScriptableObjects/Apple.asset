@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Apple
   icon: {fileID: 7293598183456022363, guid: c3b38fb8cc49f9c45969943d7fe31572, type: 3}
-  rarity: 200
-  value: 5
+  rarity: 25
+  value: 15
   description: Hey apple!
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 8165695579985975029, guid: 0c77a15294c7a2a4bb194b6ffa1c7f34, type: 3}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Greatsword
   m_EditorClassIdentifier: 
   itemName: Greatsword
-  icon: {fileID: 3563303686181767654, guid: 3ee93f3c1b75fb748bf9157288a840ff, type: 3}
-  rarity: 2
-  value: 35
+  icon: {fileID: -2990865643518836724, guid: f739915ba1948354c9f5e9312604c52b, type: 3}
+  rarity: 3
+  value: 600
   description: A dull plain looking sword
   itemPrefab: {fileID: 7437507418307087891, guid: a55675f99cabd194d9d74cd9b5fb44c5, type: 3}

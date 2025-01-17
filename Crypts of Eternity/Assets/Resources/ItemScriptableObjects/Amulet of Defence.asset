@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Amulet of Defence
   icon: {fileID: 1080495179, guid: 137a4eb7be9f2264b94945af68989053, type: 3}
-  rarity: 0
-  value: 0
+  rarity: 5
+  value: 300
   description: 
   itemPrefab: {fileID: 3136063009342275356, guid: c2fcb2ecba77a544db31547463e10a02, type: 3}

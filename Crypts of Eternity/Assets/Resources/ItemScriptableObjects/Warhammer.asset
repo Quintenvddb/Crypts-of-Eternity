@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707d3ea80a8292a4fa6e9aceb8ed79e8, type: 3}
   m_Name: Warhammer
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
-  rarity: 0
-  value: 0
+  itemName: Iron Warhammer
+  icon: {fileID: -4340815731715244962, guid: 8d24d3d0e30a034418c71589089079ac, type: 3}
+  rarity: 15
+  value: 150
   description: 
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 449930913840765999, guid: 88ab572bf6f956b429936974819203b3, type: 3}

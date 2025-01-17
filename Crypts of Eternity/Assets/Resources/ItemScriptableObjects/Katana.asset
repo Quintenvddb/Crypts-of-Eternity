@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707d3ea80a8292a4fa6e9aceb8ed79e8, type: 3}
   m_Name: Katana
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
-  rarity: 0
-  value: 0
+  itemName: Katana
+  icon: {fileID: -5488921040926458067, guid: 7a898a8f59868254fa41e0896f69fbf0, type: 3}
+  rarity: 5
+  value: 300
   description: 
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 2816721793274999386, guid: d30a0d38258335d4d9e189892b9cf19d, type: 3}

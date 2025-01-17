@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707d3ea80a8292a4fa6e9aceb8ed79e8, type: 3}
   m_Name: Royal Gown
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
-  rarity: 0
-  value: 0
+  itemName: Royal Gown
+  icon: {fileID: 6482956576948116751, guid: 4bf48d4dd85c969418ded7cd14dd1cc3, type: 3}
+  rarity: 1
+  value: 1000
   description: 
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 8260949912814944834, guid: f2fb9008761c1d144b56297b71b614e4, type: 3}
