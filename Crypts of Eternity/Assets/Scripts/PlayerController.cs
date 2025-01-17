@@ -28,10 +28,12 @@ public class PlayerController : MonoBehaviour
     public AudioClip attackAudio;
     public AudioClip blockAudio;
     public AudioClip hurtAudio;
+    public AudioClip healAudio;
     public AudioClip deathAudio;
     public float blockVolume = 1.0f;
     public float attackVolume = 2.0f;
     public float hurtVolume = 1.0f;
+    public float healVolume = 1.0f;
     public float stepVolume = 4.0f;
     public float deathVolume = 4.0f;
 
@@ -171,6 +173,7 @@ public class PlayerController : MonoBehaviour
 
         currentHealth += healAmount;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
+        audioSource.PlayOneShot(healAudio, healVolume);
         UpdateHealthUI();
     }
 
