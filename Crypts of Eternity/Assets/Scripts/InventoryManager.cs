@@ -19,6 +19,10 @@ public class InventoryManager : MonoBehaviour
     public int maxInventorySize = 24;
 
     private Item[] inventoryItems;
+    
+    public AudioSource audioSource;
+    public AudioClip inventoryOpenAudio;
+    public float inventoryOpenVolume = 0.25f;
 
     void Start()
     {
@@ -31,6 +35,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (Input.GetKeyDown("e"))
         {
+            audioSource.PlayOneShot(inventoryOpenAudio, inventoryOpenVolume);
             ToggleInventory();
         }
     }

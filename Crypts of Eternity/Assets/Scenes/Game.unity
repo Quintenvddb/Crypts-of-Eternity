@@ -2070,6 +2070,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 647789808547729990, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1544213163}
+    - target: {fileID: 647789808547729990, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
       propertyPath: inventoryUI
       value: 
       objectReference: {fileID: 499686453}
@@ -2081,6 +2085,14 @@ PrefabInstance:
       propertyPath: equipmentSlots
       value: 
       objectReference: {fileID: 1927361781}
+    - target: {fileID: 647789808547729990, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
+      propertyPath: inventoryOpenAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 4ef2722729de18c469d867926f156038, type: 3}
+    - target: {fileID: 647789808547729990, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
+      propertyPath: inventoryOpenVolume
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 3589055423988948921, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -2101,6 +2113,10 @@ PrefabInstance:
       propertyPath: blockAudio
       value: 
       objectReference: {fileID: 8300000, guid: 03dbe9c79fd996342811425744058536, type: 3}
+    - target: {fileID: 5180516462067648392, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
+      propertyPath: deathAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ab36e2a36705d348b6202b7d0352eba, type: 3}
     - target: {fileID: 5180516462067648392, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
       propertyPath: attackAudio
       value: 

@@ -28,10 +28,12 @@ public class PlayerController : MonoBehaviour
     public AudioClip attackAudio;
     public AudioClip blockAudio;
     public AudioClip hurtAudio;
+    public AudioClip deathAudio;
     public float blockVolume = 1.0f;
     public float attackVolume = 2.0f;
     public float hurtVolume = 1.0f;
     public float stepVolume = 4.0f;
+    public float deathVolume = 4.0f;
 
     public AudioClip[] footstepSounds;
     private bool isPlayingFootstep = false;
@@ -183,6 +185,7 @@ public class PlayerController : MonoBehaviour
     private void TriggerDeath()
     {
         isDead = true;
+        audioSource.PlayOneShot(deathAudio, deathVolume);
         animator.SetTrigger("Death");
         rb.linearVelocity = Vector2.zero;
         Destroy(gameObject, 2f);
