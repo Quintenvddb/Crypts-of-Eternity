@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; // Vergeet niet om de lijstbibliotheek te importeren
 
 public class EnemyBehaviour : MonoBehaviour, IDamageable
 {
@@ -16,31 +17,28 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public int damageAmount = 10;
     private Rigidbody2D rb;
 
+    public List<GameObject> prefabsToSpawn;
+
     void Start()
     {
-        // Initialize Rigidbody2D
         rb = GetComponent<Rigidbody2D>();
         if (rb == null)
         {
             rb = gameObject.AddComponent<Rigidbody2D>();
         }
 
-        // Configure Rigidbody2D for physics-based movement
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 0;
         rb.freezeRotation = true;
 
-        // Find the player object by tag
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {
             player = playerObject.transform;
         }
 
-        // Set update interval for movement direction changes
         updateInterval = Random.Range(0f, 0.5f) + minUpdateInterval;
 
-        // Setup SpriteRenderer and original color for damage effect
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
@@ -50,7 +48,6 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     void Update()
     {
-        // Update the movement direction periodically
         if (Time.time - lastUpdateTime >= updateInterval)
         {
             if (player != null)
@@ -60,7 +57,6 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
             }
         }
 
-        // Apply movement using Rigidbody2D (respects collisions)
         rb.linearVelocity = currentDirection * speed;
     }
 
@@ -82,6 +78,15 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     private void Die()
     {
         Debug.Log("Enemy died!");
+
+        if (prefabsToSpawn != null && prefabsToSpawn.Count > 0)
+        {
+            int randomIndex = Random.Range(0, prefabsToSpawn.Count);
+            GameObject selectedPrefab = prefabsToSpawn[randomIndex];
+
+            Instantiate(selectedPrefab, transform.position, Quaternion.identity);
+        }
+
         Destroy(gameObject);
     }
 
