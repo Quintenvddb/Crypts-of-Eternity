@@ -11,7 +11,7 @@ public class RoomGenerator
     public List<GameObject> spawnedObjects { get; private set; } = new List<GameObject>();
 
     // Prefabs for Enemy, Loot, and Shop
-    public GameObject enemyPrefab;
+    public List<GameObject> enemyPrefabs;
     public GameObject lootPrefab;
     public GameObject shopPrefab;
 
@@ -39,92 +39,92 @@ public class RoomGenerator
     }
 
     public void GenerateRooms(int maxRooms, int minSize, int maxSize)
-{
-    for (int i = 0; i < maxRooms; i++)
     {
-        int roomWidth = Random.Range(minSize, maxSize + 1);
-        int roomHeight = Random.Range(minSize, maxSize + 1);
-        int x = Random.Range(1, gridWidth - roomWidth - 1);
-        int y = Random.Range(1, gridHeight - roomHeight - 1);
-
-        Room newRoom = new Room(x, y, roomWidth, roomHeight);
-
-        // Convert grid coordinates to world coordinates
-        int worldStartX = x - gridWidth / 2;
-        int worldEndX = worldStartX + roomWidth;
-        int worldStartY = y - gridHeight / 2;
-        int worldEndY = worldStartY + roomHeight;
-
-        // Check if the room overlaps with the spawn room (-10, -10) to (10, 10)
-        if (worldStartX < 13 && worldEndX > -13 && worldStartY < 13 && worldEndY > -13)
+        for (int i = 0; i < maxRooms; i++)
         {
-            Debug.Log($"Skipped room at ({worldStartX}, {worldStartY}) because it overlaps the spawn room.");
-            continue; // Skip this room
-        }
+            int roomWidth = Random.Range(minSize, maxSize + 1);
+            int roomHeight = Random.Range(minSize, maxSize + 1);
+            int x = Random.Range(1, gridWidth - roomWidth - 1);
+            int y = Random.Range(1, gridHeight - roomHeight - 1);
 
-        // Check if the room overlaps any existing room with a buffer of 7 tiles
-        if (!Rooms.Exists(r => 
-        newRoom.x < r.x + r.width + 7 && 
-        newRoom.x + newRoom.width + 7 > r.x && 
-        newRoom.y < r.y + r.height + 7 && 
-        newRoom.y + newRoom.height + 7 > r.y))
-        {
-            Rooms.Add(newRoom);
-            for (int rx = x; rx < x + roomWidth; rx++)
+            Room newRoom = new Room(x, y, roomWidth, roomHeight);
+
+            // Convert grid coordinates to world coordinates
+            int worldStartX = x - gridWidth / 2;
+            int worldEndX = worldStartX + roomWidth;
+            int worldStartY = y - gridHeight / 2;
+            int worldEndY = worldStartY + roomHeight;
+
+            // Check if the room overlaps with the spawn room (-10, -10) to (10, 10)
+            if (worldStartX < 13 && worldEndX > -13 && worldStartY < 13 && worldEndY > -13)
             {
-                for (int ry = y; ry < y + roomHeight; ry++)
-                {
-                    grid[rx, ry] = 1; // Mark as floor
-                }
+                Debug.Log($"Skipped room at ({worldStartX}, {worldStartY}) because it overlaps the spawn room.");
+                continue; // Skip this room
             }
 
-            // Generate enemies, loot, and shops based on spawn chances
-            SpawnObjectsInRoom(newRoom, x, y, roomWidth, roomHeight);
+            // Check if the room overlaps any existing room with a buffer of 7 tiles
+            if (!Rooms.Exists(r => 
+                newRoom.x < r.x + r.width + 7 && 
+                newRoom.x + newRoom.width + 7 > r.x && 
+                newRoom.y < r.y + r.height + 7 && 
+                newRoom.y + newRoom.height + 7 > r.y))
+            {
+                Rooms.Add(newRoom);
+                for (int rx = x; rx < x + roomWidth; rx++)
+                {
+                    for (int ry = y; ry < y + roomHeight; ry++)
+                    {
+                        grid[rx, ry] = 1; // Mark as floor
+                    }
+                }
+
+                // Generate enemies, loot, and shops based on spawn chances
+                SpawnObjectsInRoom(newRoom, x, y, roomWidth, roomHeight);
+            }
+        }
+
+        // Ensure minimum counts are met
+        EnsureMinimumCounts();
+        
+        // Debug the totals after all rooms are generated
+        Debug.Log($"Total Enemies Spawned: {enemyCount}");
+        Debug.Log($"Total Loot Spawned: {lootCount}");
+        Debug.Log($"Total Shops Spawned: {shopCount}");
+    }
+
+    private void EnsureMinimumCounts()
+    {
+        System.Random random = new System.Random();
+
+        // Ensure at least 3 enemies
+        while (enemyCount < 3)
+        {
+            SpawnRandomEnemy(0, 0, 0, 0); // Call SpawnRandomEnemy with dummy values for coordinates
+            enemyCount++;
+        }
+
+        // Ensure at least 2 loot
+        while (lootCount < 2)
+        {
+            SpawnInRandomRoom(lootPrefab, lootParent);
+            lootCount++;
+        }
+
+        // Ensure at least 1 shop
+        while (shopCount < 1)
+        {
+            SpawnInRandomRoom(shopPrefab, shopParent);
+            shopCount++;
         }
     }
 
-    // Ensure minimum counts are met
-    EnsureMinimumCounts();
-    
-    // Debug the totals after all rooms are generated
-    Debug.Log($"Total Enemies Spawned: {enemyCount}");
-    Debug.Log($"Total Loot Spawned: {lootCount}");
-    Debug.Log($"Total Shops Spawned: {shopCount}");
-}
-
-    private void EnsureMinimumCounts()
-{
-    System.Random random = new System.Random();
-
-    // Ensure at least 3 enemies
-    while (enemyCount < 3)
+    private void SpawnInRandomRoom(GameObject prefab, GameObject parent)
     {
-        SpawnInRandomRoom(enemyPrefab, enemyParent);
-        enemyCount++;
+        if (Rooms.Count == 0) return;
+
+        Room randomRoom = Rooms[Random.Range(0, Rooms.Count)];
+        SpawnPrefab(prefab, randomRoom.x, randomRoom.y, randomRoom.width, randomRoom.height, parent);
     }
-
-    // Ensure at least 2 loot
-    while (lootCount < 2)
-    {
-        SpawnInRandomRoom(lootPrefab, lootParent);
-        lootCount++;
-    }
-
-    // Ensure at least 1 shop
-    while (shopCount < 1)
-    {
-        SpawnInRandomRoom(shopPrefab, shopParent);
-        shopCount++;
-    }
-}
-
-private void SpawnInRandomRoom(GameObject prefab, GameObject parent)
-{
-    if (Rooms.Count == 0) return;
-
-    Room randomRoom = Rooms[Random.Range(0, Rooms.Count)];
-    SpawnPrefab(prefab, randomRoom.x, randomRoom.y, randomRoom.width, randomRoom.height, parent);
-}
 
     private void SpawnObjectsInRoom(Room room, int roomStartX, int roomStartY, int roomWidth, int roomHeight)
     {
@@ -134,7 +134,7 @@ private void SpawnInRandomRoom(GameObject prefab, GameObject parent)
             // Spawn 20 enemies
             for (int i = 0; i < 20; i++)
             {
-                GameObject enemy = SpawnPrefab(enemyPrefab, roomStartX, roomStartY, roomWidth, roomHeight, enemyParent);
+                GameObject enemy = SpawnRandomEnemy(roomStartX, roomStartY, roomWidth, roomHeight);
                 enemyCount++;
                 spawnedObjects.Add(enemy);
             }
@@ -142,7 +142,7 @@ private void SpawnInRandomRoom(GameObject prefab, GameObject parent)
         // 40% chance for a single enemy if the 0.01 chance didn't trigger
         else if (Random.Range(0f, 1f) < 0.4f)
         {
-            GameObject enemy = SpawnPrefab(enemyPrefab, roomStartX, roomStartY, roomWidth, roomHeight, enemyParent);
+            GameObject enemy = SpawnRandomEnemy(roomStartX, roomStartY, roomWidth, roomHeight);
             enemyCount++;
             spawnedObjects.Add(enemy);
         }
@@ -156,7 +156,7 @@ private void SpawnInRandomRoom(GameObject prefab, GameObject parent)
 
             if (Random.Range(0f, 1f) < 0.2f)
             {
-                GameObject enemy = SpawnPrefab(enemyPrefab, roomStartX, roomStartY, roomWidth, roomHeight, enemyParent);
+                GameObject enemy = SpawnRandomEnemy(roomStartX, roomStartY, roomWidth, roomHeight);
                 enemyCount++;
                 spawnedObjects.Add(enemy);
             }
@@ -169,6 +169,15 @@ private void SpawnInRandomRoom(GameObject prefab, GameObject parent)
             shopCount++;
             spawnedObjects.Add(shop);
         }
+    }
+
+    private GameObject SpawnRandomEnemy(int roomStartX, int roomStartY, int roomWidth, int roomHeight)
+    {
+        // Pick a random enemy prefab from the list
+        GameObject selectedEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+    
+        // Spawn the selected enemy
+        return SpawnPrefab(selectedEnemyPrefab, roomStartX, roomStartY, roomWidth, roomHeight, enemyParent);
     }
 
     private GameObject SpawnPrefab(GameObject prefab, int roomStartX, int roomStartY, int roomWidth, int roomHeight, GameObject parent)
@@ -226,5 +235,4 @@ private void SpawnInRandomRoom(GameObject prefab, GameObject parent)
 
         return spawnedObject;
     }
-
 }
