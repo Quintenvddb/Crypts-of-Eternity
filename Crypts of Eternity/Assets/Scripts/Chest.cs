@@ -23,7 +23,7 @@ public class Chest : MonoBehaviour
 
         SpawnItem();
 
-        GetComponent<Collider2D>().enabled = false;
+        //GetComponent<Collider2D>().enabled = false;
 
         Debug.Log("Spawn Position: " + spawnPoint.position);
     }

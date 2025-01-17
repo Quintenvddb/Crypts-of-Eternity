@@ -2020,6 +2020,47 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1 &874782935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5790048036885523910, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+  m_PrefabInstance: {fileID: 1090239319}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &874782941
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874782935}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.484375}
+  m_Radius: 1
 --- !u!1001 &939351937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2220,6 +2261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPool: {fileID: 1003807274}
+  scale: {x: 10, y: 10, z: 10}
 --- !u!4 &1003807273
 Transform:
   m_ObjectHideFlags: 0
@@ -2539,6 +2581,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -7088389945309778506, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+      propertyPath: scale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7088389945309778506, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+      propertyPath: scale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7088389945309778506, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+      propertyPath: scale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7088389945309778506, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
       propertyPath: itemPool
       value: 
       objectReference: {fileID: 1003807274}
@@ -2551,6 +2605,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1056004869084753758, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004869084753758, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004869084753758, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056004869084753758, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2561,6 +2627,18 @@ PrefabInstance:
     - target: {fileID: 1056004869084753758, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
       propertyPath: m_LocalPosition.z
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2026395609407994003, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855185218073114716, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855185218073114716, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4243530203737602971, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
       propertyPath: spawnPoint
@@ -2626,10 +2704,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 5790048036885523910, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5790048036885523910, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 874782941}
   m_SourcePrefab: {fileID: 100100000, guid: b60eaefefcc42424ebf215d605e1d532, type: 3}
 --- !u!1 &1096021688
 GameObject:

@@ -3,10 +3,12 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ItemGenerator : MonoBehaviour
 {
     public ItemPool itemPool;
+    public Vector3 scale = new Vector3(10,10,10);
 
     public ItemScriptableObject GenerateRandomItem()
     {
@@ -25,6 +27,7 @@ public class ItemGenerator : MonoBehaviour
         {
             GameObject itemObject = Instantiate(generatedItem.itemPrefab, position, Quaternion.identity);
             // Assuming the prefab has a script to display item details
+            itemObject.transform.localScale = scale;
             itemObject.GetComponent<ItemDisplay>().Setup(generatedItem);
         }
     }
