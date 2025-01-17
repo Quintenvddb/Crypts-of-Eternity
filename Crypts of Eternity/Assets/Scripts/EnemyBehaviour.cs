@@ -17,7 +17,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public int damageAmount = 10;
     private Rigidbody2D rb;
 
-    public List<GameObject> prefabsToSpawn;
+    public EnemyLootTable LootTable;
 
     void Start()
     {
@@ -79,16 +79,18 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     {
         Debug.Log("Enemy died!");
 
-        if (prefabsToSpawn != null && prefabsToSpawn.Count > 0)
+        if (LootTable != null)
         {
-            int randomIndex = Random.Range(0, prefabsToSpawn.Count);
-            GameObject selectedPrefab = prefabsToSpawn[randomIndex];
-
-            Instantiate(selectedPrefab, transform.position, Quaternion.identity);
+            GameObject loot = LootTable.GetRandomLoot();
+            if (loot != null)
+            {
+                Instantiate(loot, transform.position, Quaternion.identity);
+            }
         }
 
         Destroy(gameObject);
     }
+
 
     private IEnumerator FlashRed(float duration)
     {
