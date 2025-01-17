@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public int attackDamage = 5;
     private Rigidbody2D rb;
     private Vector2 movement;
+    private Vector2 smoothMovement;
     private Animator animator;
 
     private int attackState = 1;
@@ -62,7 +63,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!isDead)
         {
-            rb.linearVelocity = movement.normalized * moveSpeed;
+            smoothMovement = Vector2.Lerp(smoothMovement, movement.normalized * moveSpeed, 0.2f);
+            rb.linearVelocity = smoothMovement;
             HandleFootsteps();
         }
     }
