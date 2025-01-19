@@ -2,19 +2,19 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class EnemyBehaviour : MonoBehaviour, IDamageable
+public class BossBehaviour : MonoBehaviour, IDamageable
 {
     private Transform player;
-    public float speed = 1.5f;
+    public float speed = 2.0f;
     private Vector2 currentDirection;
     private float lastUpdateTime = 0f;
-    public float minUpdateInterval = 0.4f;
+    public float minUpdateInterval = 0.3f;
     private float updateInterval;
-    public int health = 50;
+    public int health = 500;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
 
-    public int damageAmount = 10;
+    public int damageAmount = 20;
     private Rigidbody2D rb;
 
     public EnemyLootTable LootTable;
@@ -63,7 +63,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         health -= damage;
-        Debug.Log($"Enemy received damage: {damage}, Current health: {health}");
+        Debug.Log($"Boss received damage: {damage}, Current health: {health}");
 
         if (health <= 0)
         {

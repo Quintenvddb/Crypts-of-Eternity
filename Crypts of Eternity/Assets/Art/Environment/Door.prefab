@@ -103,6 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {x: 400, y: 400, z: 0}
   playerTag: Player
+  prefabToSpawn: {fileID: 5170699716074705305, guid: 6d4409189a573da478b00eb85a80b708, type: 3}
+  spawnPosition: {x: 89, y: 0, z: -10}
 --- !u!61 &1255157939055486759
 BoxCollider2D:
   m_ObjectHideFlags: 0

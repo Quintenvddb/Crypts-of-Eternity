@@ -5,6 +5,8 @@ public class TeleportDoor : MonoBehaviour
 {
     public Vector3 targetPosition; // Target position where the player will be teleported
     public string playerTag = "Player"; // Tag to identify the player
+    public GameObject prefabToSpawn; // Prefab to spawn when the player is teleported
+    public Vector3 spawnPosition = new Vector3(89, 0, -10); // Position to spawn the prefab
     private Coroutine teleportCoroutine; // Reference to the coroutine
     private bool playerInBounds = false; // Tracks if the player is still in the bounds
 
@@ -50,6 +52,7 @@ public class TeleportDoor : MonoBehaviour
         if (playerInBounds)
         {
             TeleportPlayer(player);
+            SpawnPrefab();
         }
         else
         {
@@ -62,5 +65,19 @@ public class TeleportDoor : MonoBehaviour
     {
         player.transform.position = targetPosition;
         Debug.Log("Player Teleported to " + targetPosition);
+    }
+
+    // Spawn the prefab at the specified position
+    private void SpawnPrefab()
+    {
+        if (prefabToSpawn != null)
+        {
+            Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
+            Debug.Log("Prefab spawned at " + spawnPosition);
+        }
+        else
+        {
+            Debug.LogWarning("Prefab to spawn is not assigned!");
+        }
     }
 }

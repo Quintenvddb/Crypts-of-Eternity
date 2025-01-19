@@ -2201,6 +2201,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117128348835321587, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 8
       objectReference: {fileID: 0}
