@@ -11,6 +11,10 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public float minUpdateInterval = 0.4f;
     private float updateInterval;
     public int health = 50;
+
+    public int lowHealthThreshold = 10; // Threshold for low health to start running away
+    public float runAwaySpeedMultiplier = 1.5f; // Speed multiplier when running away
+
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
 
@@ -55,7 +59,18 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
         {
             if (player != null)
             {
-                currentDirection = (player.position - transform.position).normalized;
+                // Determine movement direction based on health
+                if (health <= lowHealthThreshold)
+                {
+                    // Run away from the player
+                    currentDirection = (transform.position - player.position).normalized * runAwaySpeedMultiplier;
+                }
+                else
+                {
+                    // Move towards the player
+                    currentDirection = (player.position - transform.position).normalized;
+                }
+
                 lastUpdateTime = Time.time;
             }
         }
@@ -117,7 +132,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     private void TryAttack(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && health > lowHealthThreshold) // Don't attack if running away
         {
             if (Time.time - lastAttackTime >= attackCooldown)
             {
