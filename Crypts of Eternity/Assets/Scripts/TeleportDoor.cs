@@ -81,7 +81,7 @@ public class TeleportDoor : MonoBehaviour
             yield return StartCoroutine(ShrinkCircle());
             yield return new WaitForSeconds(1f);
             isTeleporting = false; // End teleportation
-            SpawnPrefab();
+            SpawnBoss();
         }
         else
         {
@@ -162,7 +162,7 @@ public class TeleportDoor : MonoBehaviour
     }
 
     // Spawn the prefab at the specified position
-    private void SpawnPrefab()
+    private void SpawnBoss()
     {
         if (prefabToSpawn != null)
         {
