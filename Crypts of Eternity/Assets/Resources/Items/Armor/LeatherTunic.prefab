@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7160259364136980726}
   - component: {fileID: -8399004687211548482}
   m_Layer: 0
-  m_Name: BanditLightArmor [Paint]_0
+  m_Name: LeatherTunic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4122432800360564600}
   - component: {fileID: 5047810264498479619}
   m_Layer: 0
-  m_Name: AriostinGreatsword_0
+  m_Name: AriostinGreatsword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

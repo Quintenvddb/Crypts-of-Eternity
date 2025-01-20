@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2816721793274999386
+--- !u!1 &4439635003457354420
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1592194440824846290}
-  - component: {fileID: 7328203670627090343}
-  - component: {fileID: -545180186887642878}
+  - component: {fileID: 8859523784664798819}
+  - component: {fileID: 1968809960455845246}
+  - component: {fileID: 7558421340220463233}
   m_Layer: 0
-  m_Name: Katana1 [Paint]_0
+  m_Name: RogueArmor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1592194440824846290
+--- !u!4 &8859523784664798819
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2816721793274999386}
+  m_GameObject: {fileID: 4439635003457354420}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,13 +33,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7328203670627090343
+--- !u!212 &1968809960455845246
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2816721793274999386}
+  m_GameObject: {fileID: 4439635003457354420}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,34 +77,33 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5488921040926458067, guid: 7a898a8f59868254fa41e0896f69fbf0, type: 3}
+  m_Sprite: {fileID: 9083158208115367601, guid: dd48a09987b2cbc43ba933c4a14482c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.61, y: 1.88}
+  m_Size: {x: 1.72, y: 1.72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-545180186887642878
+--- !u!114 &7558421340220463233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2816721793274999386}
+  m_GameObject: {fileID: 4439635003457354420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ecc2710913edbd4492dea3b8ee405b7, type: 3}
+  m_Script: {fileID: 11500000, guid: f137da53c2074174e83681cb5a8c0b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Katana
-  icon: {fileID: -5488921040926458067, guid: 7a898a8f59868254fa41e0896f69fbf0, type: 3}
-  rarity: 5
+  itemName: Rogue Armor
+  icon: {fileID: 9083158208115367601, guid: dd48a09987b2cbc43ba933c4a14482c3, type: 3}
+  rarity: 20
   description: 
-  value: 300
-  itemPrefab: {fileID: 2816721793274999386}
-  damage: 15
-  attackSpeed: 1
+  value: 80
+  itemPrefab: {fileID: 4439635003457354420}
+  defense: 10
