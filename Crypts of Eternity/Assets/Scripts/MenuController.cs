@@ -18,7 +18,12 @@ public class MenuController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            menu.SetActive(!menu.activeSelf);
+        {
+            bool isMenuActive = !menu.activeSelf;
+            menu.SetActive(isMenuActive);
+
+            Time.timeScale = isMenuActive ? 0 : 1;
+        }
     }
 
     void QuitGame()

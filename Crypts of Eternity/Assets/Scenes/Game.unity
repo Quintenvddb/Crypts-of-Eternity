@@ -1764,7 +1764,7 @@ MonoBehaviour:
   - {fileID: 529721178849006507, guid: d3de4e743d7a0524b81d04843dc44083, type: 3}
   lootPrefab: {fileID: 6650320610758518852, guid: a43b5f29b2146a549973ed37f01af9ec, type: 3}
   shopPrefab: {fileID: 3742164553007408510, guid: 32f3f8d594dee2247b6589734e9e259a, type: 3}
-  teleportDoorPrefab: {fileID: 3964646405665900980, guid: 4fe826e9e0183d74195af1e96bf1981f, type: 3}
+  teleportDoorPrefab: {fileID: 5289858651078758115, guid: cce524a36da459b4c88660d34e758763, type: 3}
 --- !u!4 &809774870
 Transform:
   m_ObjectHideFlags: 0
@@ -2148,6 +2148,10 @@ PrefabInstance:
       propertyPath: 'footstepSounds.Array.data[9]'
       value: 
       objectReference: {fileID: 8300000, guid: 8d210257f491da64390c6b3fcb955a36, type: 3}
+    - target: {fileID: 6239782115839689915, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6323719953710832613, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
       propertyPath: m_Name
       value: Player
