@@ -10,9 +10,10 @@ public class TeleportDoor : MonoBehaviour
     public GameObject circle; // The expanding circle child object
     public AudioSource doorCreakSound; // AudioSource for the door creaking sound
     private Coroutine teleportCoroutine; // Reference to the teleport coroutine
-    private Coroutine expandCircleCoroutine; // Reference to the circle animation coroutine
+    private Coroutine circleCoroutine; // Reference to the circle animation coroutine
     private bool playerInBounds = false; // Tracks if the player is still in bounds
     private Vector3 originalCircleScale; // Original scale of the circle
+    private bool isTeleporting = false; // Tracks whether teleportation is currently happening
 
     private void Start()
     {
@@ -46,27 +47,26 @@ public class TeleportDoor : MonoBehaviour
         if (other.CompareTag(playerTag))
         {
             playerInBounds = false; // Mark the player as outside bounds
-
-            // Stop the teleport coroutine if running
-            if (teleportCoroutine != null)
+            if (!isTeleporting)
             {
-                StopCoroutine(teleportCoroutine);
-                teleportCoroutine = null;
-                Debug.Log("Player left the door's area. Teleportation canceled.");
-            }
-
-            // Stop the circle animation coroutine if running and reset the circle's scale
-            if (expandCircleCoroutine != null)
-            {
-                StopCoroutine(expandCircleCoroutine);
-                expandCircleCoroutine = null;
-            }
-
-            ResetCircle();
+                // Stop the teleport coroutine if running
+                if (teleportCoroutine != null)
+                {
+                    StopCoroutine(teleportCoroutine);
+                    teleportCoroutine = null;
+                    Debug.Log("Player left the door's area. Teleportation canceled.");
+                }
+                // Stop any ongoing circle animation coroutine
+                if (circleCoroutine != null)
+                {
+                    StopCoroutine(circleCoroutine);
+                    circleCoroutine = null;
+                }
+                ResetCircle();
+            }       
         }
     }
 
-    // Coroutine to teleport the player after a delay
     private IEnumerator TeleportAfterDelay(GameObject player, float delay)
     {
         Debug.Log("Player detected. Waiting for " + delay + " seconds...");
@@ -75,8 +75,12 @@ public class TeleportDoor : MonoBehaviour
         // Teleport the player if they're still marked as in bounds
         if (playerInBounds)
         {
-            yield return new WaitForSeconds(0.5f); // Wait for the animation to finish
+            isTeleporting = true; // Start teleportation
+            MoveDoorAndCircle();
             TeleportPlayer(player);
+            yield return StartCoroutine(ShrinkCircle());
+            yield return new WaitForSeconds(1f);
+            isTeleporting = false; // End teleportation
             SpawnPrefab();
         }
         else
@@ -85,12 +89,13 @@ public class TeleportDoor : MonoBehaviour
         }
     }
 
+
     // Start the expanding animation and play the sound
     private void StartAnimationAndSound()
     {
         if (circle != null)
         {
-            expandCircleCoroutine = StartCoroutine(ExpandCircle());
+            circleCoroutine = StartCoroutine(ExpandCircle());
         }
         if (doorCreakSound != null)
         {
@@ -103,11 +108,42 @@ public class TeleportDoor : MonoBehaviour
     {
         float duration = 2.5f;
         float elapsedTime = 0f;
-        Vector3 targetScale = new Vector3(30f, 30f, -8f); // Adjust as needed for screen fill
+        Vector3 targetScale = new Vector3(30f, 30f, 1f); // Adjust as needed for screen fill
 
         while (elapsedTime < duration)
         {
             circle.transform.localScale = Vector3.Lerp(originalCircleScale, targetScale, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        circle.transform.localScale = targetScale;
+    }
+
+    // Teleport the player to the target position
+    private void TeleportPlayer(GameObject player)
+    {
+        player.transform.position = targetPosition;
+        Debug.Log("Player Teleported to " + targetPosition);
+    }
+
+    // Move the door and circle to the target position
+    private void MoveDoorAndCircle()
+    {
+        transform.position = targetPosition;
+        Debug.Log("Door and circle moved to " + targetPosition);
+    }
+
+    // Coroutine to shrink the circle
+    private IEnumerator ShrinkCircle()
+    {
+        float duration = 4f;
+        float elapsedTime = 0f;
+        Vector3 targetScale = originalCircleScale; // Shrink back to the original scale
+
+        while (elapsedTime < duration)
+        {
+            circle.transform.localScale = Vector3.Lerp(circle.transform.localScale, targetScale, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -123,13 +159,6 @@ public class TeleportDoor : MonoBehaviour
             circle.transform.localScale = originalCircleScale;
             Debug.Log("Circle scale reset to original size.");
         }
-    }
-
-    // Teleport the player to the target position
-    private void TeleportPlayer(GameObject player)
-    {
-        player.transform.position = targetPosition;
-        Debug.Log("Player Teleported to " + targetPosition);
     }
 
     // Spawn the prefab at the specified position
