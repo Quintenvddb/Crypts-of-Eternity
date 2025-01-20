@@ -6,6 +6,8 @@ public class StartMenuController : MonoBehaviour
 {
     public GameObject menu;
     public Button startButton;
+    public Button settingsButton;
+    public GameObject settingsMenu;
 
     void Start()
     {
@@ -14,6 +16,11 @@ public class StartMenuController : MonoBehaviour
         if (startButton != null)
         {
             startButton.onClick.AddListener(OnStartButtonClick);
+        }
+
+        if (settingsButton != null)
+        {
+            settingsButton.onClick.AddListener(OnSettingsButtonClick);
         }
     }
 
@@ -31,5 +38,14 @@ public class StartMenuController : MonoBehaviour
         }
 
         Time.timeScale = 1;
+    }
+
+    private void OnSettingsButtonClick()
+    {
+        if (settingsMenu != null)
+        {
+            settingsMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 }

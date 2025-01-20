@@ -48,6 +48,13 @@ public class PlayerController : MonoBehaviour
 
     private bool isBlocking = false;
 
+
+    // Key binding variables
+    public KeyCode moveUpKey = KeyCode.W;
+    public KeyCode moveDownKey = KeyCode.S;
+    public KeyCode moveLeftKey = KeyCode.A;
+    public KeyCode moveRightKey = KeyCode.D;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -97,8 +104,8 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovementInput()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        movement.x = (Input.GetKey(moveRightKey) ? 1 : 0) + (Input.GetKey(moveLeftKey) ? -1 : 0);
+        movement.y = (Input.GetKey(moveUpKey) ? 1 : 0) + (Input.GetKey(moveDownKey) ? -1 : 0);
 
         if (movement.x != 0 && Mathf.Sign(transform.localScale.x) != Mathf.Sign(movement.x))
         {
@@ -109,6 +116,25 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
+
+public void RebindKey(string action, KeyCode newKey)
+{
+    switch (action)
+    {
+        case "MoveUp":
+            moveUpKey = newKey;
+            break;
+        case "MoveDown":
+            moveDownKey = newKey;
+            break;
+        case "MoveLeft":
+            moveLeftKey = newKey;
+            break;
+        case "MoveRight":
+            moveRightKey = newKey;
+            break;
+    }
+}
 
     private void HandleActions()
     {

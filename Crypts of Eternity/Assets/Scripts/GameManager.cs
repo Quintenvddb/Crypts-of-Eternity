@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public class FrameRateManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public bool limitFrameRate = true;
+
+    public GameObject startMenu;
 
     void Start()
     {
         SetFrameRate();
+        startMenu.SetActive(true);
     }
 
     void Update()
