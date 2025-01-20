@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2346990114712274569}
   - component: {fileID: 7160259364136980726}
+  - component: {fileID: -8399004687211548482}
   m_Layer: 0
   m_Name: BanditLightArmor [Paint]_0
   m_TagString: Untagged
@@ -87,3 +88,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8399004687211548482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6441997188048732134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f137da53c2074174e83681cb5a8c0b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Leather Tunic
+  icon: {fileID: 7618251882285239222, guid: 98c8e15dc77423c40b5d639b6990b379, type: 3}
+  rarity: 30
+  description: 
+  value: 20
+  itemPrefab: {fileID: 6441997188048732134}
+  defense: 5

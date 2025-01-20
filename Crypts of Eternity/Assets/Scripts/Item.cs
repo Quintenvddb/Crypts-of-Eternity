@@ -1,15 +1,14 @@
 using UnityEngine;
 
 [System.Serializable]
-public class Item
+public abstract class Item : MonoBehaviour
 {
     public string itemName;
     public Sprite icon;
-    public string type;
     public int rarity;
     public string description;
-    public int damage;
     public int value;
+    public GameObject itemPrefab;
 
     public Item(string name, Sprite icon)
     {

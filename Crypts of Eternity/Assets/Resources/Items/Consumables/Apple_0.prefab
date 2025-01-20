@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3158320156456573261}
   - component: {fileID: 484727986492705429}
+  - component: {fileID: -2137473420970893756}
   m_Layer: 0
   m_Name: Apple_0
   m_TagString: Untagged
@@ -87,3 +88,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2137473420970893756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8165695579985975029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0d6a9515739f84e881570e2008f1ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Apple
+  icon: {fileID: 7293598183456022363, guid: 73b02a20b65e0e240a53d1997bdfc8dd, type: 3}
+  rarity: 25
+  description: 
+  value: 15
+  itemPrefab: {fileID: 8165695579985975029}
+  restoreAmount: 25
+  effect: 

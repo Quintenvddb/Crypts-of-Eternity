@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 51453014286506751}
   - component: {fileID: 1319226840515388251}
+  - component: {fileID: 2504505047183432582}
   m_Layer: 0
   m_Name: WoodenClub_0
   m_TagString: Untagged
@@ -87,3 +88,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2504505047183432582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967169869580567451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ecc2710913edbd4492dea3b8ee405b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Wooden Club
+  icon: {fileID: -6454480877998099751, guid: 92a9cf072d980f44bab629e35538b521, type: 3}
+  rarity: 15
+  description: 
+  value: 150
+  itemPrefab: {fileID: 1967169869580567451}
+  damage: 12
+  attackSpeed: 0.7

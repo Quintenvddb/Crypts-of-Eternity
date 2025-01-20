@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4167105768942305661}
   - component: {fileID: 4167105768942305650}
+  - component: {fileID: -112624590837460007}
   m_Layer: 0
   m_Name: Amulet of Luck
   m_TagString: Untagged
@@ -87,3 +88,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-112624590837460007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4167105768942305651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170d99f586ce8bc4c85ae8d6fb96e99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Amulet of Luck
+  icon: {fileID: -1832495798, guid: 137a4eb7be9f2264b94945af68989053, type: 3}
+  rarity: 5
+  description: 
+  value: 300
+  itemPrefab: {fileID: 4167105768942305651}
+  effect: Bonus luck

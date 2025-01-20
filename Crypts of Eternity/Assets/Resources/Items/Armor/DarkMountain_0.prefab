@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8859523784664798819}
   - component: {fileID: 1968809960455845246}
+  - component: {fileID: 7558421340220463233}
   m_Layer: 0
   m_Name: DarkMountain_0
   m_TagString: Untagged
@@ -87,3 +88,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7558421340220463233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439635003457354420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f137da53c2074174e83681cb5a8c0b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Rogue Armor
+  icon: {fileID: 9083158208115367601, guid: dd48a09987b2cbc43ba933c4a14482c3, type: 3}
+  rarity: 20
+  description: 
+  value: 80
+  itemPrefab: {fileID: 4439635003457354420}
+  defense: 10

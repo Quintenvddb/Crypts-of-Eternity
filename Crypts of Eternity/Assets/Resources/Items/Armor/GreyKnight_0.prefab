@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 303682278992549058}
   - component: {fileID: 1592827069227707102}
+  - component: {fileID: 7046029576893001669}
   m_Layer: 0
   m_Name: GreyKnight_0
   m_TagString: Untagged
@@ -87,3 +88,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7046029576893001669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8039014538911479557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f137da53c2074174e83681cb5a8c0b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Adamantium Platebody
+  icon: {fileID: 4411648087972103025, guid: ac6f68bf07badfb45a86f48629d42c0b, type: 3}
+  rarity: 2
+  description: 
+  value: 750
+  itemPrefab: {fileID: 8039014538911479557}
+  defense: 30

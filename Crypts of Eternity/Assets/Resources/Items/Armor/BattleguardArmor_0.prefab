@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4779730591663644524}
   - component: {fileID: 7718157830308755868}
+  - component: {fileID: -1196421767752828743}
   m_Layer: 0
   m_Name: BattleguardArmor_0
   m_TagString: Untagged
@@ -87,3 +88,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1196421767752828743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4358974601121928364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f137da53c2074174e83681cb5a8c0b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Iron Platebody
+  icon: {fileID: -7297217709293447414, guid: b6b125c8d7ab2a940bf194043a6a78bd, type: 3}
+  rarity: 10
+  description: 
+  value: 200
+  itemPrefab: {fileID: 4358974601121928364}
+  defense: 15

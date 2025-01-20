@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class ItemDisplay : MonoBehaviour
 {
-    public ItemScriptableObject item;
+    public Item item;
     public SpriteRenderer spriteRenderer;
 
-    public void Setup(ItemScriptableObject newItem)
+    public void Setup(Item newItem)
     {
         item = newItem;
         spriteRenderer.sprite = item.icon;

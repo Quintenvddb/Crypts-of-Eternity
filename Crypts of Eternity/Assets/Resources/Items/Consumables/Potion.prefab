@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6564868181584819129}
   - component: {fileID: 7509408438678832317}
+  - component: {fileID: 1336089617607828630}
   m_Layer: 0
   m_Name: Potion
   m_TagString: Untagged
@@ -87,3 +88,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1336089617607828630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418220194905897250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0d6a9515739f84e881570e2008f1ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Healing potion
+  icon: {fileID: 8145951374611147372, guid: ca1fe683d8872314481b6dbcd87cb1d1, type: 3}
+  rarity: 15
+  description: 
+  value: 100
+  itemPrefab: {fileID: 3418220194905897250}
+  restoreAmount: 50
+  effect: 

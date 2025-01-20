@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4600946633282676197}
   - component: {fileID: 9138416615930811887}
+  - component: {fileID: -3012449706406672559}
   m_Layer: 0
   m_Name: WarHammer_0
   m_TagString: Untagged
@@ -87,3 +88,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3012449706406672559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449930913840765999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ecc2710913edbd4492dea3b8ee405b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Warhammer
+  icon: {fileID: -4340815731715244962, guid: 8d24d3d0e30a034418c71589089079ac, type: 3}
+  rarity: 15
+  description: 
+  value: 150
+  itemPrefab: {fileID: 449930913840765999}
+  damage: 17
+  attackSpeed: 0.3

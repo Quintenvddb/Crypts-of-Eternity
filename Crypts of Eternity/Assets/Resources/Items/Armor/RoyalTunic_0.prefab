@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8450267434345453789}
   - component: {fileID: 2096168840945251462}
+  - component: {fileID: 6407204014039922932}
   m_Layer: 0
   m_Name: RoyalTunic_0
   m_TagString: Untagged
@@ -87,3 +88,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6407204014039922932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260949912814944834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f137da53c2074174e83681cb5a8c0b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Royal Gown
+  icon: {fileID: 6482956576948116751, guid: 4bf48d4dd85c969418ded7cd14dd1cc3, type: 3}
+  rarity: 1
+  description: 
+  value: 1000
+  itemPrefab: {fileID: 8260949912814944834}
+  defense: -50

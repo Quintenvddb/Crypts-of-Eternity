@@ -10,11 +10,11 @@ public class ItemGenerator : MonoBehaviour
     public ItemPool itemPool;
     public Vector3 scale = new Vector3(10,10,10);
 
-    public ItemScriptableObject GenerateRandomItem()
+    public Item GenerateRandomItem()
     {
         if (itemPool.itemList.Count == 0) return null;
 
-        List<ItemScriptableObject> validItems = itemPool.itemList;
+        List<Item> validItems = itemPool.itemList;
 
         int randomIndex = Random.Range(0, validItems.Count);
         return itemPool.itemList[randomIndex];

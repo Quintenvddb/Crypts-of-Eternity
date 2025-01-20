@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
-    public List<ItemScriptableObject> itemsToSpawn;
+    public ChestLootTable lootTable;
     public Transform spawnPoint;
     private bool isOpened = false;
 
@@ -30,33 +30,10 @@ public class Chest : MonoBehaviour
 
     private void SpawnItem()
     {
-        ItemScriptableObject selectedItem = SelectItem();
+        Item selectedItem = lootTable.GetRandomItem();
         if (selectedItem != null && selectedItem.itemPrefab != null)
         {
             Instantiate(selectedItem.itemPrefab, spawnPoint.position, Quaternion.identity);
         }
-    }
-
-    private ItemScriptableObject SelectItem()
-    {
-        float totalWeight = 0f;
-        foreach (var item in itemsToSpawn)
-        {
-            totalWeight += item.rarity;
-        }
-
-        float randomValue = Random.value * totalWeight;
-        float cumulativeWeight = 0f;
-
-        foreach (var item in itemsToSpawn)
-        {
-            cumulativeWeight += item.rarity;
-            if (randomValue <= cumulativeWeight)
-            {
-                return item;
-            }
-        }
-
-        return null;
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8267086134582239215}
   - component: {fileID: 8267086134582239214}
+  - component: {fileID: 5731561761733840781}
   m_Layer: 0
   m_Name: Amulet of Vigour
   m_TagString: Untagged
@@ -87,3 +88,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5731561761733840781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267086134582239212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170d99f586ce8bc4c85ae8d6fb96e99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Amulet of Vigour
+  icon: {fileID: 210295133, guid: 137a4eb7be9f2264b94945af68989053, type: 3}
+  rarity: 5
+  description: 
+  value: 300
+  itemPrefab: {fileID: 8267086134582239212}
+  effect: Even more bonus health

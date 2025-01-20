@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6998247583734496550}
   - component: {fileID: 7794475486660117119}
+  - component: {fileID: 7503851401172672454}
   m_Layer: 0
   m_Name: Coconut
   m_TagString: Untagged
@@ -87,3 +88,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7503851401172672454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287067110980331293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0d6a9515739f84e881570e2008f1ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Coconut
+  icon: {fileID: -7377819553374844296, guid: 7bfd56392dc1ec04cb2b3c108aaf56bf, type: 3}
+  rarity: 25
+  description: 
+  value: 15
+  itemPrefab: {fileID: 5287067110980331293}
+  restoreAmount: 25
+  effect: 

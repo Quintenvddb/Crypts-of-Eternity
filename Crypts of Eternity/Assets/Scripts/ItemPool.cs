@@ -7,6 +7,6 @@ namespace Assets.Resources.Scripts
 {
     public class ItemPool : MonoBehaviour
     {
-        public List<ItemScriptableObject> itemList = new List<ItemScriptableObject>();
+        public List<Item> itemList = new List<Item>();
     }
 }
