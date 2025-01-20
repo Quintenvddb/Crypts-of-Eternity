@@ -2148,6 +2148,10 @@ PrefabInstance:
       propertyPath: 'footstepSounds.Array.data[9]'
       value: 
       objectReference: {fileID: 8300000, guid: 8d210257f491da64390c6b3fcb955a36, type: 3}
+    - target: {fileID: 6239782115839689915, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6323719953710832613, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
       propertyPath: m_Name
       value: Player

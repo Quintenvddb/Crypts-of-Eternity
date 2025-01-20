@@ -41,6 +41,13 @@ public class PlayerController : MonoBehaviour
     public AudioClip[] footstepSounds;
     private bool isPlayingFootstep = false;
 
+    private Vector2 knockbackVelocity;
+    private bool isKnockedBack = false;
+    private float knockbackDuration = 0.2f;
+    private float knockbackTimer = 0f;
+
+    private bool isBlocking = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -55,17 +62,36 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead) return;
 
-        HandleMovementInput();
-        HandleActions();
+        if (isKnockedBack)
+        {
+            knockbackTimer -= Time.deltaTime;
+            if (knockbackTimer <= 0f)
+            {
+                isKnockedBack = false;
+                knockbackVelocity = Vector2.zero;
+            }
+        }
+        else
+        {
+            HandleMovementInput();
+            HandleActions();
+        }
     }
 
     void FixedUpdate()
     {
         if (!isDead)
         {
-            smoothMovement = Vector2.Lerp(smoothMovement, movement.normalized * moveSpeed, 0.2f);
-            rb.linearVelocity = smoothMovement;
-            HandleFootsteps();
+            if (isKnockedBack)
+            {
+                rb.linearVelocity = knockbackVelocity;
+            }
+            else
+            {
+                smoothMovement = Vector2.Lerp(smoothMovement, movement.normalized * moveSpeed, 0.2f);
+                rb.linearVelocity = smoothMovement;
+                HandleFootsteps();
+            }
         }
     }
 
@@ -95,6 +121,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("Block");
             audioSource.PlayOneShot(blockAudio, blockVolume);
+            isBlocking = true;
         }
 
         if (Input.GetMouseButton(1))
@@ -106,6 +133,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("IdleBlock", false);
             moveSpeed = 4f;
+            isBlocking = false;
         }
     }
 
@@ -156,16 +184,33 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead || currentHealth <= 0) return;
 
-        currentHealth -= damage;
+        int finalDamage = isBlocking ? Mathf.CeilToInt(damage * 0.25f) : damage;
+
+        currentHealth -= finalDamage;
         currentHealth = Mathf.Max(currentHealth, 0);
 
-        animator.SetTrigger("Hurt");
         audioSource.PlayOneShot(hurtAudio, hurtVolume);
         UpdateHealthUI();
+
+        StartCoroutine(FlashRed());
 
         if (currentHealth <= 0)
         {
             TriggerDeath();
+        }
+    }
+
+    private IEnumerator FlashRed()
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            Color originalColor = spriteRenderer.color;
+            spriteRenderer.color = Color.red;
+
+            yield return new WaitForSeconds(0.2f);
+
+            spriteRenderer.color = originalColor;
         }
     }
 
@@ -177,6 +222,13 @@ public class PlayerController : MonoBehaviour
         currentHealth = Mathf.Min(currentHealth, maxHealth);
         audioSource.PlayOneShot(healAudio, healVolume);
         UpdateHealthUI();
+    }
+
+    public void ApplyKnockback(Vector2 direction, float force)
+    {
+        isKnockedBack = true;
+        knockbackTimer = knockbackDuration;
+        knockbackVelocity = direction * force;
     }
 
     private void UpdateHealthUI()
@@ -207,7 +259,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleFootsteps()
     {
-        if (movement.sqrMagnitude > 0.1f && !isAttacking && !isPlayingFootstep)  
+        if (movement.sqrMagnitude > 0.1f && !isAttacking && !isPlayingFootstep)
         {
             StartCoroutine(PlayFootstep());
         }

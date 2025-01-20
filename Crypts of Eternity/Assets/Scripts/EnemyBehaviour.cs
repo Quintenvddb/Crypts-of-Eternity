@@ -19,6 +19,9 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     public EnemyLootTable LootTable;
 
+    public float attackCooldown = 1.5f;
+    private float lastAttackTime = 0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -91,7 +94,6 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-
     private IEnumerator FlashRed(float duration)
     {
         if (spriteRenderer != null)
@@ -105,12 +107,31 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        TryAttack(collision);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        TryAttack(collision);
+    }
+
+    private void TryAttack(Collider2D collision)
+    {
         if (collision.CompareTag("Player"))
         {
-            PlayerController player = Object.FindFirstObjectByType<PlayerController>();
-            if (player != null)
+            if (Time.time - lastAttackTime >= attackCooldown)
             {
-                player.TakeDamage(damageAmount);
+                PlayerController player = collision.GetComponent<PlayerController>();
+                if (player != null)
+                {
+                    player.TakeDamage(damageAmount);
+
+                    Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
+                    float knockbackForce = 3f;
+                    player.ApplyKnockback(knockbackDirection, knockbackForce);
+                }
+
+                lastAttackTime = Time.time;
             }
         }
     }

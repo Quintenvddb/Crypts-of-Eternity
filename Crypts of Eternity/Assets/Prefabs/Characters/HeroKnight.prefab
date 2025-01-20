@@ -39,7 +39,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3589055423988948921}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -291,6 +291,9 @@ MonoBehaviour:
   slotSpacing: 8
   inventory: []
   maxInventorySize: 24
+  audioSource: {fileID: 0}
+  inventoryOpenAudio: {fileID: 0}
+  inventoryOpenVolume: 0.25
 --- !u!114 &5180516462067648392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,3 +311,16 @@ MonoBehaviour:
   maxHealth: 100
   healthSlider: {fileID: 0}
   attackCollider: {fileID: 6239782115839689915}
+  audioSource: {fileID: 0}
+  attackAudio: {fileID: 0}
+  blockAudio: {fileID: 0}
+  hurtAudio: {fileID: 0}
+  healAudio: {fileID: 0}
+  deathAudio: {fileID: 0}
+  blockVolume: 1
+  attackVolume: 2
+  hurtVolume: 1
+  healVolume: 1
+  stepVolume: 4
+  deathVolume: 4
+  footstepSounds: []
