@@ -133,7 +133,7 @@ void PlaceTeleportDoor(Vector3 doorWorldPosition)
     TeleportDoor teleportDoor = door.GetComponent<TeleportDoor>();
     if (teleportDoor != null)
     {
-        teleportDoor.SetTargetPosition(new Vector3(80, 0, -10));
+        teleportDoor.SetTargetPosition(new Vector3(80, 0, -5));
         Debug.Log("Teleport Door target set for Boss Room.");
     }
 }
