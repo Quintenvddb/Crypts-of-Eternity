@@ -5,14 +5,30 @@ public class Chest : MonoBehaviour
 {
     public ChestLootTable lootTable;
     public Transform spawnPoint;
+    private Animator animator;
     private bool isOpened = false;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !isOpened)
         {
-            OpenChest();
+            PlayAnimation();
         }
+    }
+
+    private void PlayAnimation()
+    {
+        animator.SetTrigger("ChestOpenAnim");
+    }
+
+    public void AnimationComplete()
+    {
+        OpenChest();
     }
 
     private void OpenChest()
@@ -22,8 +38,6 @@ public class Chest : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.gray;
 
         SpawnItem();
-
-        //GetComponent<Collider2D>().enabled = false;
 
         Debug.Log("Spawn Position: " + spawnPoint.position);
     }
