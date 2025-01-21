@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637e750e332f2e644a2f8fe942193e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsForSale:
-  - Health Potion
-  - Mana Potion
-  - Sword Upgrade
+  itemPool: {fileID: 11400000, guid: c07d183c666f0424fadd18452a212694, type: 2}
+  displayedItems: []
+  numberOfItemsToDisplay: 3
+  itemUIElements: []
