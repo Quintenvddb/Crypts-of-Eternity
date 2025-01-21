@@ -146,9 +146,13 @@ public class RoomGenerator
         // 40% chance for a single enemy if the 0.01 chance didn't trigger
         else if (Random.Range(0f, 1f) < 0.4f)
         {
-            GameObject enemy = SpawnRandomEnemy(roomStartX, roomStartY, roomWidth, roomHeight);
-            enemyCount++;
-            spawnedObjects.Add(enemy);
+            for (int i = 0; i < 4; i++)
+            {
+                GameObject enemy = SpawnRandomEnemy(roomStartX, roomStartY, roomWidth, roomHeight);
+                enemyCount++;
+                spawnedObjects.Add(enemy); 
+            }
+            
         }
 
         // 40% chance for loot
@@ -160,9 +164,12 @@ public class RoomGenerator
 
             if (Random.Range(0f, 1f) < 0.2f)
             {
-                GameObject enemy = SpawnRandomEnemy(roomStartX, roomStartY, roomWidth, roomHeight);
-                enemyCount++;
-                spawnedObjects.Add(enemy);
+                for (int i = 0; i < 3; i++)
+                {
+                    GameObject enemy = SpawnRandomEnemy(roomStartX, roomStartY, roomWidth, roomHeight);
+                    enemyCount++;
+                    spawnedObjects.Add(enemy); 
+                }
             }
         }
 
