@@ -48,12 +48,12 @@ public class PlayerController : MonoBehaviour
 
     private bool isBlocking = false;
 
-
-    // Key binding variables
     public KeyCode moveUpKey = KeyCode.W;
     public KeyCode moveDownKey = KeyCode.S;
     public KeyCode moveLeftKey = KeyCode.A;
     public KeyCode moveRightKey = KeyCode.D;
+
+    public GameObject deathMenu;
 
     void Start()
     {
@@ -272,6 +272,7 @@ public void RebindKey(string action, KeyCode newKey)
         animator.SetTrigger("Death");
         rb.linearVelocity = Vector2.zero;
         Destroy(gameObject, 2f);
+        deathMenu.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

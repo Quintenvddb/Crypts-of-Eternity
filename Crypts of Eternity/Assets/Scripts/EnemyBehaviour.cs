@@ -12,8 +12,8 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     private float updateInterval;
     public int health = 50;
 
-    public int lowHealthThreshold = 10; // Threshold for low health to start running away
-    public float runAwaySpeedMultiplier = 1.5f; // Speed multiplier when running away
+    public int lowHealthThreshold = 20;
+    public float runAwaySpeedMultiplier = 1.5f;
 
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
@@ -25,6 +25,10 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     public float attackCooldown = 1.5f;
     private float lastAttackTime = 0f;
+
+    public GameObject exclamationMarkPrefab;
+    private GameObject exclamationMarkInstance;
+    public float exclamationMarkDuration = 2f;
 
     void Start()
     {
@@ -59,23 +63,20 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
         {
             if (player != null)
             {
-                // Determine movement direction based on health
                 if (health <= lowHealthThreshold)
                 {
-                    // Run away from the player
-                    currentDirection = (transform.position - player.position).normalized * runAwaySpeedMultiplier;
+                    currentDirection = (transform.position - player.position).normalized;
+                    rb.linearVelocity = currentDirection * speed * runAwaySpeedMultiplier;
                 }
                 else
                 {
-                    // Move towards the player
                     currentDirection = (player.position - transform.position).normalized;
+                    rb.linearVelocity = currentDirection * speed;
                 }
 
                 lastUpdateTime = Time.time;
             }
         }
-
-        rb.linearVelocity = currentDirection * speed;
     }
 
     public void TakeDamage(int damage)
@@ -120,6 +121,26 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
         }
     }
 
+    private void ShowExclamationMark()
+    {
+        if (exclamationMarkPrefab != null && exclamationMarkInstance == null)
+        {
+            exclamationMarkInstance = Instantiate(exclamationMarkPrefab, transform.position + Vector3.up, Quaternion.identity, transform);
+            StartCoroutine(RemoveExclamationMarkAfterDelay());
+        }
+    }
+
+    private IEnumerator RemoveExclamationMarkAfterDelay()
+    {
+        yield return new WaitForSeconds(exclamationMarkDuration);
+
+        if (exclamationMarkInstance != null)
+        {
+            Destroy(exclamationMarkInstance);
+            exclamationMarkInstance = null;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         TryAttack(collision);
@@ -132,8 +153,9 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
     private void TryAttack(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && health > lowHealthThreshold) // Don't attack if running away
+        if (collision.CompareTag("Player"))
         {
+            ShowExclamationMark();
             if (Time.time - lastAttackTime >= attackCooldown)
             {
                 PlayerController player = collision.GetComponent<PlayerController>();

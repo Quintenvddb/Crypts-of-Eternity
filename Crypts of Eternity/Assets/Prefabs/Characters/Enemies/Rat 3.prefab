@@ -56,6 +56,8 @@ MonoBehaviour:
   damageAmount: 5
   LootTable: {fileID: 11400000, guid: d12edaeaa18903b4fae31f838596bc19, type: 2}
   attackCooldown: 0.5
+  exclamationMarkPrefab: {fileID: 7944833294361005848, guid: c9197bb9195c29d47b1fa29181ab170e, type: 3}
+  detectionRange: 5
 --- !u!212 &6513273823052991076
 SpriteRenderer:
   m_ObjectHideFlags: 0
