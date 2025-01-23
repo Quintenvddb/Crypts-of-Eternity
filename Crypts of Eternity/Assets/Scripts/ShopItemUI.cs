@@ -6,6 +6,7 @@ public class ShopItemUI : MonoBehaviour
     public Text itemNameText;
     public Image itemIconImage;
     public Text itemPriceText;
+    public Button purchaseButton;
     private Item currentItem;
     private ShopBehavior shopBehavior;
 
@@ -17,6 +18,9 @@ public class ShopItemUI : MonoBehaviour
         itemNameText.text = item.itemName;
         itemIconImage.sprite = item.icon;
         itemPriceText.text = item.value.ToString();
+
+        purchaseButton.onClick.RemoveAllListeners();
+        purchaseButton.onClick.AddListener(() => shop.PurchaseItem(item));
         gameObject.SetActive(true);
     }
 
@@ -28,6 +32,8 @@ public class ShopItemUI : MonoBehaviour
         itemNameText.text = "";
         itemIconImage.sprite = null;
         itemPriceText.text = "";
+
+        purchaseButton.onClick.RemoveAllListeners();
         gameObject.SetActive(false);
     }
 }

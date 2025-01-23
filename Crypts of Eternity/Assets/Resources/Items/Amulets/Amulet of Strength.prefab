@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2017292884523674144}
   - component: {fileID: 2017292884523674147}
   - component: {fileID: -8661973551353301524}
+  - component: {fileID: 1921035335169073169}
   m_Layer: 0
   m_Name: Amulet of Strength
   m_TagString: Untagged
@@ -101,9 +102,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Amulet of Strength
-  icon: {fileID: 575391593, guid: 137a4eb7be9f2264b94945af68989053, type: 3}
+  icon: {fileID: 2090787215, guid: 4c03e3ab908d89e43baff61bc4ca76cf, type: 3}
   rarity: 5
   description: 
   value: 300
   itemPrefab: {fileID: 2017292884523674146}
   effect: Bonus damage
+--- !u!61 &1921035335169073169
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017292884523674146}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0

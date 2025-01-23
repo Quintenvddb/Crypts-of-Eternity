@@ -14,16 +14,19 @@ public class RoomGenerator
     public List<GameObject> enemyPrefabs;
     public GameObject lootPrefab;
     public GameObject shopPrefab;
+    public GameObject trapPrefab;
 
     // Counters for spawned objects
     private int enemyCount = 0;
     private int lootCount = 0;
     private int shopCount = 0;
+    private int trapCount = 0;
 
     // Parent GameObjects for organizing spawned objects
     private GameObject enemyParent;
     private GameObject lootParent;
     private GameObject shopParent;
+    private GameObject trapParent;
 
     public RoomGenerator(int[,] grid, int width, int height)
     {
@@ -36,6 +39,7 @@ public class RoomGenerator
         enemyParent = new GameObject("Enemies");
         lootParent = new GameObject("Loot");
         shopParent = new GameObject("Shops");
+        trapParent = new GameObject("Traps");
     }
 
     public void GenerateRooms(int maxRooms, int minSize, int maxSize)
@@ -90,6 +94,7 @@ public class RoomGenerator
         Debug.Log($"Total Enemies Spawned: {enemyCount}");
         Debug.Log($"Total Loot Spawned: {lootCount}");
         Debug.Log($"Total Shops Spawned: {shopCount}");
+        Debug.Log($"Total Traps Spawned: {trapCount}");
     }
 
     private void EnsureMinimumCounts()
@@ -119,6 +124,13 @@ public class RoomGenerator
         {
             SpawnInRandomRoom(shopPrefab, shopParent);
             shopCount++;
+        }
+
+        // Ensure at least 10 traps
+        while (trapCount < 10)
+        {
+            SpawnInRandomRoom(trapPrefab, trapParent);
+            trapCount++;
         }
     }
 
