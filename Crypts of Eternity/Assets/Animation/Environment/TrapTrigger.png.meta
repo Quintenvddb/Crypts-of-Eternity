@@ -1,319 +1,40 @@
 fileFormatVersion: 2
-guid: f47aa0ec2becf1c4384225333d247a53
+guid: 14b9786231e286046868f8ab2255dc7c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6267551129678049057
-    second: TrapTrigger_0
+      213: -5235649329766366428
+    second: traps_pixel_2_0
   - first:
-      213: 660740198620715889
-    second: TrapTrigger_1
+      213: 3343515190062855949
+    second: traps_pixel_2_1
   - first:
-      213: 8778511020597848870
-    second: TrapTrigger_2
+      213: 6084275801579222575
+    second: traps_pixel_2_2
   - first:
-      213: 5649825355492559592
-    second: TrapTrigger_3
+      213: 9005908186177334527
+    second: traps_pixel_2_3
   - first:
-      213: 2538594434920385758
-    second: TrapTrigger_4
+      213: -1180534967387315881
+    second: traps_pixel_2_4
   - first:
-      213: 4519010645746345480
-    second: TrapTrigger_5
+      213: 666641340333837533
+    second: traps_pixel_2_5
   - first:
-      213: 4721263531783212945
-    second: TrapTrigger_6
+      213: -4872318297552360936
+    second: traps_pixel_2_6
   - first:
-      213: -8790114968838380607
-    second: TrapTrigger_7
+      213: -8854239638725198344
+    second: traps_pixel_2_7
   - first:
-      213: -7023720646188258989
-    second: TrapTrigger_8
+      213: 7923209399275759382
+    second: traps_pixel_2_8
   - first:
-      213: -5029298291532338548
-    second: TrapTrigger_9
+      213: -432648692943300074
+    second: traps_pixel_2_9
   - first:
-      213: -2961612044731119777
-    second: TrapTrigger_10
-  - first:
-      213: -3980880218929658813
-    second: TrapTrigger_11
-  - first:
-      213: -8252796145926679353
-    second: TrapTrigger_12
-  - first:
-      213: -3400870798466238518
-    second: TrapTrigger_13
-  - first:
-      213: 2375657366963439517
-    second: TrapTrigger_14
-  - first:
-      213: -8236973144951163990
-    second: TrapTrigger_15
-  - first:
-      213: 6486872747326976259
-    second: TrapTrigger_16
-  - first:
-      213: 7575037195398913410
-    second: TrapTrigger_17
-  - first:
-      213: -5633831915583948603
-    second: TrapTrigger_18
-  - first:
-      213: 995032888057768413
-    second: TrapTrigger_19
-  - first:
-      213: 4697689874460171737
-    second: TrapTrigger_20
-  - first:
-      213: 4871343072743259337
-    second: TrapTrigger_21
-  - first:
-      213: 4670075324275238865
-    second: TrapTrigger_22
-  - first:
-      213: -1169729713648314381
-    second: TrapTrigger_23
-  - first:
-      213: -732393166902297858
-    second: TrapTrigger_24
-  - first:
-      213: -724123382070012044
-    second: TrapTrigger_25
-  - first:
-      213: -6051242243859113498
-    second: TrapTrigger_26
-  - first:
-      213: 7926695481258395191
-    second: TrapTrigger_27
-  - first:
-      213: 7747994724306782564
-    second: TrapTrigger_28
-  - first:
-      213: 3342818948138862500
-    second: TrapTrigger_29
-  - first:
-      213: 1793518368898031176
-    second: TrapTrigger_30
-  - first:
-      213: 359598873010076918
-    second: TrapTrigger_31
-  - first:
-      213: -5733255984185650330
-    second: TrapTrigger_32
-  - first:
-      213: -808128066213988573
-    second: TrapTrigger_33
-  - first:
-      213: 1649168269573848093
-    second: TrapTrigger_34
-  - first:
-      213: 7610202114079443753
-    second: TrapTrigger_35
-  - first:
-      213: -2417167898687564132
-    second: TrapTrigger_36
-  - first:
-      213: 4794884483347354882
-    second: TrapTrigger_37
-  - first:
-      213: 2349519710092045420
-    second: TrapTrigger_38
-  - first:
-      213: 2359479213418505222
-    second: TrapTrigger_39
-  - first:
-      213: 3754557501225503115
-    second: TrapTrigger_40
-  - first:
-      213: -6620982957271111198
-    second: TrapTrigger_41
-  - first:
-      213: 5313987622097517453
-    second: TrapTrigger_42
-  - first:
-      213: 8698641138400727157
-    second: TrapTrigger_43
-  - first:
-      213: -3728522548986605392
-    second: TrapTrigger_44
-  - first:
-      213: -1261574908418279923
-    second: TrapTrigger_45
-  - first:
-      213: 5510104275010213785
-    second: TrapTrigger_46
-  - first:
-      213: 3730013212150506876
-    second: TrapTrigger_47
-  - first:
-      213: -8396595355704089650
-    second: TrapTrigger_48
-  - first:
-      213: -8645893766816087035
-    second: TrapTrigger_49
-  - first:
-      213: 307698625463172639
-    second: TrapTrigger_50
-  - first:
-      213: -1622458458529060706
-    second: TrapTrigger_51
-  - first:
-      213: 8891673960136721863
-    second: TrapTrigger_52
-  - first:
-      213: -6231256120815496559
-    second: TrapTrigger_53
-  - first:
-      213: 3796106703681998822
-    second: TrapTrigger_54
-  - first:
-      213: 1055470043462440930
-    second: TrapTrigger_55
-  - first:
-      213: -3318095558937821682
-    second: TrapTrigger_56
-  - first:
-      213: 574074941211931303
-    second: TrapTrigger_57
-  - first:
-      213: 2254243826441347076
-    second: TrapTrigger_58
-  - first:
-      213: 3491617207436973904
-    second: TrapTrigger_59
-  - first:
-      213: -294367675236616313
-    second: TrapTrigger_60
-  - first:
-      213: -8444567062589907262
-    second: TrapTrigger_61
-  - first:
-      213: -6022568647539937011
-    second: TrapTrigger_62
-  - first:
-      213: -7136529378201930510
-    second: TrapTrigger_63
-  - first:
-      213: -5301331271494361974
-    second: TrapTrigger_64
-  - first:
-      213: -5207957306997771324
-    second: TrapTrigger_65
-  - first:
-      213: 4157915332162799900
-    second: TrapTrigger_66
-  - first:
-      213: -5258532008832560003
-    second: TrapTrigger_67
-  - first:
-      213: -8732039984783326385
-    second: TrapTrigger_68
-  - first:
-      213: 4133372997132865899
-    second: TrapTrigger_69
-  - first:
-      213: 7902810204153718897
-    second: TrapTrigger_70
-  - first:
-      213: 6989277153554659728
-    second: TrapTrigger_71
-  - first:
-      213: -5058567829936239316
-    second: TrapTrigger_72
-  - first:
-      213: 2722249187139519286
-    second: TrapTrigger_73
-  - first:
-      213: 302682359110586144
-    second: TrapTrigger_74
-  - first:
-      213: -2556609376843622830
-    second: TrapTrigger_75
-  - first:
-      213: 6162479636249180202
-    second: TrapTrigger_76
-  - first:
-      213: 7564028533826571589
-    second: TrapTrigger_77
-  - first:
-      213: 176679731574195019
-    second: TrapTrigger_78
-  - first:
-      213: 2387048482837344275
-    second: TrapTrigger_79
-  - first:
-      213: 3490432774591878077
-    second: TrapTrigger_80
-  - first:
-      213: 199437212342555094
-    second: TrapTrigger_81
-  - first:
-      213: -2746605463890625706
-    second: TrapTrigger_82
-  - first:
-      213: -6256834264859815079
-    second: TrapTrigger_83
-  - first:
-      213: 4852171375488407167
-    second: TrapTrigger_84
-  - first:
-      213: 7830115088344558596
-    second: TrapTrigger_85
-  - first:
-      213: 3929499779825178664
-    second: TrapTrigger_86
-  - first:
-      213: -443962805203154504
-    second: TrapTrigger_87
-  - first:
-      213: -2863622845405940675
-    second: TrapTrigger_88
-  - first:
-      213: -31918688989656979
-    second: TrapTrigger_89
-  - first:
-      213: 477158097584523596
-    second: TrapTrigger_90
-  - first:
-      213: -5213760926819218712
-    second: TrapTrigger_91
-  - first:
-      213: 8038416496106354086
-    second: TrapTrigger_92
-  - first:
-      213: 7711488405980818723
-    second: TrapTrigger_93
-  - first:
-      213: 1905465002437360679
-    second: TrapTrigger_94
-  - first:
-      213: -758373243793480904
-    second: TrapTrigger_95
-  - first:
-      213: -5645407255968590921
-    second: TrapTrigger_96
-  - first:
-      213: 8693506543014173455
-    second: TrapTrigger_97
-  - first:
-      213: -5260106418500901826
-    second: TrapTrigger_98
-  - first:
-      213: 3830821164969641064
-    second: TrapTrigger_99
-  - first:
-      213: 2923223236892573907
-    second: TrapTrigger_100
-  - first:
-      213: 6136347651813058801
-    second: TrapTrigger_101
-  - first:
-      213: 7994912812646272635
-    second: TrapTrigger_102
-  - first:
-      213: 2652578661958385765
-    second: TrapTrigger_103
+      213: 8924242347078257018
+    second: traps_pixel_2_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -360,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -409,13 +130,79 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TrapTrigger_0
+      name: traps_pixel_2_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 3
+        y: 101
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42383ca9cac3757b0800000000000000
+      internalID: -5235649329766366428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: traps_pixel_2_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 101
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d07b1d4c95d866e20800000000000000
+      internalID: 3343515190062855949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: traps_pixel_2_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 101
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2672ac0b90bf6450800000000000000
+      internalID: 6084275801579222575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: traps_pixel_2_3
+      rect:
+        serializedVersion: 2
+        x: 3
         y: 69
-        width: 89
-        height: 54
+        width: 27
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,86 +211,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 12fee08ab80daf650800000000000000
-      internalID: 6267551129678049057
+      spriteID: ffce1eca7c96bfc70800000000000000
+      internalID: 9005908186177334527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TrapTrigger_1
+      name: traps_pixel_2_4
       rect:
         serializedVersion: 2
-        x: 36
-        y: 86
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17bdb9bb5bb6b2900800000000000000
-      internalID: 660740198620715889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_2
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 81
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 62b269f334983d970800000000000000
-      internalID: 8778511020597848870
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_3
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 75
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ea012d0a36386e40800000000000000
-      internalID: 5649825355492559592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_4
-      rect:
-        serializedVersion: 2
-        x: 36
+        x: 35
         y: 69
-        width: 7
-        height: 6
+        width: 27
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -512,86 +233,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: edc86324036ea3320800000000000000
-      internalID: 2538594434920385758
+      spriteID: 751a3ffa3b5ed9fe0800000000000000
+      internalID: -1180534967387315881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TrapTrigger_5
+      name: traps_pixel_2_5
       rect:
         serializedVersion: 2
-        x: 42
-        y: 86
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8066be35d30c6be30800000000000000
-      internalID: 4519010645746345480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_6
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 81
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 19fc1f6fa2c458140800000000000000
-      internalID: 4721263531783212945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_7
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 75
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1c36b83020d330680800000000000000
-      internalID: -8790114968838380607
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_8
-      rect:
-        serializedVersion: 2
-        x: 42
+        x: 67
         y: 69
-        width: 7
-        height: 6
+        width: 27
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -600,1076 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3592f5a194bb68e90800000000000000
-      internalID: -7023720646188258989
+      spriteID: ddc403b54c2604900800000000000000
+      internalID: 666641340333837533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TrapTrigger_9
+      name: traps_pixel_2_6
       rect:
         serializedVersion: 2
-        x: 48
-        y: 86
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c8a6cb7a9d7543ab0800000000000000
-      internalID: -5029298291532338548
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_10
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 81
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f57884f598d36e6d0800000000000000
-      internalID: -2961612044731119777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_11
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 75
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3448151588211c8c0800000000000000
-      internalID: -3980880218929658813
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_12
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 69
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c4d35661ad287d80800000000000000
-      internalID: -8252796145926679353
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_13
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 86
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ac7bb62070eadc0d0800000000000000
-      internalID: -3400870798466238518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_14
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 81
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9745e9d9c708f020800000000000000
-      internalID: 2375657366963439517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_15
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 75
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aa3f0c6e09460bd80800000000000000
-      internalID: -8236973144951163990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_16
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 69
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 301369f0560060a50800000000000000
-      internalID: 6486872747326976259
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_17
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 86
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 28d9f18e130ff1960800000000000000
-      internalID: 7575037195398913410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_18
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 81
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5c83c5bd8bb90d1b0800000000000000
-      internalID: -5633831915583948603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_19
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 75
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dd9a388c3211fcd00800000000000000
-      internalID: 995032888057768413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_20
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 69
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ddd5282d0c813140800000000000000
-      internalID: 4697689874460171737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_21
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 86
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ccfbe517bc7a9340800000000000000
-      internalID: 4871343072743259337
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_22
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 81
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1d72eb9a3c07fc040800000000000000
-      internalID: 4670075324275238865
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_23
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 75
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f7d5ced50944cfe0800000000000000
-      internalID: -1169729713648314381
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_24
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 69
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: efa7dda8b4406d5f0800000000000000
-      internalID: -732393166902297858
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_25
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 86
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 477992ede9563f5f0800000000000000
-      internalID: -724123382070012044
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_26
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 81
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6e990f47d3ba50ca0800000000000000
-      internalID: -6051242243859113498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_27
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 75
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 736c913fa87410e60800000000000000
-      internalID: 7926695481258395191
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_28
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 69
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 46908efa628668b60800000000000000
-      internalID: 7747994724306782564
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_29
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 81
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4a703405f14146e20800000000000000
-      internalID: 3342818948138862500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_30
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 75
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 84e1e4c347bd3e810800000000000000
-      internalID: 1793518368898031176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_31
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 69
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6fc756f054d8df400800000000000000
-      internalID: 359598873010076918
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_32
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 54
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6635b38fe026f60b0800000000000000
-      internalID: -5733255984185650330
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_33
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 49
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 327ba403ec3f8c4f0800000000000000
-      internalID: -808128066213988573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_34
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 54
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d1c7bc2bdc503e610800000000000000
-      internalID: 1649168269573848093
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_35
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 49
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 92bc1ae808edc9960800000000000000
-      internalID: 7610202114079443753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_36
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 54
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c9610445a9e747ed0800000000000000
-      internalID: -2417167898687564132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_37
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 49
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 20593f0880ada8240800000000000000
-      internalID: 4794884483347354882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_38
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 54
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c6ca0d06abb2b9020800000000000000
-      internalID: 2349519710092045420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_39
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 49
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6046ab2f7dd8eb020800000000000000
-      internalID: 2359479213418505222
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_40
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 54
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b890355a72eda1430800000000000000
-      internalID: 3754557501225503115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_41
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 49
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2e9a0ff641b8d14a0800000000000000
-      internalID: -6620982957271111198
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_42
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 54
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d8bf1fb66931fb940800000000000000
-      internalID: 5313987622097517453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_43
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 49
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 57099fa2708c7b870800000000000000
-      internalID: 8698641138400727157
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_44
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 54
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0b09e9a0f70a14cc0800000000000000
-      internalID: -3728522548986605392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_45
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 49
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d06be2e0e4cfd7ee0800000000000000
-      internalID: -1261574908418279923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_46
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 54
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9975853f4a2d77c40800000000000000
-      internalID: 5510104275010213785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_47
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 49
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c75aeb5014ba3c330800000000000000
-      internalID: 3730013212150506876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_48
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 54
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec32094d20d497b80800000000000000
-      internalID: -8396595355704089650
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_49
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 49
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 504c92f4d6d930880800000000000000
-      internalID: -8645893766816087035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_50
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 54
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f1ebb94054a254400800000000000000
-      internalID: 307698625463172639
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_51
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 49
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e982c8cc0aedb79e0800000000000000
-      internalID: -1622458458529060706
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_52
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 54
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c54a8c4b52956b70800000000000000
-      internalID: 8891673960136721863
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_53
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 49
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 192505e92912689a0800000000000000
-      internalID: -6231256120815496559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_54
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 54
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6efc1723fea7ea430800000000000000
-      internalID: 3796106703681998822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_55
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 49
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2e715a39968c5ae00800000000000000
-      internalID: 1055470043462440930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_56
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 43
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e0eb5be4ba1c3f1d0800000000000000
-      internalID: -3318095558937821682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_57
-      rect:
-        serializedVersion: 2
-        x: 4
+        x: 3
         y: 37
-        width: 7
-        height: 6
+        width: 27
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1678,42 +277,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7a2f3611e1687f700800000000000000
-      internalID: 574074941211931303
+      spriteID: 81a61c1b25c026cb0800000000000000
+      internalID: -4872318297552360936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TrapTrigger_58
+      name: traps_pixel_2_7
       rect:
         serializedVersion: 2
-        x: 10
-        y: 43
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 400672011dea84f10800000000000000
-      internalID: 2254243826441347076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_59
-      rect:
-        serializedVersion: 2
-        x: 10
+        x: 35
         y: 37
-        width: 7
-        height: 6
+        width: 27
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1722,42 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0571cecc957b47030800000000000000
-      internalID: 3491617207436973904
+      spriteID: 8fdf999d5fb6f1580800000000000000
+      internalID: -8854239638725198344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TrapTrigger_60
+      name: traps_pixel_2_8
       rect:
         serializedVersion: 2
-        x: 16
-        y: 43
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 787f924b8223aebf0800000000000000
-      internalID: -294367675236616313
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_61
-      rect:
-        serializedVersion: 2
-        x: 16
+        x: 67
         y: 37
-        width: 7
-        height: 6
+        width: 27
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1766,768 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ce5d507ffedeca80800000000000000
-      internalID: -8444567062589907262
+      spriteID: 6172edc38f4e4fd60800000000000000
+      internalID: 7923209399275759382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TrapTrigger_62
+      name: traps_pixel_2_9
       rect:
         serializedVersion: 2
-        x: 22
-        y: 43
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d013af759b98b6ca0800000000000000
-      internalID: -6022568647539937011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_63
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 37
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2f4722b6754f5fc90800000000000000
-      internalID: -7136529378201930510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_64
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 43
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a8c98e5db43ed66b0800000000000000
-      internalID: -5301331271494361974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_65
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 37
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4c37ff61c6e99b7b0800000000000000
-      internalID: -5207957306997771324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_66
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 43
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c19c6bb07f1e3b930800000000000000
-      internalID: 4157915332162799900
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_67
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 37
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d749385bff0f507b0800000000000000
-      internalID: -5258532008832560003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_68
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 43
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f438b7ee5ef81d680800000000000000
-      internalID: -8732039984783326385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_69
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 37
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b61db4267d0bc5930800000000000000
-      internalID: 4133372997132865899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_70
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 43
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1782ae1820c6cad60800000000000000
-      internalID: 7902810204153718897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_71
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 37
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 099f0665a86eef060800000000000000
-      internalID: 6989277153554659728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_72
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 43
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c2d8e603c5b5cc9b0800000000000000
-      internalID: -5058567829936239316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_73
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 37
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6330c8d663f57c520800000000000000
-      internalID: 2722249187139519286
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_74
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 43
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02f409e7008533400800000000000000
-      internalID: 302682359110586144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_75
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 37
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2569dc73159158cd0800000000000000
-      internalID: -2556609376843622830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_76
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 43
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a28f5363496858550800000000000000
-      internalID: 6162479636249180202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_77
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 37
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 54dc6a520e3d8f860800000000000000
-      internalID: 7564028533826571589
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_78
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 43
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b43cd7f9741b37200800000000000000
-      internalID: 176679731574195019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_79
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 37
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 310b721b2ff702120800000000000000
-      internalID: 2387048482837344275
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_80
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 17
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: db31ee98d12807030800000000000000
-      internalID: 3490432774591878077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_81
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 11
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d11ca4861b84c200800000000000000
-      internalID: 199437212342555094
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_82
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 17
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 65bf6aaf1e812e9d0800000000000000
-      internalID: -2746605463890625706
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_83
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 11
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 953d980e2624b29a0800000000000000
-      internalID: -6256834264859815079
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_84
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 17
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f761e497820665340800000000000000
-      internalID: 4852171375488407167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_85
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 11
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 40c2437ef282aac60800000000000000
-      internalID: 7830115088344558596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_86
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 17
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8289479fa33688630800000000000000
-      internalID: 3929499779825178664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_87
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 11
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8b9416e4e2ab6d9f0800000000000000
-      internalID: -443962805203154504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_88
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 17
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d34b2e8b13e5248d0800000000000000
-      internalID: -2863622845405940675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_89
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 11
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d6843191f1a9e8ff0800000000000000
-      internalID: -31918688989656979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_90
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 17
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c490a3cf2c43f9600800000000000000
-      internalID: 477158097584523596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_91
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 11
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ea012d8f0005a7b0800000000000000
-      internalID: -5213760926819218712
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_92
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 17
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6a53f0fb6313e8f60800000000000000
-      internalID: 8038416496106354086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_93
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 11
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32da70819d5b40b60800000000000000
-      internalID: 7711488405980818723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_94
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 17
-        width: 7
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 72cb73af252917a10800000000000000
-      internalID: 1905465002437360679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_95
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 11
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 83367848d87b975f0800000000000000
-      internalID: -758373243793480904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_96
-      rect:
-        serializedVersion: 2
-        x: 4
+        x: 3
         y: 5
-        width: 7
-        height: 7
+        width: 27
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2536,20 +343,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b35497e20c77a1b0800000000000000
-      internalID: -5645407255968590921
+      spriteID: 61ad3985e4ceef9f0800000000000000
+      internalID: -432648692943300074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TrapTrigger_97
+      name: traps_pixel_2_10
       rect:
         serializedVersion: 2
-        x: 10
+        x: 35
         y: 5
-        width: 7
-        height: 7
+        width: 27
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2558,140 +365,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f0bd4e4042a85a870800000000000000
-      internalID: 8693506543014173455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_98
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 5
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e346084e4195007b0800000000000000
-      internalID: -5260106418500901826
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_99
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 5
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 86440109d8fc92530800000000000000
-      internalID: 3830821164969641064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_100
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 5
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3d0462acb00619820800000000000000
-      internalID: 2923223236892573907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_101
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 5
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1f8ae947dafa82550800000000000000
-      internalID: 6136347651813058801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_102
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 5
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b7e000028d2a3fe60800000000000000
-      internalID: 7994912812646272635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TrapTrigger_103
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 5
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5608fc43d3adfc420800000000000000
-      internalID: 2652578661958385765
+      spriteID: a79091bc12749db70800000000000000
+      internalID: 8924242347078257018
       vertices: []
       indices: 
       edges: []
@@ -2709,7 +384,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      traps_pixel_2_0: -5235649329766366428
+      traps_pixel_2_1: 3343515190062855949
+      traps_pixel_2_10: 8924242347078257018
+      traps_pixel_2_2: 6084275801579222575
+      traps_pixel_2_3: 9005908186177334527
+      traps_pixel_2_4: -1180534967387315881
+      traps_pixel_2_5: 666641340333837533
+      traps_pixel_2_6: -4872318297552360936
+      traps_pixel_2_7: -8854239638725198344
+      traps_pixel_2_8: 7923209399275759382
+      traps_pixel_2_9: -432648692943300074
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

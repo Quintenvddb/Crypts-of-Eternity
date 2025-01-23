@@ -24,6 +24,7 @@ public class DungeonGenerator : MonoBehaviour
     public GameObject lootPrefab;
     public GameObject shopPrefab;
     public GameObject teleportDoorPrefab;
+    public GameObject trapPrefab;
 
     private Room mainRoom;
 
@@ -36,7 +37,8 @@ public class DungeonGenerator : MonoBehaviour
         {
             enemyPrefabs = enemyPrefabs,
             lootPrefab = lootPrefab,
-            shopPrefab = shopPrefab
+            shopPrefab = shopPrefab,
+            trapPrefab = trapPrefab
         };
     }
 
