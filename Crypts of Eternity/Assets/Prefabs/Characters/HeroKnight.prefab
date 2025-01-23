@@ -277,7 +277,7 @@ MonoBehaviour:
   slotSpacing: 8
   inventory: []
   maxInventorySize: 24
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 3085922193527949279}
   inventoryOpenAudio: {fileID: 8300000, guid: 4ef2722729de18c469d867926f156038, type: 3}
   inventoryOpenVolume: 0.25
 --- !u!114 &5180516462067648392
@@ -295,7 +295,7 @@ MonoBehaviour:
   moveSpeed: 4
   attackDamage: 5
   maxHealth: 100
-  healthSlider: {fileID: 0}
+  currentHealth: 0
   attackCollider: {fileID: 6239782115839689915}
   audioSource: {fileID: 3085922193527949279}
   attackAudio: {fileID: 8300000, guid: f598f387c44e6a249b41e60fa8cd4290, type: 3}
@@ -325,6 +325,7 @@ MonoBehaviour:
   moveLeftKey: 97
   moveRightKey: 100
   deathMenu: {fileID: 0}
+  coins: 0
 --- !u!82 &3085922193527949279
 AudioSource:
   m_ObjectHideFlags: 0
