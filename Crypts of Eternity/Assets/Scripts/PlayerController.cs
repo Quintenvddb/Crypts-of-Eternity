@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject deathMenu;
 
+    public int coins = 0;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
