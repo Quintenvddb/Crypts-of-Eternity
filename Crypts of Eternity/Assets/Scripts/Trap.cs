@@ -2,20 +2,17 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    public int damage;
-    public GameObject player;
-    private PlayerController controller;
+    public int damage = 5;
+    public float damageCooldown = 1f;
+    private float lastDamageTime = 0f;
+    private Transform player;
 
     public void Start()
     {
-        if (player != null)
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
         {
-            controller = player.GetComponent<PlayerController>();
-            Debug.Log("Controller has been found from player gameobject");
-        }
-        else
-        {
-            Debug.Log("player has not been found");
+            player = playerObject.transform;
         }
     }
 
@@ -23,20 +20,29 @@ public class Trap : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            TriggerTrap();
+            TriggerTrap(collision);
         }
     }
 
-    private void TriggerTrap()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (controller != null)
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("Trap has been triggered");
-            controller.TakeDamage(damage);
+            TriggerTrap(collision);
         }
-        else 
-        {
-            Debug.Log("Playercontroller has not been found");
-        }
+    }
+
+    private void TriggerTrap(Collider2D collision)
+    {
+            if (Time.time - lastDamageTime >= damageCooldown)
+            {
+                PlayerController player = collision.GetComponent<PlayerController>();
+                if (player != null)
+                {
+                    player.TakeDamage(damage);
+                }
+
+                lastDamageTime = Time.time;
+            }
     }
 }
