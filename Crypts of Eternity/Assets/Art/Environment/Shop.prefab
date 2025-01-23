@@ -103,11 +103,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPool: {fileID: 11400000, guid: c07d183c666f0424fadd18452a212694, type: 2}
-  displayedItems: []
+  displayedItems:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   playerCurrency: 50
-  player: {fileID: 3431980401608542853, guid: 4396334b05e0dc247871a50f22b3f67c, type: 3}
+  player: {fileID: 5180516462067648392, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
   numberOfItemsToDisplay: 3
   itemUIElements:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
 --- !u!61 &-5153762216154048807
 BoxCollider2D:

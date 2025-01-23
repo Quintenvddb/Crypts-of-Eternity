@@ -81,7 +81,6 @@ GameObject:
   - component: {fileID: 2954181336601895002}
   - component: {fileID: 8942925490989933264}
   - component: {fileID: 9117128348835321587}
-  - component: {fileID: 7050033012916296115}
   - component: {fileID: 647789808547729990}
   - component: {fileID: 5180516462067648392}
   m_Layer: 0
@@ -257,20 +256,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.73, y: 1.2}
   m_EdgeRadius: 0
---- !u!114 &7050033012916296115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6323719953710832613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02ebaf04e2abbb841b63621712b19e8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 6323719953710832613}
-  DevPlayground: {fileID: 0}
 --- !u!114 &647789808547729990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,3 +309,8 @@ MonoBehaviour:
   stepVolume: 4
   deathVolume: 4
   footstepSounds: []
+  moveUpKey: 119
+  moveDownKey: 115
+  moveLeftKey: 97
+  moveRightKey: 100
+  deathMenu: {fileID: 0}
