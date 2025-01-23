@@ -5,14 +5,24 @@ public class ShopBehavior : MonoBehaviour
 {
     public ShopItemPool itemPool;
     public List<Item> displayedItems = new List<Item>();
-    public int playerCurrency;
-    public PlayerController player;
+    private PlayerController player;
     public int numberOfItemsToDisplay = 3;
 
     public List<ShopItemUI> itemUIElements;
 
     void Start()
     {
+        // Find the player GameObject by tag and get the PlayerController component
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
+        {
+            player = playerObject.GetComponent<PlayerController>();
+        }
+        else
+        {
+            Debug.LogError("Player object not found. Make sure the player has the 'Player' tag.");
+        }
+
         DisplayRandomItems();
     }
 
@@ -20,7 +30,7 @@ public class ShopBehavior : MonoBehaviour
     {
         displayedItems.Clear();
         List<Item> poolCopy = new List<Item>(itemPool.availableItems);
-        
+
         // Filter items based on rarity
         for (int i = 0; i < numberOfItemsToDisplay; i++)
         {
@@ -34,9 +44,9 @@ public class ShopBehavior : MonoBehaviour
         UpdateUI();
     }
 
-     public void PurchaseItem(Item item)
+    public void PurchaseItem(Item item)
     {
-        if (playerCurrency > item.value)
+        if (player.coins > item.value)
         {
             //player.SpendMoney(item.value);
             AddItemToInventory(item);
@@ -48,7 +58,7 @@ public class ShopBehavior : MonoBehaviour
         }
     }
 
-        void AddItemToInventory(Item item)
+    void AddItemToInventory(Item item)
     {
         // Implement inventory addition logic
     }
@@ -72,9 +82,9 @@ public class ShopBehavior : MonoBehaviour
             {
                 return item;
             }
-    }
+        }
 
-    return null;
+        return null;
     }
 
     int GetWeightForRarity(int rarity)
