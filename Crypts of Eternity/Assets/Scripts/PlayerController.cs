@@ -15,11 +15,9 @@ public class PlayerController : MonoBehaviour
     private bool isAttacking = false;
 
     public int maxHealth = 100;
-    private int currentHealth;
+    public int currentHealth;
 
     private bool isDead = false;
-
-    public Slider healthSlider;
 
     public Collider2D attackCollider;
 
@@ -64,7 +62,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         defaultScale = transform.localScale;
-        UpdateHealthUI();
     }
 
     void Update()
@@ -218,7 +215,6 @@ public void RebindKey(string action, KeyCode newKey)
         currentHealth = Mathf.Max(currentHealth, 0);
 
         audioSource.PlayOneShot(hurtAudio, hurtVolume);
-        UpdateHealthUI();
 
         StartCoroutine(FlashRed());
 
@@ -249,7 +245,6 @@ public void RebindKey(string action, KeyCode newKey)
         currentHealth += healAmount;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
         audioSource.PlayOneShot(healAudio, healVolume);
-        UpdateHealthUI();
     }
 
     public void ApplyKnockback(Vector2 direction, float force)
@@ -257,14 +252,6 @@ public void RebindKey(string action, KeyCode newKey)
         isKnockedBack = true;
         knockbackTimer = knockbackDuration;
         knockbackVelocity = direction * force;
-    }
-
-    private void UpdateHealthUI()
-    {
-        if (healthSlider != null)
-        {
-            healthSlider.value = (float)currentHealth / maxHealth;
-        }
     }
 
     private void TriggerDeath()
