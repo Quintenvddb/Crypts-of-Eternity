@@ -5,6 +5,8 @@ public class ShopBehavior : MonoBehaviour
 {
     public ShopItemPool itemPool;
     public List<Item> displayedItems = new List<Item>();
+    public int playerCurrency;
+    public PlayerController player;
     public int numberOfItemsToDisplay = 3;
 
     public List<ShopItemUI> itemUIElements;
@@ -30,6 +32,25 @@ public class ShopBehavior : MonoBehaviour
         }
 
         UpdateUI();
+    }
+
+     public void PurchaseItem(Item item)
+    {
+        if (playerCurrency > item.value)
+        {
+            //player.SpendMoney(item.value);
+            AddItemToInventory(item);
+            Debug.Log("Purchased: " + item.itemName);
+        }
+        else
+        {
+            Debug.Log("Not enough money to purchase: " + item.itemName);
+        }
+    }
+
+        void AddItemToInventory(Item item)
+    {
+        // Implement inventory addition logic
     }
 
     Item GetRandomItemBasedOnRarity(List<Item> pool)
