@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ShopTile : MonoBehaviour
 {
-    public GameObject shopUI; 
+    public GameObject shopUI;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {

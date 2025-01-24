@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2990907824945081083}
   - component: {fileID: 4095060593158122200}
-  - component: {fileID: 3460065050604742887}
   - component: {fileID: -5153762216154048807}
   - component: {fileID: 8916274842415294214}
   m_Layer: 0
@@ -90,30 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3460065050604742887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3742164553007408510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 637e750e332f2e644a2f8fe942193e69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemPool: {fileID: 11400000, guid: c07d183c666f0424fadd18452a212694, type: 2}
-  displayedItems:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  playerCurrency: 50
-  player: {fileID: 5180516462067648392, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
-  numberOfItemsToDisplay: 3
-  itemUIElements:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!61 &-5153762216154048807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,4 +147,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2e8ea0042d16b4692828961b0b892e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopUI: {fileID: 3069662387212935958, guid: 8b915713affd2f949a2e62a457d9008f, type: 3}
+  shopUI: {fileID: 0}

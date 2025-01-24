@@ -12,7 +12,6 @@ public class ShopBehavior : MonoBehaviour
 
     void Start()
     {
-        // Find the player GameObject by tag and get the PlayerController component
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {
@@ -21,6 +20,13 @@ public class ShopBehavior : MonoBehaviour
         else
         {
             Debug.LogError("Player object not found. Make sure the player has the 'Player' tag.");
+            return;
+        }
+
+        if (itemPool == null)
+        {
+            Debug.LogError("Item pool is not assigned. Please assign it in the Inspector.");
+            return;
         }
 
         DisplayRandomItems();
@@ -31,14 +37,17 @@ public class ShopBehavior : MonoBehaviour
         displayedItems.Clear();
         List<Item> poolCopy = new List<Item>(itemPool.availableItems);
 
-        // Filter items based on rarity
+        // Randomly select items based on rarity
         for (int i = 0; i < numberOfItemsToDisplay; i++)
         {
             if (poolCopy.Count == 0) break;
 
             Item randomItem = GetRandomItemBasedOnRarity(poolCopy);
-            displayedItems.Add(randomItem);
-            poolCopy.Remove(randomItem);
+            if (randomItem != null)
+            {
+                displayedItems.Add(randomItem);
+                poolCopy.Remove(randomItem);
+            }
         }
 
         UpdateUI();
@@ -46,7 +55,13 @@ public class ShopBehavior : MonoBehaviour
 
     public void PurchaseItem(Item item)
     {
-        if (player.coins > item.value)
+        if (player == null)
+        {
+            Debug.LogError("Player is not assigned. Cannot purchase item.");
+            return;
+        }
+
+        if (player.coins >= item.value)
         {
             //player.SpendMoney(item.value);
             AddItemToInventory(item);
@@ -60,12 +75,13 @@ public class ShopBehavior : MonoBehaviour
 
     void AddItemToInventory(Item item)
     {
-        // Implement inventory addition logic
+        // Implement inventory addition logic here
+        Debug.Log("Added " + item.itemName + " to inventory.");
     }
 
     Item GetRandomItemBasedOnRarity(List<Item> pool)
     {
-        // Weighting logic based on rarity
+        // Calculate the total weight based on item rarity
         int totalWeight = 0;
         foreach (Item item in pool)
         {
