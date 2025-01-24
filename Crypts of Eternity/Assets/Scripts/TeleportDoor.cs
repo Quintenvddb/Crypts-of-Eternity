@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;  // Include for Text references (use TMPro if you're using TextMeshPro)
 
 public class TeleportDoor : MonoBehaviour
 {
@@ -14,9 +15,14 @@ public class TeleportDoor : MonoBehaviour
     private bool playerInBounds = false; // Tracks if the player is still in bounds
     private Vector3 originalCircleScale; // Original scale of the circle
     private bool isTeleporting = false; // Tracks whether teleportation is currently happening
+    private PlayerController playerController; // Declare the reference
+    // Pop-up UI references
+    public GameObject NoKeyPopup;  // Reference to the pop-up panel
+    private float popUpDuration = 3f; // How long to show the pop-up
 
     private void Start()
     {
+        playerController = Object.FindFirstObjectByType<PlayerController>(); // Find the PlayerController at runtime
         if (circle != null)
         {
             originalCircleScale = circle.transform.localScale; // Store the original scale of the circle
@@ -31,14 +37,39 @@ public class TeleportDoor : MonoBehaviour
     }
 
     // Trigger the teleport process when the player enters the door's area
-    private void OnTriggerEnter2D(Collider2D other)
+    private IEnumerator OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(playerTag))
         {
             playerInBounds = true; // Mark the player as inside bounds
-            StartAnimationAndSound(); // Start the circle animation and sound
-            teleportCoroutine = StartCoroutine(TeleportAfterDelay(other.gameObject, 3f));
+            // Check if the player has the BossRoomKey
+            if (!playerController.GetComponent<InventoryManager>().HasItem("BossRoomKey"))
+            {
+                Debug.Log("Player does not have the BossRoomKey. Teleportation canceled.");
+                ShowPopUp(); // Show the pop-up message
+                yield break; // Exit the coroutine
+            }
+            else
+            {
+                StartAnimationAndSound(); // Start the circle animation and sound
+                teleportCoroutine = StartCoroutine(TeleportAfterDelay(other.gameObject, 3f));
+            }
         }
+    }
+
+    // Show the pop-up with a message
+    private void ShowPopUp()
+    {
+        NoKeyPopup.SetActive(true); // Show the pop-up panel
+        // Start coroutine to hide the pop-up after a set duration
+        StartCoroutine(HidePopUpAfterDelay());
+    }
+
+    // Coroutine to hide the pop-up after a set duration
+    private IEnumerator HidePopUpAfterDelay()
+    {
+        yield return new WaitForSeconds(popUpDuration);
+        NoKeyPopup.SetActive(false); // Hide the pop-up panel
     }
 
     // Stop the teleport process if the player exits the door's area
@@ -63,7 +94,7 @@ public class TeleportDoor : MonoBehaviour
                     circleCoroutine = null;
                 }
                 ResetCircle();
-            }       
+            }
         }
     }
 
@@ -88,7 +119,6 @@ public class TeleportDoor : MonoBehaviour
             Debug.Log("Player moved out of the door's area. Teleportation not performed.");
         }
     }
-
 
     // Start the expanding animation and play the sound
     private void StartAnimationAndSound()
