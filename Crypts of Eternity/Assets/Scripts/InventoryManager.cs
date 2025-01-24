@@ -19,7 +19,7 @@ public class InventoryManager : MonoBehaviour
     public int maxInventorySize = 24;
 
     private Item[] inventoryItems;
-    
+
     public AudioSource audioSource;
     public AudioClip inventoryOpenAudio;
     public float inventoryOpenVolume = 0.25f;
@@ -75,6 +75,20 @@ public class InventoryManager : MonoBehaviour
         UpdateSlot(fromIndex);
         UpdateSlot(toIndex);
     }
+
+    public bool HasItem(string itemName)
+    {
+        foreach (Item item in inventoryItems)
+        {
+            if (item != null && item.itemName == itemName) // Compare the itemName field
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 
     private void UpdateSlot(int slotIndex)
     {

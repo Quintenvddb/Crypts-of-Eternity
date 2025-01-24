@@ -26,6 +26,7 @@ public class DungeonGenerator : MonoBehaviour
     public GameObject teleportDoorPrefab;
     public GameObject trapPrefab;
     public GameObject shopUI;
+    public GameObject NoKeyPopup;
 
     private Room mainRoom;
 
@@ -55,7 +56,7 @@ public class DungeonGenerator : MonoBehaviour
         // Generate the dungeon rooms
         roomGenerator.GenerateRooms(maxRooms, minRoomSize, maxRoomSize);
         Debug.Log($"Rooms Generated: {roomGenerator.Rooms.Count}");
-        
+
         // Create HallwayGenerator with the mainRoom
         hallwayGenerator = new HallwayGenerator(grid, mainRoom);
 
@@ -98,49 +99,57 @@ public class DungeonGenerator : MonoBehaviour
     }
 
     void GenerateBossRoom(int startX, int startY, int endX, int endY)
-{
-    // Expand the grid to ensure enough space for the boss room
-    ExpandGrid(60, 0);
-
-    int gridCenterX = gridWidth / 2;
-    int gridCenterY = gridHeight / 2;
-
-    // Generate the boss room at a fixed position relative to the dungeon
-    for (int x = startX; x <= endX; x++)
     {
-        for (int y = startY; y <= endY; y++)
-        {
-            int gridX = x + gridCenterX; // Offset by center
-            int gridY = y + gridCenterY;
+        // Expand the grid to ensure enough space for the boss room
+        ExpandGrid(60, 0);
 
-            if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
+        int gridCenterX = gridWidth / 2;
+        int gridCenterY = gridHeight / 2;
+
+        // Generate the boss room at a fixed position relative to the dungeon
+        for (int x = startX; x <= endX; x++)
+        {
+            for (int y = startY; y <= endY; y++)
             {
-                grid[gridX, gridY] = 1; // Mark as floor tile
-            }
-            else
-            {
-                Debug.LogWarning($"Boss room tile ({gridX}, {gridY}) is outside the grid bounds.");
+                int gridX = x + gridCenterX; // Offset by center
+                int gridY = y + gridCenterY;
+
+                if (gridX >= 0 && gridX < gridWidth && gridY >= 0 && gridY < gridHeight)
+                {
+                    grid[gridX, gridY] = 1; // Mark as floor tile
+                }
+                else
+                {
+                    Debug.LogWarning($"Boss room tile ({gridX}, {gridY}) is outside the grid bounds.");
+                }
             }
         }
+
+        // Place the teleport door leading to the boss room
+        PlaceTeleportDoor(new Vector3(3, 0, -8));
     }
 
-    // Place the teleport door leading to the boss room
-    PlaceTeleportDoor(new Vector3(10, 8, -10)); // Adjust as needed
-}
-
-void PlaceTeleportDoor(Vector3 doorWorldPosition)
-{
-    // Ensure the door prefab is instantiated at the correct position
-    GameObject door = Instantiate(teleportDoorPrefab, doorWorldPosition, Quaternion.identity);
-
-    // Set the target position for the teleport to the center of the boss room
-    TeleportDoor teleportDoor = door.GetComponent<TeleportDoor>();
-    if (teleportDoor != null)
+    void PlaceTeleportDoor(Vector3 doorWorldPosition)
     {
-        teleportDoor.SetTargetPosition(new Vector3(80, 0, -5));
-        Debug.Log("Teleport Door target set for Boss Room.");
+        // Instantiate the teleport door
+        GameObject door = Instantiate(teleportDoorPrefab, doorWorldPosition, Quaternion.identity);
+
+        // Get the TeleportDoor component from the instantiated object
+        TeleportDoor teleportDoor = door.GetComponent<TeleportDoor>();
+        if (teleportDoor != null)
+        {
+            // Assign the NoKeyPopup instance
+            teleportDoor.NoKeyPopup = NoKeyPopup;
+
+            // Set the target position for teleportation
+            teleportDoor.SetTargetPosition(new Vector3(80, 0, -5));
+            Debug.Log("Teleport Door target set for Boss Room.");
+        }
+        else
+        {
+            Debug.LogWarning("TeleportDoor component not found on the prefab.");
+        }
     }
-}
 
     void ExpandGrid(int expandWidth, int expandHeight)
     {
