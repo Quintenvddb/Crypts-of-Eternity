@@ -6,7 +6,7 @@ public class RoomGenerator
     private int[,] grid;
     private int gridWidth, gridHeight;
     public List<Room> Rooms { get; private set; }
-    
+
     // Store spawned objects
     public List<GameObject> spawnedObjects { get; private set; } = new List<GameObject>();
 
@@ -67,10 +67,10 @@ public class RoomGenerator
             }
 
             // Check if the room overlaps any existing room with a buffer of 7 tiles
-            if (!Rooms.Exists(r => 
-                newRoom.x < r.x + r.width + 7 && 
-                newRoom.x + newRoom.width + 7 > r.x && 
-                newRoom.y < r.y + r.height + 7 && 
+            if (!Rooms.Exists(r =>
+                newRoom.x < r.x + r.width + 7 &&
+                newRoom.x + newRoom.width + 7 > r.x &&
+                newRoom.y < r.y + r.height + 7 &&
                 newRoom.y + newRoom.height + 7 > r.y))
             {
                 Rooms.Add(newRoom);
@@ -89,7 +89,7 @@ public class RoomGenerator
 
         // Ensure minimum counts are met
         EnsureMinimumCounts();
-        
+
         // Debug the totals after all rooms are generated
         Debug.Log($"Total Enemies Spawned: {enemyCount}");
         Debug.Log($"Total Loot Spawned: {lootCount}");
@@ -106,7 +106,7 @@ public class RoomGenerator
         {
             // Pick a random enemy prefab from the list
             GameObject selectedEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
-    
+
             // Spawn the selected enemy
             SpawnInRandomRoom(selectedEnemyPrefab, enemyParent); // Call SpawnRandomEnemy with dummy values for coordinates
             enemyCount++;
@@ -162,9 +162,9 @@ public class RoomGenerator
             {
                 GameObject enemy = SpawnRandomEnemy(roomStartX, roomStartY, roomWidth, roomHeight);
                 enemyCount++;
-                spawnedObjects.Add(enemy); 
+                spawnedObjects.Add(enemy);
             }
-            
+
         }
 
         // 40% chance for loot
@@ -180,7 +180,7 @@ public class RoomGenerator
                 {
                     GameObject enemy = SpawnRandomEnemy(roomStartX, roomStartY, roomWidth, roomHeight);
                     enemyCount++;
-                    spawnedObjects.Add(enemy); 
+                    spawnedObjects.Add(enemy);
                 }
             }
         }
@@ -198,7 +198,7 @@ public class RoomGenerator
     {
         // Pick a random enemy prefab from the list
         GameObject selectedEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
-    
+
         // Spawn the selected enemy
         return SpawnPrefab(selectedEnemyPrefab, roomStartX, roomStartY, roomWidth, roomHeight, enemyParent);
     }
@@ -217,15 +217,15 @@ public class RoomGenerator
             {
                 bool validSpawn = true;
 
+                // Check a 3x3 area around the spawn location
                 for (int offsetX = -1; offsetX <= 1; offsetX++)
                 {
                     for (int offsetY = -1; offsetY <= 1; offsetY++)
                     {
-                        if (offsetX == 0 && offsetY == 0) continue;
-
                         int checkX = spawnX + offsetX;
                         int checkY = spawnY + offsetY;
 
+                        // Ensure the check stays within the bounds of the room
                         if (checkX >= roomStartX && checkX < roomStartX + roomWidth &&
                             checkY >= roomStartY && checkY < roomStartY + roomHeight)
                         {
@@ -241,9 +241,11 @@ public class RoomGenerator
                             break;
                         }
                     }
+
                     if (!validSpawn) break;
                 }
 
+                // If the spawn location is valid, instantiate the prefab
                 if (validSpawn)
                 {
                     float worldPosX = spawnX - gridWidth / 2f;
@@ -258,4 +260,5 @@ public class RoomGenerator
 
         return spawnedObject;
     }
+
 }
