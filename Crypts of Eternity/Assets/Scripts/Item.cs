@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public abstract class Item : MonoBehaviour
+public class Item : MonoBehaviour
 {
     public string itemName;
     public Sprite icon;
