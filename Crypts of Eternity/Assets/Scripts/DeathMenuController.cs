@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DeathMenuController : MonoBehaviour
 {
@@ -29,7 +30,9 @@ public class DeathMenuController : MonoBehaviour
 
     void RestartGame()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         deathMenu.SetActive(false);
         Time.timeScale = 1;
+        
     }
 }
