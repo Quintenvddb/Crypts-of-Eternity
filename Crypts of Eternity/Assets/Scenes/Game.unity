@@ -3292,6 +3292,7 @@ MonoBehaviour:
   shopPrefab: {fileID: 3742164553007408510, guid: 32f3f8d594dee2247b6589734e9e259a, type: 3}
   teleportDoorPrefab: {fileID: 5289858651078758115, guid: cce524a36da459b4c88660d34e758763, type: 3}
   trapPrefab: {fileID: 5043329216499695214, guid: e99491928ddb4bc44806d8641993e5e6, type: 3}
+  shopUI: {fileID: 1950249268}
 --- !u!4 &809774870
 Transform:
   m_ObjectHideFlags: 0
@@ -8337,7 +8338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1950249269
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8419,7 +8420,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1950249273
 Canvas:
   m_ObjectHideFlags: 0

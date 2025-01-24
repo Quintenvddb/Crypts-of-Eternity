@@ -25,6 +25,7 @@ public class DungeonGenerator : MonoBehaviour
     public GameObject shopPrefab;
     public GameObject teleportDoorPrefab;
     public GameObject trapPrefab;
+    public GameObject shopUI;
 
     private Room mainRoom;
 
@@ -40,6 +41,7 @@ public class DungeonGenerator : MonoBehaviour
             shopPrefab = shopPrefab,
             trapPrefab = trapPrefab
         };
+        roomGenerator.shopUI = shopUI;
     }
 
     void Start()
