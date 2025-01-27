@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopTile : MonoBehaviour
 {
@@ -15,12 +16,25 @@ public class ShopTile : MonoBehaviour
     private void OpenShop()
     {
         shopUI.SetActive(true);
+        Debug.Log("Shop has been opened");
         Time.timeScale = 0;
     }
 
     public void CloseShop()
     {
-        shopUI.SetActive(false);
-        Time.timeScale = 1;
+        if (shopUI == null)
+    {
+        Debug.LogError("shopUI is not assigned in the Inspector!");
+        return;
+    }
+
+    shopUI.SetActive(false);
+    foreach (Transform child in shopUI.transform)
+    {
+        child.gameObject.SetActive(false);
+    }
+
+    Debug.Log("Shop has been closed");
+    Time.timeScale = 1;
     }
 }

@@ -7,7 +7,6 @@ public class ShopBehavior : MonoBehaviour
     public List<Item> displayedItems = new List<Item>();
     private PlayerController player;
     public int numberOfItemsToDisplay = 3;
-
     public List<ShopItemUI> itemUIElements;
 
     void Start()

@@ -17,7 +17,7 @@ public class ShopItemUI : MonoBehaviour
 
         itemNameText.text = item.itemName;
         itemIconImage.sprite = item.icon;
-        itemPriceText.text = item.value.ToString();
+        itemPriceText.text = '$' + item.value.ToString();
 
         purchaseButton.onClick.RemoveAllListeners();
         purchaseButton.onClick.AddListener(() => shop.PurchaseItem(item));
