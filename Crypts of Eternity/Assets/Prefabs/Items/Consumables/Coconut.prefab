@@ -101,12 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0d6a9515739f84e881570e2008f1ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 3
   itemName: Coconut
   icon: {fileID: -7377819553374844296, guid: 7bfd56392dc1ec04cb2b3c108aaf56bf, type: 3}
   rarity: 25
   description: 
   value: 15
   itemPrefab: {fileID: 5287067110980331293}
+  item: {fileID: 0}
   restoreAmount: 25
   effect: 
 --- !u!61 &-2986764935097943723

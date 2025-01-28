@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170d99f586ce8bc4c85ae8d6fb96e99f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 2
   itemName: Amulet of Defence
   icon: {fileID: 1398635856, guid: 4c03e3ab908d89e43baff61bc4ca76cf, type: 3}
   rarity: 5

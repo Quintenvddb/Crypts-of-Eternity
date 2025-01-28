@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754a8a011a46b3848a2ae7114276deb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 4
   itemName: BossRoomKey
   icon: {fileID: 8294153067866525139, guid: 8badc88a115f2814d98ab9b1c15775e5, type: 3}
   rarity: 0

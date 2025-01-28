@@ -101,12 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f137da53c2074174e83681cb5a8c0b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 1
   itemName: Royal Gown
   icon: {fileID: 6482956576948116751, guid: 4bf48d4dd85c969418ded7cd14dd1cc3, type: 3}
   rarity: 1
   description: 
   value: 1000
   itemPrefab: {fileID: 8260949912814944834}
+  item: {fileID: 0}
   defense: -50
 --- !u!61 &4208436842563260878
 BoxCollider2D:

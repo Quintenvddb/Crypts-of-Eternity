@@ -101,12 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f137da53c2074174e83681cb5a8c0b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 1
   itemName: Adamantium Platebody
   icon: {fileID: 4411648087972103025, guid: ac6f68bf07badfb45a86f48629d42c0b, type: 3}
   rarity: 2
   description: 
   value: 750
   itemPrefab: {fileID: 8039014538911479557}
+  item: {fileID: 0}
   defense: 30
 --- !u!61 &6005425580964114596
 BoxCollider2D:

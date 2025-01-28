@@ -101,12 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170d99f586ce8bc4c85ae8d6fb96e99f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 2
   itemName: Amulet of Vigour
   icon: {fileID: 1093696024, guid: cce7b61bf5aca3a4091990307ea45673, type: 3}
   rarity: 5
   description: 
   value: 300
   itemPrefab: {fileID: 8267086134582239212}
+  item: {fileID: 0}
   effect: Even more bonus health
 --- !u!61 &7634082444908409552
 BoxCollider2D:
