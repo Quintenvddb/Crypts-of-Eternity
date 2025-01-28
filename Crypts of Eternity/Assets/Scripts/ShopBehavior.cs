@@ -30,37 +30,30 @@ public class ShopBehavior : MonoBehaviour
             return;
         }
 
-        DisplayRandomItems();
+        Item key = GetSpecificItem();
+        DisplayRandomItems(key);
     }
 
-    public void DisplayRandomItems()
+    public void DisplayRandomItems(Item key)
     {
         displayedItems.Clear();
+        displayedItems.Add(null);
+        displayedItems.Add(key);
+        displayedItems.Add(null);
         List<Item> poolCopy = new List<Item>(itemPool.availableItems);
 
         // Randomly select items based on rarity
         for (int i = 0; i < numberOfItemsToDisplay; i++)
         {
-            if (poolCopy.Count == 0) break;
-
-            Item randomItem = GetRandomItemBasedOnRarity(poolCopy);
-            if (randomItem != null)
+        if (displayedItems[i] == null && poolCopy.Count > 0)
             {
-                displayedItems.Add(randomItem);
+                Item randomItem = GetRandomItemBasedOnRarity(poolCopy);
+                displayedItems[i] = randomItem;
                 poolCopy.Remove(randomItem);
             }
         }
 
         UpdateUI();
-    }
-
-    public void OnPurchaseButtonClicked(int index)
-    {
-        if (index < displayedItems.Count)
-        {
-            Item itemToPurchase = displayedItems[index];
-            PurchaseItem(itemToPurchase);
-        }
     }
 
     public void PurchaseItem(Item item)
@@ -77,7 +70,11 @@ public class ShopBehavior : MonoBehaviour
             AddItemToInventory(item);
             Debug.Log("Purchased: " + item.itemName);
 
-            displayedItems.Remove(item);
+            int index = displayedItems.IndexOf(item);
+            if (index != -1)
+            {
+                ReplaceItemInSlot(index);
+            }
 
             UpdateUI();
         }
@@ -128,6 +125,18 @@ public class ShopBehavior : MonoBehaviour
     {
         return Mathf.Max(1, rarity * 10);
     }
+
+    public Item GetSpecificItem()
+    {
+        return itemPool.availableItems[19]; //Item number of key
+    }
+
+    private void ReplaceItemInSlot(int index)
+{
+    List<Item> poolCopy = new List<Item>(itemPool.availableItems);
+    Item randomItem = GetRandomItemBasedOnRarity(poolCopy);
+    displayedItems[index] = randomItem;
+}
 
     public void UpdateUI()
     {

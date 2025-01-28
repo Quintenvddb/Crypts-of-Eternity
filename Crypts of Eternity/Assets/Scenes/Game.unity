@@ -4511,19 +4511,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 932319178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1950249270}
-        m_TargetAssemblyTypeName: ShopBehavior, Assembly-CSharp
-        m_MethodName: OnPurchaseButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &932319178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5697,9 +5685,9 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.87169814, g: 0.1496689, b: 0.1496689, a: 1}
     m_HighlightedColor: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_PressedColor: {r: 0.8705883, g: 0.14901961, b: 0.14901961, a: 1}
+    m_SelectedColor: {r: 0.8705883, g: 0.14901961, b: 0.14901961, a: 1}
+    m_DisabledColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -6872,19 +6860,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1282481678}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1950249270}
-        m_TargetAssemblyTypeName: ShopBehavior, Assembly-CSharp
-        m_MethodName: OnPurchaseButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1282481681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7414,19 +7390,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1419278286}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1950249270}
-        m_TargetAssemblyTypeName: ShopBehavior, Assembly-CSharp
-        m_MethodName: OnPurchaseButtonClicked
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1419278286
 MonoBehaviour:
   m_ObjectHideFlags: 0
