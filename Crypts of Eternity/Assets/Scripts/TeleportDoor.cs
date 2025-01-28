@@ -6,8 +6,6 @@ public class TeleportDoor : MonoBehaviour
 {
     public Vector3 targetPosition; // Target position where the player will be teleported
     public string playerTag = "Player"; // Tag to identify the player
-    public GameObject prefabToSpawn; // Prefab to spawn when the player is teleported
-    public Vector3 spawnPosition = new Vector3(89, 0, -10); // Position to spawn the prefab
     public GameObject circle; // The expanding circle child object
     public AudioSource doorCreakSound; // AudioSource for the door creaking sound
     private Coroutine teleportCoroutine; // Reference to the teleport coroutine
@@ -20,10 +18,12 @@ public class TeleportDoor : MonoBehaviour
     public GameObject NoKeyPopup;  // Reference to the pop-up panel
     private float popUpDuration = 3f; // How long to show the pop-up
     private bool hasTeleported = false; // Tracks if the player has teleported
+    public BossFightController bossFightController; // Reference to BossFightController
 
     private void Start()
     {
         playerController = Object.FindFirstObjectByType<PlayerController>(); // Find the PlayerController at runtime
+        bossFightController = Object.FindFirstObjectByType<BossFightController>(); // Find the BossFightController at runtime
         if (circle != null)
         {
             originalCircleScale = circle.transform.localScale; // Store the original scale of the circle
@@ -118,10 +118,10 @@ public class TeleportDoor : MonoBehaviour
             hasTeleported = true; // Mark the player as having teleported
             MoveDoorAndCircle();
             TeleportPlayer(player);
+            bossFightController.SpawnBoss();
             yield return StartCoroutine(ShrinkCircle());
             yield return new WaitForSeconds(1f);
             isTeleporting = false; // End teleportation
-            SpawnBoss();
         }
         else
         {
@@ -197,20 +197,6 @@ public class TeleportDoor : MonoBehaviour
         {
             circle.transform.localScale = originalCircleScale;
             Debug.Log("Circle scale reset to original size.");
-        }
-    }
-
-    // Spawn the prefab at the specified position
-    private void SpawnBoss()
-    {
-        if (prefabToSpawn != null)
-        {
-            Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
-            Debug.Log("Prefab spawned at " + spawnPosition);
-        }
-        else
-        {
-            Debug.LogWarning("Prefab to spawn is not assigned!");
         }
     }
 }

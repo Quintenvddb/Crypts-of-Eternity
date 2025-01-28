@@ -103,13 +103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcaa1ee9af36f0a4881e925977fcb545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 400, y: 400, z: 0}
+  targetPosition: {x: 400, y: 400, z: -8}
   playerTag: Player
-  prefabToSpawn: {fileID: 5170699716074705305, guid: 6d4409189a573da478b00eb85a80b708, type: 3}
-  spawnPosition: {x: 89, y: 0, z: -5}
   circle: {fileID: 7993424113208908775}
   doorCreakSound: {fileID: 886901759775685867}
   NoKeyPopup: {fileID: 0}
+  bossFightController: {fileID: 0}
 --- !u!61 &8053273618379428680
 BoxCollider2D:
   m_ObjectHideFlags: 0

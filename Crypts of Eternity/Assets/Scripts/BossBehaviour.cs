@@ -5,12 +5,12 @@ using System.Collections.Generic;
 public class BossBehaviour : MonoBehaviour, IDamageable
 {
     private Transform player;
-    public float speed = 2.0f;
+    public float speed = 3f;
     private Vector2 currentDirection;
     private float lastUpdateTime = 0f;
     public float minUpdateInterval = 0.3f;
     private float updateInterval;
-    public int health = 500;
+    private int health = 200;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
 
@@ -61,6 +61,15 @@ public class BossBehaviour : MonoBehaviour, IDamageable
         }
 
         rb.linearVelocity = currentDirection * speed;
+
+        if (currentDirection.x < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (currentDirection.x > 0)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     public void TakeDamage(int damage)
@@ -93,7 +102,6 @@ public class BossBehaviour : MonoBehaviour, IDamageable
 
         Destroy(gameObject);
     }
-
 
     private IEnumerator FlashRed(float duration)
     {

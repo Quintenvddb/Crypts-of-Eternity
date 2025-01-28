@@ -78,6 +78,15 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
                 lastUpdateTime = Time.time;
             }
         }
+
+        if (currentDirection.x < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (currentDirection.x > 0)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     public void TakeDamage(int damage)
