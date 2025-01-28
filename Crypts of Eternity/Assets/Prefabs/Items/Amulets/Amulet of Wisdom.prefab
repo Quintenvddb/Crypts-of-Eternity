@@ -105,11 +105,11 @@ MonoBehaviour:
   itemName: Amulet of Wisdom
   icon: {fileID: 666269110, guid: 4c03e3ab908d89e43baff61bc4ca76cf, type: 3}
   rarity: 5
-  description: 
+  description: Bonus mana
   value: 300
   itemPrefab: {fileID: 895112811687260751}
   item: {fileID: 0}
-  effect: Bonus mana
+  effect: 
 --- !u!61 &2842130109973368355
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -175,7 +175,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (selectedItem != null)
         {
-            Debug.Log($"Used item: {selectedItem.itemName}");
+            UseItem(selectedItem);
         }
         optionsWindow.SetActive(false);
     }
@@ -189,6 +189,25 @@ public class InventoryManager : MonoBehaviour
         optionsWindow.SetActive(false);
     }
 
+    private void UseItem(Item item)
+    {
+        if (item is Consumable consumable)
+        {
+            ApplyConsumableEffects(consumable);
+            RemoveItemFromInventory(item);
+            Debug.Log($"Used consumable: {item.itemName}");
+        }
+    }
+
+    private void ApplyConsumableEffects(Consumable consumable)
+    {
+        if (consumable.restoreAmount > 0)
+        {
+            playerController.currentHealth += consumable.restoreAmount;
+            playerController.currentHealth = Mathf.Min(playerController.currentHealth, playerController.maxHealth);
+        }
+    }
+
     private void EquipItem(Item item)
     {
         if (item.itemType == ItemType.Weapon)
@@ -199,6 +218,7 @@ public class InventoryManager : MonoBehaviour
                 RemoveItemFromInventory(item);
                 Debug.Log($"Equipped weapon: {item.itemName}");
                 UpdateEquipmentSlot(0);
+                ApplyItemStats(item);
             }
         }
         else if (item.itemType == ItemType.Armor)
@@ -209,6 +229,7 @@ public class InventoryManager : MonoBehaviour
                 RemoveItemFromInventory(item);
                 Debug.Log($"Equipped armor: {item.itemName}");
                 UpdateEquipmentSlot(1);
+                ApplyItemStats(item);
             }
         }
         else if (item.itemType == ItemType.Amulet)
@@ -221,9 +242,31 @@ public class InventoryManager : MonoBehaviour
                     RemoveItemFromInventory(item);
                     Debug.Log($"Equipped amulet: {item.itemName} in slot {i}");
                     UpdateEquipmentSlot(i);
+                    ApplyItemStats(item);
                     return;
                 }
             }
+        }
+    }
+
+    private void ApplyItemStats(Item item)
+    {
+        PlayerController player = playerController;
+
+        if (item is Weapon weapon)
+        {
+            player.attackDamage += weapon.damage;
+            player.attackSpeed += weapon.attackSpeed;
+        }
+        else if (item is Armor armor)
+        {
+            player.maxHealth += armor.defense;
+        }
+        else if (item is Amulet amulet)
+        {
+            player.attackDamage += amulet.damage;
+            player.attackSpeed += amulet.attackSpeed;
+            player.maxHealth += amulet.defense;
         }
     }
 

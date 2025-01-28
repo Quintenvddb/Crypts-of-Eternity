@@ -105,11 +105,11 @@ MonoBehaviour:
   itemName: Amulet of Luck
   icon: {fileID: 1203483271, guid: 4c03e3ab908d89e43baff61bc4ca76cf, type: 3}
   rarity: 5
-  description: 
+  description: Bonus luck
   value: 300
   itemPrefab: {fileID: 4167105768942305651}
   item: {fileID: 0}
-  effect: Bonus luck
+  effect: 
 --- !u!61 &7151317160749936740
 BoxCollider2D:
   m_ObjectHideFlags: 0

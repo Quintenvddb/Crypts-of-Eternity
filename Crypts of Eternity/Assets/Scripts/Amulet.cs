@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Amulet : Item
 {
-    public string effect;
+    public int damage;
+    public float attackSpeed;
+    public int defense;
 
     public Amulet(string name, Sprite icon) : base(name, icon)
     {

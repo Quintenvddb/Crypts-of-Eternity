@@ -105,11 +105,13 @@ MonoBehaviour:
   itemName: Amulet of Vigour
   icon: {fileID: 1093696024, guid: cce7b61bf5aca3a4091990307ea45673, type: 3}
   rarity: 5
-  description: 
+  description: Even more bonus health
   value: 300
   itemPrefab: {fileID: 8267086134582239212}
   item: {fileID: 0}
-  effect: Even more bonus health
+  damage: 0
+  attackSpeed: 0
+  defense: 15
 --- !u!61 &7634082444908409552
 BoxCollider2D:
   m_ObjectHideFlags: 0
