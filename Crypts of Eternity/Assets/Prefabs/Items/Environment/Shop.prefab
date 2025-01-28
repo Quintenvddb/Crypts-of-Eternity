@@ -147,4 +147,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2e8ea0042d16b4692828961b0b892e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopUI: {fileID: 3742164553007408510}
+  shopUI: {fileID: 0}

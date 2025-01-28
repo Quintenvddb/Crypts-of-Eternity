@@ -15,7 +15,6 @@ public class RoomGenerator
     public GameObject lootPrefab;
     public GameObject shopPrefab;
     public GameObject trapPrefab;
-    public GameObject shopUI;
 
     // Counters for spawned objects
     private int enemyCount = 0;
@@ -192,12 +191,6 @@ public class RoomGenerator
             GameObject shop = SpawnPrefab(shopPrefab, roomStartX, roomStartY, roomWidth, roomHeight, shopParent);
             shopCount++;
             spawnedObjects.Add(shop);
-
-            ShopTile shopTile = shop.GetComponent<ShopTile>();
-            if (shopTile != null) 
-            {
-                shopTile.shopUI = shopUI;
-            }
         }
     }
 
