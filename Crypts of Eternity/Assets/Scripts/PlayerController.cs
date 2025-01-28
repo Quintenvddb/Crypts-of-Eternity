@@ -296,4 +296,10 @@ public void RebindKey(string action, KeyCode newKey)
 
         isPlayingFootstep = false;
     }
+
+    public void SpendMoney(int amount){
+        this.coins -= amount;
+
+        return;
+    }
 }

@@ -1,15 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopBehavior : MonoBehaviour
 {
     public ShopItemPool itemPool;
     public List<Item> displayedItems = new List<Item>();
     private PlayerController player;
+    public InventoryManager inventory;
     public int numberOfItemsToDisplay = 3;
     public List<ShopItemUI> itemUIElements;
 
-    void Start()
+    public void Start()
     {
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
@@ -31,7 +33,7 @@ public class ShopBehavior : MonoBehaviour
         DisplayRandomItems();
     }
 
-    void DisplayRandomItems()
+    public void DisplayRandomItems()
     {
         displayedItems.Clear();
         List<Item> poolCopy = new List<Item>(itemPool.availableItems);
@@ -52,6 +54,15 @@ public class ShopBehavior : MonoBehaviour
         UpdateUI();
     }
 
+    public void OnPurchaseButtonClicked(int index)
+    {
+        if (index < displayedItems.Count)
+        {
+            Item itemToPurchase = displayedItems[index];
+            PurchaseItem(itemToPurchase);
+        }
+    }
+
     public void PurchaseItem(Item item)
     {
         if (player == null)
@@ -62,9 +73,13 @@ public class ShopBehavior : MonoBehaviour
 
         if (player.coins >= item.value)
         {
-            //player.SpendMoney(item.value);
+            player.SpendMoney(item.value);
             AddItemToInventory(item);
             Debug.Log("Purchased: " + item.itemName);
+
+            displayedItems.Remove(item);
+
+            UpdateUI();
         }
         else
         {
@@ -72,13 +87,20 @@ public class ShopBehavior : MonoBehaviour
         }
     }
 
-    void AddItemToInventory(Item item)
+    public void AddItemToInventory(Item item)
     {
-        // Implement inventory addition logic here
-        Debug.Log("Added " + item.itemName + " to inventory.");
+        if (inventory != null)
+        {
+            inventory.AddItem(item);
+            Debug.Log("Added " + item.itemName + " to inventory.");
+        }
+        else
+        {
+            Debug.Log("Inventory not found");
+        }
     }
 
-    Item GetRandomItemBasedOnRarity(List<Item> pool)
+    public Item GetRandomItemBasedOnRarity(List<Item> pool)
     {
         // Calculate the total weight based on item rarity
         int totalWeight = 0;
@@ -102,12 +124,12 @@ public class ShopBehavior : MonoBehaviour
         return null;
     }
 
-    int GetWeightForRarity(int rarity)
+    public int GetWeightForRarity(int rarity)
     {
         return Mathf.Max(1, rarity * 10);
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
         for (int i = 0; i < itemUIElements.Count; i++)
         {

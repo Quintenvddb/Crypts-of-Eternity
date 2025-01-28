@@ -15,12 +15,6 @@ public class Item : MonoBehaviour
         itemName = name;
         this.icon = icon;
     }
-    public Item item;
-
-    private void Start()
-    {
-        item = GetComponent<Item>();
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,9 +24,9 @@ public class Item : MonoBehaviour
 
             if (inventoryManager != null)
             {
-                if (inventoryManager.AddItem(item))
+                if (inventoryManager.AddItem(this))
                 {
-                    Debug.Log($"Picked up {item.itemName}");
+                    Debug.Log($"Picked up {this.itemName}");
                     gameObject.SetActive(false);
                 }
                 else
