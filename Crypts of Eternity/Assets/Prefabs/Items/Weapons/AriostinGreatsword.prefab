@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8760752852985489920}
   - component: {fileID: 8824461093005191063}
-  - component: {fileID: -8006953124046410137}
-  - component: {fileID: 4122432800360564600}
   - component: {fileID: 5047810264498479619}
+  - component: {fileID: 4122432800360564600}
   m_Layer: 0
   m_Name: AriostinGreatsword
   m_TagString: Untagged
@@ -90,7 +89,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8006953124046410137
+--- !u!114 &5047810264498479619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,10 +98,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 7437507418307087891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f03cb34383c2e4daa6157dfd07a853, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ecc2710913edbd4492dea3b8ee405b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemToGive: {fileID: 0}
+  itemName: Greatsword
+  icon: {fileID: -2990865643518836724, guid: f739915ba1948354c9f5e9312604c52b, type: 3}
+  rarity: 3
+  description: 
+  value: 600
+  itemPrefab: {fileID: 7437507418307087891}
+  item: {fileID: 0}
+  damage: 25
+  attackSpeed: 0.4
 --- !u!61 &4122432800360564600
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,23 +156,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.92, y: 1.92}
   m_EdgeRadius: 0
---- !u!114 &5047810264498479619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7437507418307087891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ecc2710913edbd4492dea3b8ee405b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Greatsword
-  icon: {fileID: -2990865643518836724, guid: f739915ba1948354c9f5e9312604c52b, type: 3}
-  rarity: 3
-  description: 
-  value: 600
-  itemPrefab: {fileID: 7437507418307087891}
-  damage: 25
-  attackSpeed: 0.4

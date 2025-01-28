@@ -107,6 +107,7 @@ MonoBehaviour:
   description: 
   value: 300
   itemPrefab: {fileID: 3136063009342275356}
+  item: {fileID: 0}
   effect: Bonus defense
 --- !u!61 &4381118718204783465
 BoxCollider2D:

@@ -22,31 +22,15 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void UpdateSlot(Item item)
     {
         currentItem = item;
-        if (currentItem != null)
-        {
-            slotImage.sprite = currentItem.icon;
-            slotImage.color = Color.white;
-        }
-        else
-        {
-            slotImage.sprite = inventoryManager.slotTexture;
-            slotImage.color = new Color(1f, 1f, 1f, 0.95f);
-        }
+        slotImage.sprite = currentItem?.icon ?? inventoryManager.slotTexture;
+        slotImage.color = currentItem != null ? Color.white : new Color(1f, 1f, 1f, 0.95f);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (currentItem == null) return;
 
-        dragIcon = new GameObject("DragIcon");
-        Image dragImage = dragIcon.AddComponent<Image>();
-        dragImage.sprite = slotImage.sprite;
-        dragImage.raycastTarget = false;
-
-        dragIcon.transform.SetParent(canvas.transform, false);
-        dragIcon.transform.SetAsLastSibling();
-        RectTransform rectTransform = dragIcon.GetComponent<RectTransform>();
-        rectTransform.sizeDelta = slotImage.rectTransform.sizeDelta;
+        dragIcon = CreateDragIcon();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -59,16 +43,24 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (dragIcon != null)
-        {
-            Destroy(dragIcon);
-        }
+        Destroy(dragIcon);
 
-        GameObject droppedOn = eventData.pointerEnter;
-        if (droppedOn != null && droppedOn.GetComponent<InventorySlot>() != null)
+        if (eventData.pointerEnter is GameObject droppedOn && droppedOn.GetComponent<InventorySlot>() != null)
         {
             InventorySlot targetSlot = droppedOn.GetComponent<InventorySlot>();
             inventoryManager.SwapItems(slotIndex, targetSlot.slotIndex);
         }
+    }
+
+    private GameObject CreateDragIcon()
+    {
+        GameObject icon = new GameObject("DragIcon");
+        Image dragImage = icon.AddComponent<Image>();
+        dragImage.sprite = slotImage.sprite;
+        dragImage.raycastTarget = false;
+        icon.transform.SetParent(canvas.transform, false);
+        icon.transform.SetAsLastSibling();
+        icon.GetComponent<RectTransform>().sizeDelta = slotImage.rectTransform.sizeDelta;
+        return icon;
     }
 }

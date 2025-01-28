@@ -4524,6 +4524,10 @@ PrefabInstance:
       propertyPath: deathMenu
       value: 
       objectReference: {fileID: 226932939}
+    - target: {fileID: 5180516462067648392, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 1585226649}
     - target: {fileID: 6323719953710832613, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
       propertyPath: m_Name
       value: Player
@@ -8181,6 +8185,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1582495066}
   m_CullTransparentMesh: 0
+--- !u!114 &1585226649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 647789808547729990, guid: 7225c98e2fb64fe48bc6d0fd32f779be, type: 3}
+  m_PrefabInstance: {fileID: 939351937}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af300f9efbaf08a4aa60780eb5b1e76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1594793898
 GameObject:
   m_ObjectHideFlags: 0
