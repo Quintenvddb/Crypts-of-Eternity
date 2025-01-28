@@ -17,11 +17,19 @@ public class InventoryManager : MonoBehaviour
     private const int inventoryRows = 3;
     private const int inventoryColumns = 8;
 
+    public GameObject optionsWindow;
+    public Button useButton;
+    public Button equipButton;
+    private Item selectedItem;
+
     void Start()
     {
         inventoryUI.SetActive(inventoryToggled);
         InitializeInventory();
         InitializeEquipmentSlots();
+        optionsWindow.SetActive(false);
+        useButton.onClick.AddListener(OnUseItem);
+        equipButton.onClick.AddListener(OnEquipItem);
     }
 
     void Update()
@@ -151,5 +159,30 @@ public class InventoryManager : MonoBehaviour
         inventoryToggled = !inventoryToggled;
         inventoryUI.SetActive(inventoryToggled);
         playerController.moveSpeed = inventoryToggled ? 2f : 4f;
+    }
+
+    public void ShowItemOptions(Item item, Vector3 position)
+    {
+        selectedItem = item;
+        optionsWindow.SetActive(true);
+        optionsWindow.transform.position = position;
+    }
+
+    private void OnUseItem()
+    {
+        if (selectedItem != null)
+        {
+            Debug.Log($"Used item: {selectedItem.itemName}");
+        }
+        optionsWindow.SetActive(false);
+    }
+
+    private void OnEquipItem()
+    {
+        if (selectedItem != null)
+        {
+            Debug.Log($"Equipped item: {selectedItem.itemName}");
+        }
+        optionsWindow.SetActive(false);
     }
 }

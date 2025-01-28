@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public int slotIndex;
     private Image slotImage;
@@ -49,6 +49,14 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             InventorySlot targetSlot = droppedOn.GetComponent<InventorySlot>();
             inventoryManager.SwapItems(slotIndex, targetSlot.slotIndex);
+        }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right && currentItem != null)
+        {
+            inventoryManager.ShowItemOptions(currentItem, this.transform.position);
         }
     }
 
