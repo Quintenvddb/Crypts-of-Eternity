@@ -19,6 +19,7 @@ public class TeleportDoor : MonoBehaviour
     // Pop-up UI references
     public GameObject NoKeyPopup;  // Reference to the pop-up panel
     private float popUpDuration = 3f; // How long to show the pop-up
+    private bool hasTeleported = false; // Tracks if the player has teleported
 
     private void Start()
     {
@@ -41,7 +42,14 @@ public class TeleportDoor : MonoBehaviour
     {
         if (other.CompareTag(playerTag))
         {
+            if (hasTeleported)
+            {
+                Debug.Log("Player has already teleported. Teleportation denied.");
+                yield break; // Exit if the player has already teleported
+            }
+
             playerInBounds = true; // Mark the player as inside bounds
+
             // Check if the player has the BossRoomKey
             if (!playerController.GetComponent<InventoryManager>().HasItem("BossRoomKey"))
             {
@@ -107,6 +115,7 @@ public class TeleportDoor : MonoBehaviour
         if (playerInBounds)
         {
             isTeleporting = true; // Start teleportation
+            hasTeleported = true; // Mark the player as having teleported
             MoveDoorAndCircle();
             TeleportPlayer(player);
             yield return StartCoroutine(ShrinkCircle());

@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 4f;
     public int attackDamage = 5;
+    public float attackSpeed = 1f;
     private Rigidbody2D rb;
     private Vector2 movement;
     private Vector2 smoothMovement;
@@ -54,6 +55,8 @@ public class PlayerController : MonoBehaviour
     public GameObject deathMenu;
 
     public int coins = 0;
+
+    public bool IsInventoryOpen { get; set; } = false;
 
     void Start()
     {
@@ -137,6 +140,8 @@ public class PlayerController : MonoBehaviour
 
     private void HandleActions()
     {
+        if (IsInventoryOpen) return;
+
         if (Input.GetMouseButtonDown(0) && !isAttacking)
         {
             StartCoroutine(AttackCoroutine());
@@ -288,7 +293,6 @@ public class PlayerController : MonoBehaviour
         if (footstepSounds.Length > 0)
         {
             int randomIndex = Random.Range(0, footstepSounds.Length);
-            audioSource.pitch = Random.Range(0.9f, 1.1f);
             audioSource.PlayOneShot(footstepSounds[randomIndex], stepVolume);
         }
 
@@ -297,7 +301,8 @@ public class PlayerController : MonoBehaviour
         isPlayingFootstep = false;
     }
 
-    public void SpendMoney(int amount){
+    public void SpendMoney(int amount)
+    {
         this.coins -= amount;
 
         return;

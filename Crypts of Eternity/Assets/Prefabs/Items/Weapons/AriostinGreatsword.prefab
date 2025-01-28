@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecc2710913edbd4492dea3b8ee405b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 0
   itemName: Greatsword
   icon: {fileID: -2990865643518836724, guid: f739915ba1948354c9f5e9312604c52b, type: 3}
   rarity: 3

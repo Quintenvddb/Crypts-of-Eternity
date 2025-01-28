@@ -161,6 +161,7 @@ public class InventoryManager : MonoBehaviour
     {
         inventoryToggled = !inventoryToggled;
         inventoryUI.SetActive(inventoryToggled);
+        playerController.IsInventoryOpen = inventoryToggled; // Update the player's inventory state
         playerController.moveSpeed = inventoryToggled ? 2f : 4f;
     }
 
@@ -175,7 +176,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (selectedItem != null)
         {
-            Debug.Log($"Used item: {selectedItem.itemName}");
+            UseItem(selectedItem);
         }
         optionsWindow.SetActive(false);
     }
@@ -189,6 +190,28 @@ public class InventoryManager : MonoBehaviour
         optionsWindow.SetActive(false);
     }
 
+    private void UseItem(Item item)
+    {
+        if (item is Consumable consumable)
+        {
+            if (playerController.currentHealth != playerController.maxHealth)
+            {
+                ApplyConsumableEffects(consumable);
+                RemoveItemFromInventory(item);
+                Debug.Log($"Used consumable: {item.itemName}");
+            }
+        }
+    }
+
+    private void ApplyConsumableEffects(Consumable consumable)
+    {
+        if (consumable.restoreAmount > 0)
+        {
+            playerController.currentHealth += consumable.restoreAmount;
+            playerController.currentHealth = Mathf.Min(playerController.currentHealth, playerController.maxHealth);
+        }
+    }
+
     private void EquipItem(Item item)
     {
         if (item.itemType == ItemType.Weapon)
@@ -199,6 +222,7 @@ public class InventoryManager : MonoBehaviour
                 RemoveItemFromInventory(item);
                 Debug.Log($"Equipped weapon: {item.itemName}");
                 UpdateEquipmentSlot(0);
+                ApplyItemStats(item);
             }
         }
         else if (item.itemType == ItemType.Armor)
@@ -209,6 +233,7 @@ public class InventoryManager : MonoBehaviour
                 RemoveItemFromInventory(item);
                 Debug.Log($"Equipped armor: {item.itemName}");
                 UpdateEquipmentSlot(1);
+                ApplyItemStats(item);
             }
         }
         else if (item.itemType == ItemType.Amulet)
@@ -221,9 +246,29 @@ public class InventoryManager : MonoBehaviour
                     RemoveItemFromInventory(item);
                     Debug.Log($"Equipped amulet: {item.itemName} in slot {i}");
                     UpdateEquipmentSlot(i);
+                    ApplyItemStats(item);
                     return;
                 }
             }
+        }
+    }
+
+    private void ApplyItemStats(Item item)
+    {
+        if (item is Weapon weapon)
+        {
+            playerController.attackDamage += weapon.damage;
+            playerController.attackSpeed += weapon.attackSpeed;
+        }
+        else if (item is Armor armor)
+        {
+            playerController.maxHealth += armor.defense;
+        }
+        else if (item is Amulet amulet)
+        {
+            playerController.attackDamage += amulet.damage;
+            playerController.attackSpeed += amulet.attackSpeed;
+            playerController.maxHealth += amulet.defense;
         }
     }
 

@@ -105,11 +105,13 @@ MonoBehaviour:
   itemName: Amulet of Defence
   icon: {fileID: 1398635856, guid: 4c03e3ab908d89e43baff61bc4ca76cf, type: 3}
   rarity: 5
-  description: 
+  description: Bonus defense
   value: 300
   itemPrefab: {fileID: 3136063009342275356}
   item: {fileID: 0}
-  effect: Bonus defense
+  damage: 0
+  attackSpeed: 0
+  defense: 10
 --- !u!61 &4381118718204783465
 BoxCollider2D:
   m_ObjectHideFlags: 0

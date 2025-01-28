@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5289858651078758115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 146.37454, y: 106.017075, z: 0}
+  m_LocalPosition: {x: 146.37454, y: 106.017075, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -109,6 +109,7 @@ MonoBehaviour:
   spawnPosition: {x: 89, y: 0, z: -5}
   circle: {fileID: 7993424113208908775}
   doorCreakSound: {fileID: 886901759775685867}
+  NoKeyPopup: {fileID: 0}
 --- !u!61 &8053273618379428680
 BoxCollider2D:
   m_ObjectHideFlags: 0

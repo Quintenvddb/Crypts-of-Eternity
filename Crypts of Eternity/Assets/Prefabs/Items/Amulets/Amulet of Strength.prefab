@@ -105,11 +105,13 @@ MonoBehaviour:
   itemName: Amulet of Strength
   icon: {fileID: 2090787215, guid: 4c03e3ab908d89e43baff61bc4ca76cf, type: 3}
   rarity: 5
-  description: 
+  description: Bonus damage
   value: 300
   itemPrefab: {fileID: 2017292884523674146}
   item: {fileID: 0}
-  effect: Bonus damage
+  damage: 5
+  attackSpeed: 0
+  defense: 0
 --- !u!61 &1921035335169073169
 BoxCollider2D:
   m_ObjectHideFlags: 0
