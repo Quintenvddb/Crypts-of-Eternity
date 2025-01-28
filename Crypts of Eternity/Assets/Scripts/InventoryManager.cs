@@ -22,6 +22,7 @@ public class InventoryManager : MonoBehaviour
     private bool inventoryToggled;
     public Item[] inventoryItems;
     public Item[] equipmentItems;
+    public bool inventoryFull = false;
 
     void Start()
     {
@@ -58,6 +59,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
         Debug.LogWarning("Inventory is full!");
+        inventoryFull = true;
         return false;
     }
 

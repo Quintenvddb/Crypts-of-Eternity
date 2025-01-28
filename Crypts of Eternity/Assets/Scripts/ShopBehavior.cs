@@ -56,7 +56,17 @@ public class ShopBehavior : MonoBehaviour
         UpdateUI();
     }
 
-    public void PurchaseItem(Item item)
+        public void OnPurchaseButtonClicked(int index)
+    {
+        if (index >= 0 && index < displayedItems.Count)
+        {
+            Item itemToPurchase = displayedItems[index];
+            PurchaseItem(itemToPurchase, index);
+        }
+    }
+
+
+    public void PurchaseItem(Item item, int index)
     {
         if (player == null)
         {
@@ -64,23 +74,17 @@ public class ShopBehavior : MonoBehaviour
             return;
         }
 
-        if (player.coins >= item.value)
+        if (player.coins >= item.value && !inventory.inventoryFull)
         {
-            player.SpendMoney(item.value);
             AddItemToInventory(item);
             Debug.Log("Purchased: " + item.itemName);
 
-            int index = displayedItems.IndexOf(item);
-            if (index != -1)
-            {
-                ReplaceItemInSlot(index);
-            }
-
+            ReplaceItemInSlot(index);
             UpdateUI();
         }
         else
         {
-            Debug.Log("Not enough money to purchase: " + item.itemName);
+            Debug.Log("Not enough money to purchase: " + item.itemName + " or inventory is full");
         }
     }
 
@@ -88,8 +92,12 @@ public class ShopBehavior : MonoBehaviour
     {
         if (inventory != null)
         {
-            inventory.AddItem(item);
-            Debug.Log("Added " + item.itemName + " to inventory.");
+            if (!inventory.inventoryFull)
+            {
+                inventory.AddItem(item);
+                player.SpendMoney(item.value);
+                Debug.Log("Added " + item.itemName + " to inventory.");
+            }
         }
         else
         {
