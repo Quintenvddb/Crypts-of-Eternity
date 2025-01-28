@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 4b28fd68978dd744385fa986df25a8f1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - LootTable: {fileID: 11400000, guid: d12edaeaa18903b4fae31f838596bc19, type: 2}
+  - exclamationMarkPrefab: {fileID: 7944833294361005848, guid: c9197bb9195c29d47b1fa29181ab170e, type: 3}
+  - coinPrefab: {fileID: 5547999887131454018, guid: 4c841388aa52d4144ae8be7f1b1f8cc2, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

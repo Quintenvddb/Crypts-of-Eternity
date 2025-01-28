@@ -57,7 +57,8 @@ MonoBehaviour:
   LootTable: {fileID: 11400000, guid: d12edaeaa18903b4fae31f838596bc19, type: 2}
   attackCooldown: 1
   exclamationMarkPrefab: {fileID: 7944833294361005848, guid: c9197bb9195c29d47b1fa29181ab170e, type: 3}
-  detectionRange: 5
+  exclamationMarkDuration: 2
+  coinPrefab: {fileID: 5547999887131454018, guid: 4c841388aa52d4144ae8be7f1b1f8cc2, type: 3}
 --- !u!212 &6513273823052991076
 SpriteRenderer:
   m_ObjectHideFlags: 0
