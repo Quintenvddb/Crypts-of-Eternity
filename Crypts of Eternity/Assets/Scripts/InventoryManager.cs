@@ -161,6 +161,7 @@ public class InventoryManager : MonoBehaviour
     {
         inventoryToggled = !inventoryToggled;
         inventoryUI.SetActive(inventoryToggled);
+        playerController.IsInventoryOpen = inventoryToggled; // Update the player's inventory state
         playerController.moveSpeed = inventoryToggled ? 2f : 4f;
     }
 
@@ -193,9 +194,12 @@ public class InventoryManager : MonoBehaviour
     {
         if (item is Consumable consumable)
         {
-            ApplyConsumableEffects(consumable);
-            RemoveItemFromInventory(item);
-            Debug.Log($"Used consumable: {item.itemName}");
+            if (playerController.currentHealth != playerController.maxHealth)
+            {
+                ApplyConsumableEffects(consumable);
+                RemoveItemFromInventory(item);
+                Debug.Log($"Used consumable: {item.itemName}");
+            }
         }
     }
 
@@ -251,22 +255,20 @@ public class InventoryManager : MonoBehaviour
 
     private void ApplyItemStats(Item item)
     {
-        PlayerController player = playerController;
-
         if (item is Weapon weapon)
         {
-            player.attackDamage += weapon.damage;
-            player.attackSpeed += weapon.attackSpeed;
+            playerController.attackDamage += weapon.damage;
+            playerController.attackSpeed += weapon.attackSpeed;
         }
         else if (item is Armor armor)
         {
-            player.maxHealth += armor.defense;
+            playerController.maxHealth += armor.defense;
         }
         else if (item is Amulet amulet)
         {
-            player.attackDamage += amulet.damage;
-            player.attackSpeed += amulet.attackSpeed;
-            player.maxHealth += amulet.defense;
+            playerController.attackDamage += amulet.damage;
+            playerController.attackSpeed += amulet.attackSpeed;
+            playerController.maxHealth += amulet.defense;
         }
     }
 

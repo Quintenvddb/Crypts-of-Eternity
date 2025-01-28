@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour
 
     public int coins = 0;
 
+    public bool IsInventoryOpen { get; set; } = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -138,6 +140,8 @@ public class PlayerController : MonoBehaviour
 
     private void HandleActions()
     {
+        if (IsInventoryOpen) return;
+
         if (Input.GetMouseButtonDown(0) && !isAttacking)
         {
             StartCoroutine(AttackCoroutine());
@@ -289,7 +293,6 @@ public class PlayerController : MonoBehaviour
         if (footstepSounds.Length > 0)
         {
             int randomIndex = Random.Range(0, footstepSounds.Length);
-            audioSource.pitch = Random.Range(0.9f, 1.1f);
             audioSource.PlayOneShot(footstepSounds[randomIndex], stepVolume);
         }
 
@@ -298,7 +301,8 @@ public class PlayerController : MonoBehaviour
         isPlayingFootstep = false;
     }
 
-    public void SpendMoney(int amount){
+    public void SpendMoney(int amount)
+    {
         this.coins -= amount;
 
         return;
