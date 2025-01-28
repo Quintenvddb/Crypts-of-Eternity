@@ -11,9 +11,6 @@ public class InventoryManager : MonoBehaviour
     public float slotSpacing = 8f, inventoryOpenVolume = 0.25f;
     public int maxInventorySize = 24;
 
-    private bool inventoryToggled;
-    public Item[] inventoryItems;
-
     private const int inventoryRows = 3;
     private const int inventoryColumns = 8;
 
@@ -22,12 +19,18 @@ public class InventoryManager : MonoBehaviour
     public Button equipButton;
     private Item selectedItem;
 
+    private bool inventoryToggled;
+    public Item[] inventoryItems;
+    public Item[] equipmentItems;
+
     void Start()
     {
         inventoryUI.SetActive(inventoryToggled);
         InitializeInventory();
         InitializeEquipmentSlots();
-        optionsWindow.SetActive(false);
+
+        equipmentItems = new Item[8];
+
         useButton.onClick.AddListener(OnUseItem);
         equipButton.onClick.AddListener(OnEquipItem);
     }
@@ -181,8 +184,68 @@ public class InventoryManager : MonoBehaviour
     {
         if (selectedItem != null)
         {
-            Debug.Log($"Equipped item: {selectedItem.itemName}");
+            EquipItem(selectedItem);
         }
         optionsWindow.SetActive(false);
+    }
+
+    private void EquipItem(Item item)
+    {
+        if (item.itemType == ItemType.Weapon)
+        {
+            if (equipmentItems[0] == null)
+            {
+                equipmentItems[0] = item;
+                RemoveItemFromInventory(item);
+                Debug.Log($"Equipped weapon: {item.itemName}");
+                UpdateEquipmentSlot(0);
+            }
+        }
+        else if (item.itemType == ItemType.Armor)
+        {
+            if (equipmentItems[1] == null)
+            {
+                equipmentItems[1] = item;
+                RemoveItemFromInventory(item);
+                Debug.Log($"Equipped armor: {item.itemName}");
+                UpdateEquipmentSlot(1);
+            }
+        }
+        else if (item.itemType == ItemType.Amulet)
+        {
+            for (int i = 2; i <= 4; i++)
+            {
+                if (equipmentItems[i] == null)
+                {
+                    equipmentItems[i] = item;
+                    RemoveItemFromInventory(item);
+                    Debug.Log($"Equipped amulet: {item.itemName} in slot {i}");
+                    UpdateEquipmentSlot(i);
+                    return;
+                }
+            }
+        }
+    }
+
+    private void RemoveItemFromInventory(Item item)
+    {
+        for (int i = 0; i < inventoryItems.Length; i++)
+        {
+            if (inventoryItems[i] == item)
+            {
+                inventoryItems[i] = null;
+                UpdateSlot(i);
+                break;
+            }
+        }
+    }
+
+    private void UpdateEquipmentSlot(int slotIndex)
+    {
+        Transform slot = equipmentSlots.transform.GetChild(slotIndex);
+        InventorySlot equipmentSlot = slot.GetComponent<InventorySlot>();
+
+        Item equippedItem = equipmentItems[slotIndex];
+        equipmentSlot.UpdateSlot(equippedItem);
     }
 }

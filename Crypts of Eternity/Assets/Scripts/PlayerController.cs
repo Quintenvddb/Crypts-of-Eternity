@@ -116,24 +116,24 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
-public void RebindKey(string action, KeyCode newKey)
-{
-    switch (action)
+    public void RebindKey(string action, KeyCode newKey)
     {
-        case "MoveUp":
-            moveUpKey = newKey;
-            break;
-        case "MoveDown":
-            moveDownKey = newKey;
-            break;
-        case "MoveLeft":
-            moveLeftKey = newKey;
-            break;
-        case "MoveRight":
-            moveRightKey = newKey;
-            break;
+        switch (action)
+        {
+            case "MoveUp":
+                moveUpKey = newKey;
+                break;
+            case "MoveDown":
+                moveDownKey = newKey;
+                break;
+            case "MoveLeft":
+                moveLeftKey = newKey;
+                break;
+            case "MoveRight":
+                moveRightKey = newKey;
+                break;
+        }
     }
-}
 
     private void HandleActions()
     {
@@ -301,5 +301,12 @@ public void RebindKey(string action, KeyCode newKey)
         this.coins -= amount;
 
         return;
+    }
+
+    public void AddCoins()
+    {
+        int coinsToAdd = Random.Range(5, 10);
+        coins += coinsToAdd;
+        Debug.Log("Coins added: " + coinsToAdd + ", Total coins: " + coins);
     }
 }

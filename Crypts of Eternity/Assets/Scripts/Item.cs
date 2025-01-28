@@ -1,8 +1,17 @@
 using UnityEngine;
 
 [System.Serializable]
+public enum ItemType
+{
+    Weapon,
+    Armor,
+    Amulet,
+    Consumable,
+    Misc
+}
 public class Item : MonoBehaviour
 {
+    public ItemType itemType;
     public string itemName;
     public Sprite icon;
     public int rarity;

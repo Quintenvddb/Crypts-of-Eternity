@@ -101,12 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f137da53c2074174e83681cb5a8c0b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 1
   itemName: Leather Tunic
   icon: {fileID: 7618251882285239222, guid: 98c8e15dc77423c40b5d639b6990b379, type: 3}
   rarity: 30
   description: 
   value: 20
   itemPrefab: {fileID: 6441997188048732134}
+  item: {fileID: 0}
   defense: 5
 --- !u!61 &-3440343578600560969
 BoxCollider2D:

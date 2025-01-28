@@ -29,6 +29,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public GameObject exclamationMarkPrefab;
     private GameObject exclamationMarkInstance;
     public float exclamationMarkDuration = 2f;
+    public GameObject coinPrefab;
 
     void Start()
     {
@@ -97,6 +98,11 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     private void Die()
     {
         Debug.Log("Enemy died!");
+
+        if (coinPrefab != null)
+        {
+            Instantiate(coinPrefab, transform.position, Quaternion.identity);
+        }
 
         if (LootTable != null)
         {

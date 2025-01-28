@@ -101,12 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0d6a9515739f84e881570e2008f1ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 3
   itemName: Apple
   icon: {fileID: 7293598183456022363, guid: 73b02a20b65e0e240a53d1997bdfc8dd, type: 3}
   rarity: 25
   description: 
   value: 15
   itemPrefab: {fileID: 8165695579985975029}
+  item: {fileID: 0}
   restoreAmount: 25
   effect: 
 --- !u!61 &2044173824649790017

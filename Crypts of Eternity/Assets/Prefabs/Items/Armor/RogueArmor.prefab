@@ -101,12 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f137da53c2074174e83681cb5a8c0b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 1
   itemName: Rogue Armor
   icon: {fileID: 9083158208115367601, guid: dd48a09987b2cbc43ba933c4a14482c3, type: 3}
   rarity: 20
   description: 
   value: 80
   itemPrefab: {fileID: 4439635003457354420}
+  item: {fileID: 0}
   defense: 10
 --- !u!61 &-5978075572802119230
 BoxCollider2D:
