@@ -163,13 +163,14 @@ public class InventoryManager : MonoBehaviour
     {
         inventoryToggled = !inventoryToggled;
         inventoryUI.SetActive(inventoryToggled);
-        playerController.IsInventoryOpen = inventoryToggled; // Update the player's inventory state
+        playerController.IsInventoryOpen = inventoryToggled;
         playerController.moveSpeed = inventoryToggled ? 2f : 4f;
     }
 
     public void ShowItemOptions(Item item, Vector3 position)
     {
         selectedItem = item;
+        UpdateEquipButtonText();
         optionsWindow.SetActive(true);
         optionsWindow.transform.position = position;
     }
@@ -187,9 +188,73 @@ public class InventoryManager : MonoBehaviour
     {
         if (selectedItem != null)
         {
-            EquipItem(selectedItem);
+            int equippedIndex = GetEquippedIndex(selectedItem);
+            if (equippedIndex != -1)
+            {
+                UnequipItem(equippedIndex);
+            }
+            else
+            {
+                EquipItem(selectedItem);
+            }
         }
         optionsWindow.SetActive(false);
+    }
+
+    private void UnequipItem(int slotIndex)
+    {
+        if (slotIndex >= 0 && slotIndex < equipmentItems.Length)
+        {
+            Item itemToUnequip = equipmentItems[slotIndex];
+            if (itemToUnequip != null)
+            {
+                RemoveItemStats(itemToUnequip);
+                AddItem(itemToUnequip);
+                equipmentItems[slotIndex] = null;
+                UpdateEquipmentSlot(slotIndex);
+                Debug.Log($"Unequipped item: {itemToUnequip.itemName} from slot {slotIndex}");
+            }
+        }
+    }
+
+    private void RemoveItemStats(Item item)
+    {
+        if (item is Weapon weapon)
+        {
+            playerController.attackDamage -= weapon.damage;
+            playerController.attackSpeed -= weapon.attackSpeed;
+        }
+        else if (item is Armor armor)
+        {
+            playerController.maxHealth -= armor.defense;
+        }
+        else if (item is Amulet amulet)
+        {
+            playerController.attackDamage -= amulet.damage;
+            playerController.attackSpeed -= amulet.attackSpeed;
+            playerController.maxHealth -= amulet.defense;
+        }
+    }
+
+    private void UpdateEquipButtonText()
+    {
+        if (selectedItem != null)
+        {
+            int equippedIndex = GetEquippedIndex(selectedItem);
+            equipButton.GetComponentInChildren<Text>().text = equippedIndex != -1 ? "Unequip" : "Equip";
+        }
+    }
+
+    private int GetEquippedIndex(Item item)
+    {
+        for (int i = 0; i < equipmentItems.Length; i++)
+        {
+            if (equipmentItems[i] == item)
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 
     private void UseItem(Item item)
