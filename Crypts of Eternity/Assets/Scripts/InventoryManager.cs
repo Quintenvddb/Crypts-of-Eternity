@@ -274,8 +274,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (consumable.restoreAmount > 0)
         {
-            playerController.currentHealth += consumable.restoreAmount;
-            playerController.currentHealth = Mathf.Min(playerController.currentHealth, playerController.maxHealth);
+            playerController.Heal(consumable.restoreAmount);
         }
     }
 

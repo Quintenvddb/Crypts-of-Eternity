@@ -250,6 +250,21 @@ public class PlayerController : MonoBehaviour
         currentHealth += healAmount;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
         audioSource.PlayOneShot(healAudio, healVolume);
+        StartCoroutine(FlashGreen());
+    }
+
+    private IEnumerator FlashGreen()
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            Color originalColor = spriteRenderer.color;
+            spriteRenderer.color = Color.green;
+
+            yield return new WaitForSeconds(0.2f);
+
+            spriteRenderer.color = originalColor;
+        }
     }
 
     public void ApplyKnockback(Vector2 direction, float force)
