@@ -22,6 +22,10 @@ public class BossBehaviour : MonoBehaviour, IDamageable
     public float attackCooldown = 1.5f;
     private float lastAttackTime = 0f;
 
+    private bool isCharging = false;
+    private float chargeTime = 2f;
+    private float chargeSpeed = 14f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,11 +51,13 @@ public class BossBehaviour : MonoBehaviour, IDamageable
         {
             originalColor = spriteRenderer.color;
         }
+
+        StartCoroutine(ChargeRoutine());
     }
 
     void Update()
     {
-        if (Time.time - lastUpdateTime >= updateInterval)
+        if (Time.time - lastUpdateTime >= updateInterval && !isCharging)
         {
             if (player != null)
             {
@@ -60,7 +66,10 @@ public class BossBehaviour : MonoBehaviour, IDamageable
             }
         }
 
-        rb.linearVelocity = currentDirection * speed;
+        if (!isCharging)
+        {
+            rb.linearVelocity = currentDirection * speed;
+        }
 
         if (currentDirection.x < 0)
         {
@@ -71,6 +80,35 @@ public class BossBehaviour : MonoBehaviour, IDamageable
             spriteRenderer.flipX = true;
         }
     }
+
+private IEnumerator ChargeRoutine()
+{
+    while (true)
+    {
+        float waitTime = Random.Range(5f, 10f);
+        yield return new WaitForSeconds(waitTime);
+
+        isCharging = false;
+        rb.linearVelocity = Vector2.zero;
+        yield return new WaitForSeconds(1f);
+
+        isCharging = true;
+
+        currentDirection = (player.position - transform.position).normalized;
+        float chargeDuration = chargeTime;
+
+        while (chargeDuration > 0f)
+        {
+            rb.linearVelocity = currentDirection * chargeSpeed;
+            chargeDuration -= Time.deltaTime;
+            yield return null;
+        }
+
+        rb.linearVelocity = Vector2.zero;
+        isCharging = false;
+    }
+}
+
 
     public void TakeDamage(int damage)
     {
@@ -89,7 +127,7 @@ public class BossBehaviour : MonoBehaviour, IDamageable
 
     private void Die()
     {
-        Debug.Log("Enemy died!");
+        Debug.Log("Boss died!");
 
         if (LootTable != null)
         {
