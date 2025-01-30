@@ -7,6 +7,9 @@ public class Chest : MonoBehaviour
     public Transform spawnPoint;
     private Animator animator;
     private bool isOpened = false;
+    public AudioSource audioSource;
+    public AudioClip chestAudio;
+    public float chestVolume = 1.0f;
 
     private void Start()
     {
@@ -29,6 +32,7 @@ public class Chest : MonoBehaviour
     public void AnimationComplete()
     {
         OpenChest();
+        audioSource.PlayOneShot(chestAudio, chestVolume);
     }
 
     private void OpenChest()

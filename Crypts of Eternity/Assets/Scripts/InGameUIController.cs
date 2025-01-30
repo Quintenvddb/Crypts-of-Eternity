@@ -8,8 +8,10 @@ public class InGameUIController : MonoBehaviour
     public Text healthText;
     public GameObject shopUI;
     private PlayerController playerController;
-
     public Button closeShopButton;
+    public AudioSource audioSource;
+    public AudioClip backgroundAudio;
+    public float backgroundVolume = 1.0f;
 
     void Start()
     {
@@ -32,12 +34,14 @@ public class InGameUIController : MonoBehaviour
     public void OpenShop()
     {
         shopUI.SetActive(true);
+        audioSource.mute = true;
         Time.timeScale = 0;
     }
 
     public void CloseShop()
     {
         shopUI.SetActive(false);
+        audioSource.mute = false;
         Time.timeScale = 1;
     }
 }
