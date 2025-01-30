@@ -19,7 +19,7 @@ public class RoomGenerator
     // Counters for spawned objects
     private int enemyCount = 0;
     private int lootCount = 0;
-    private int shopCount = 0;
+    private int shopCount = 1;
     private int trapCount = 0;
 
     // Parent GameObjects for organizing spawned objects
@@ -113,24 +113,16 @@ public class RoomGenerator
         }
 
         // Ensure at least 2 loot
-        while (lootCount < 2)
+        while (lootCount < 3)
         {
             SpawnInRandomRoom(lootPrefab, lootParent);
             lootCount++;
         }
 
         // Ensure at least 1 shop
-        while (shopCount < 1)
+        if (shopCount == 1)
         {
             SpawnInRandomRoom(shopPrefab, shopParent);
-            shopCount++;
-        }
-
-        // Ensure at least 10 traps
-        while (trapCount < 10)
-        {
-            SpawnInRandomRoom(trapPrefab, trapParent);
-            trapCount++;
         }
     }
 
@@ -139,15 +131,30 @@ public class RoomGenerator
         if (Rooms.Count == 0) return;
 
         Room randomRoom = Rooms[Random.Range(0, Rooms.Count)];
-        SpawnPrefab(prefab, randomRoom.x, randomRoom.y, randomRoom.width, randomRoom.height, parent);
+        GameObject spawnedObject = SpawnPrefab(prefab, randomRoom.x, randomRoom.y, randomRoom.width, randomRoom.height, parent);
+
+        if (prefab != shopPrefab)
+        {
+            spawnedObjects.Add(spawnedObject);
+        }
     }
 
     private void SpawnObjectsInRoom(Room room, int roomStartX, int roomStartY, int roomWidth, int roomHeight)
     {
+        int roomTrapCount = 0;
+
+        // Ensure at least 2 traps per room
+        while (roomTrapCount < 2)
+        {
+            GameObject trap = SpawnPrefab(trapPrefab, roomStartX, roomStartY, roomWidth, roomHeight, trapParent);
+            trapCount++;
+            roomTrapCount++;
+            spawnedObjects.Add(trap);
+        }
+
         // 0.01 chance to spawn 20 enemies
         if (Random.Range(0f, 1f) < 0.001f)
         {
-            // Spawn 20 enemies
             for (int i = 0; i < 20; i++)
             {
                 GameObject enemy = SpawnRandomEnemy(roomStartX, roomStartY, roomWidth, roomHeight);
@@ -155,7 +162,6 @@ public class RoomGenerator
                 spawnedObjects.Add(enemy);
             }
         }
-        // 40% chance for a single enemy if the 0.01 chance didn't trigger
         else if (Random.Range(0f, 1f) < 0.4f)
         {
             for (int i = 0; i < 4; i++)
@@ -164,10 +170,7 @@ public class RoomGenerator
                 enemyCount++;
                 spawnedObjects.Add(enemy);
             }
-
         }
-
-        // 40% chance for loot
         else if (Random.Range(0f, 1f) < 0.4f)
         {
             GameObject loot = SpawnPrefab(lootPrefab, roomStartX, roomStartY, roomWidth, roomHeight, lootParent);
@@ -184,13 +187,19 @@ public class RoomGenerator
                 }
             }
         }
-
-        // 20% chance for shop
-        else if (Random.Range(0f, 1f) < 0.2f)
+        else
         {
-            GameObject shop = SpawnPrefab(shopPrefab, roomStartX, roomStartY, roomWidth, roomHeight, shopParent);
-            shopCount++;
-            spawnedObjects.Add(shop);
+            if (Random.Range(0f, 1f) < 0.5f)
+            {
+                GameObject trap = SpawnPrefab(trapPrefab, roomStartX, roomStartY, roomWidth, roomHeight, trapParent);
+                trapCount++;
+                spawnedObjects.Add(trap);
+            }
+            else if (Random.Range(0f, 1f) < 0.2f)
+            {
+                GameObject shop = SpawnPrefab(shopPrefab, roomStartX, roomStartY, roomWidth, roomHeight, shopParent);
+                shopCount++;
+            }
         }
     }
 

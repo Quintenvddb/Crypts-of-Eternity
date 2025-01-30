@@ -32,10 +32,12 @@ public class InGameUIController : MonoBehaviour
     public void OpenShop()
     {
         shopUI.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void CloseShop()
     {
         shopUI.SetActive(false);
+        Time.timeScale = 1;
     }
 }
