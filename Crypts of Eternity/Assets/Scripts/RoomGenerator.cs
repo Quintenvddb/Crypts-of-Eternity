@@ -19,7 +19,7 @@ public class RoomGenerator
     // Counters for spawned objects
     private int enemyCount = 0;
     private int lootCount = 0;
-    private int shopCount = 1;
+    private int shopCount = 0;
     private int trapCount = 0;
 
     // Parent GameObjects for organizing spawned objects
@@ -112,7 +112,7 @@ public class RoomGenerator
             enemyCount++;
         }
 
-        // Ensure at least 2 loot
+        // Ensure at least 3 loot
         while (lootCount < 3)
         {
             SpawnInRandomRoom(lootPrefab, lootParent);
@@ -120,9 +120,10 @@ public class RoomGenerator
         }
 
         // Ensure at least 1 shop
-        if (shopCount == 1)
+        while (shopCount < 1)
         {
             SpawnInRandomRoom(shopPrefab, shopParent);
+            shopCount++;
         }
     }
 
@@ -132,7 +133,12 @@ public class RoomGenerator
 
         Room randomRoom = Rooms[Random.Range(0, Rooms.Count)];
         GameObject spawnedObject = SpawnPrefab(prefab, randomRoom.x, randomRoom.y, randomRoom.width, randomRoom.height, parent);
+        Debug.Log("Spawned:" + spawnedObject);
 
+        if (spawnedObject == null)
+        {
+            Debug.LogError($"Failed to spawn {prefab.name} in room at ({randomRoom.x}, {randomRoom.y})");
+        }
         if (prefab != shopPrefab)
         {
             spawnedObjects.Add(spawnedObject);
@@ -199,6 +205,7 @@ public class RoomGenerator
             {
                 GameObject shop = SpawnPrefab(shopPrefab, roomStartX, roomStartY, roomWidth, roomHeight, shopParent);
                 shopCount++;
+                spawnedObjects.Add(shop);
             }
         }
     }
@@ -214,6 +221,12 @@ public class RoomGenerator
 
     private GameObject SpawnPrefab(GameObject prefab, int roomStartX, int roomStartY, int roomWidth, int roomHeight, GameObject parent)
     {
+        if (prefab == null)
+        {
+            Debug.LogError("Tried to spawn a null prefab!");
+            return null;
+        }
+
         bool spawned = false;
         GameObject spawnedObject = null;
 
@@ -265,6 +278,10 @@ public class RoomGenerator
                     spawned = true;
                 }
             }
+        }
+        if (spawnedObject == null)
+        {
+            Debug.LogError($"Failed to spawn {prefab.name}");
         }
 
         return spawnedObject;

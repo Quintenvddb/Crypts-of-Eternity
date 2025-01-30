@@ -160,6 +160,11 @@ public class DungeonRenderer : MonoBehaviour
             }
 
             Vector3 objPosition = obj.transform.position;
+            if (obj.name.Contains("Shop"))
+            {
+                obj.SetActive(true);
+                continue;
+            }
             if (objPosition.x >= minX && objPosition.x <= maxX && objPosition.y >= minY && objPosition.y <= maxY)
             {
                 obj.SetActive(true);
