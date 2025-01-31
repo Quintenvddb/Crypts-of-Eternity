@@ -10,7 +10,6 @@ public class BossFightController : MonoBehaviour
     public AudioSource audioSourceToMute;
     private float zoomOutSize = 6.5f;
     private float zoomSpeed = 1f;
-
     private float originalSize;
 
     private void Start()

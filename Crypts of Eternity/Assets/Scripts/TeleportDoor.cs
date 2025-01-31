@@ -19,14 +19,26 @@ public class TeleportDoor : MonoBehaviour
     private float popUpDuration = 3f; // How long to show the pop-up
     private bool hasTeleported = false; // Tracks if the player has teleported
     public BossFightController bossFightController; // Reference to BossFightController
+    public GameObject warning;
+
 
     private void Start()
     {
         playerController = Object.FindFirstObjectByType<PlayerController>(); // Find the PlayerController at runtime
         bossFightController = Object.FindFirstObjectByType<BossFightController>(); // Find the BossFightController at runtime
+        warning = GameObject.Find("UI").transform.Find("WarningUI").gameObject;
+
         if (circle != null)
         {
             originalCircleScale = circle.transform.localScale; // Store the original scale of the circle
+        }
+        if (circle == null)
+        {
+            circle = transform.Find("Circle")?.gameObject; // Finds the circle if it's a child
+            if (circle == null)
+            {
+                Debug.LogError("Circle object not found! Make sure it's assigned.");
+            }
         }
     }
 
@@ -118,6 +130,7 @@ public class TeleportDoor : MonoBehaviour
             hasTeleported = true; // Mark the player as having teleported
             MoveDoorAndCircle();
             TeleportPlayer(player);
+            StartCoroutine(ShowWarning());
             bossFightController.SpawnBoss();
             yield return StartCoroutine(ShrinkCircle());
             yield return new WaitForSeconds(1f);
@@ -176,18 +189,21 @@ public class TeleportDoor : MonoBehaviour
     // Coroutine to shrink the circle
     private IEnumerator ShrinkCircle()
     {
+        if (circle == null) yield break;
+
         float duration = 4f;
         float elapsedTime = 0f;
         Vector3 targetScale = originalCircleScale; // Shrink back to the original scale
 
         while (elapsedTime < duration)
         {
+            if (circle == null) yield break;
             circle.transform.localScale = Vector3.Lerp(circle.transform.localScale, targetScale, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        circle.transform.localScale = targetScale;
+        if (circle != null) circle.transform.localScale = targetScale;
     }
 
     // Reset the circle's scale to its original size
@@ -198,5 +214,12 @@ public class TeleportDoor : MonoBehaviour
             circle.transform.localScale = originalCircleScale;
             Debug.Log("Circle scale reset to original size.");
         }
+    }
+
+    private IEnumerator ShowWarning()
+    {
+        warning.SetActive(true);
+        yield return new WaitForSeconds(2);
+        warning.SetActive(false);
     }
 }
