@@ -88,6 +88,7 @@ public class RoomGenerator
         }
 
         // Ensure minimum counts are met
+        Debug.Log("Calling EnsureMinimumCounts...");
         EnsureMinimumCounts();
 
         // Debug the totals after all rooms are generated
@@ -100,6 +101,14 @@ public class RoomGenerator
     private void EnsureMinimumCounts()
     {
         System.Random random = new System.Random();
+
+        // Ensure at least 1 shop
+        if (shopCount < 1)
+        {
+            SpawnInRandomRoom(shopPrefab, shopParent);
+            shopCount++;
+            Debug.Log($"Shop spawned successfully. Current shop count: {shopCount}");
+        }
 
         // Ensure at least 3 enemies
         while (enemyCount < 3)
@@ -117,13 +126,6 @@ public class RoomGenerator
         {
             SpawnInRandomRoom(lootPrefab, lootParent);
             lootCount++;
-        }
-
-        // Ensure at least 1 shop
-        while (shopCount < 1)
-        {
-            SpawnInRandomRoom(shopPrefab, shopParent);
-            shopCount++;
         }
     }
 

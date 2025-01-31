@@ -160,7 +160,7 @@ public class DungeonRenderer : MonoBehaviour
             }
 
             Vector3 objPosition = obj.transform.position;
-            if (obj.name.Contains("Shop"))
+            if (obj.name.ToLower().Replace("(clone)", "").Trim().Contains("shop"))
             {
                 obj.SetActive(true);
                 continue;
