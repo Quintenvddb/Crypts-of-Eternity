@@ -108,8 +108,9 @@ MonoBehaviour:
   description: Bonus luck
   value: 300
   itemPrefab: {fileID: 4167105768942305651}
-  item: {fileID: 0}
-  effect: 
+  damage: 5
+  attackSpeed: 1.5
+  defense: 5
 --- !u!61 &7151317160749936740
 BoxCollider2D:
   m_ObjectHideFlags: 0

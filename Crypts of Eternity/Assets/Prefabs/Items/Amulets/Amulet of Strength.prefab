@@ -108,8 +108,7 @@ MonoBehaviour:
   description: Bonus damage
   value: 300
   itemPrefab: {fileID: 2017292884523674146}
-  item: {fileID: 0}
-  damage: 5
+  damage: 15
   attackSpeed: 0
   defense: 0
 --- !u!61 &1921035335169073169

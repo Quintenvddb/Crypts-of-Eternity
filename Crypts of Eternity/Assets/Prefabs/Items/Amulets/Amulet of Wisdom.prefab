@@ -108,8 +108,9 @@ MonoBehaviour:
   description: Bonus mana
   value: 300
   itemPrefab: {fileID: 895112811687260751}
-  item: {fileID: 0}
-  effect: 
+  damage: 0
+  attackSpeed: 2.5
+  defense: 0
 --- !u!61 &2842130109973368355
 BoxCollider2D:
   m_ObjectHideFlags: 0
