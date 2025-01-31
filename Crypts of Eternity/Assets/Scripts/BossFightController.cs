@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
 using Unity.Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class BossFightController : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class BossFightController : MonoBehaviour
     private float zoomOutSize = 6.5f;
     private float zoomSpeed = 1f;
     private float originalSize;
+    public GameObject bossDefeatedUI;
+    public Button quitButton;
+    public Button respawnButton;
 
     private void Start()
     {
@@ -32,6 +37,8 @@ public class BossFightController : MonoBehaviour
         {
             Debug.LogWarning("AudioSource to mute is not assigned!");
         }
+        quitButton.onClick.AddListener(QuitGame);
+        respawnButton.onClick.AddListener(RestartGame);
     }
 
     public void SpawnBoss()
@@ -96,5 +103,25 @@ public class BossFightController : MonoBehaviour
         }
 
         cinemachineCamera.Lens.OrthographicSize = targetSize;
+    }
+
+    public void BossDefeated()
+    {
+        bossDefeatedUI.SetActive(true);
+    }
+
+    void QuitGame()
+    {
+        Application.Quit();
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+
+    void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+
     }
 }

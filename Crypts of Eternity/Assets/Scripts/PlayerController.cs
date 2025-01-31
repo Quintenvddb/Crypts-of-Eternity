@@ -114,6 +114,15 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(Mathf.Sign(movement.x) * defaultScale.x, defaultScale.y, defaultScale.z);
         }
 
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = 6f;
+        }
+        else
+        {
+            moveSpeed = 4f;
+        }
+
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);

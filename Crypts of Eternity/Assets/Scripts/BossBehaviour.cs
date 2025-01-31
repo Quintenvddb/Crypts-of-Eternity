@@ -17,14 +17,17 @@ public class BossBehaviour : MonoBehaviour, IDamageable
     public int damageAmount = 20;
     private Rigidbody2D rb;
 
-    public EnemyLootTable LootTable;
-
     public float attackCooldown = 1.5f;
     private float lastAttackTime = 0f;
 
     private bool isCharging = false;
     private float chargeTime = 2f;
     private float chargeSpeed = 14f;
+
+    public AudioSource audioSource;
+    public AudioClip deathAudio;
+    public float deathVolume = 1.0f;
+    private BossFightController bossFightController;
 
     void Start()
     {
@@ -50,6 +53,12 @@ public class BossBehaviour : MonoBehaviour, IDamageable
         if (spriteRenderer != null)
         {
             originalColor = spriteRenderer.color;
+        }
+
+        bossFightController = Object.FindFirstObjectByType<BossFightController>();
+        if (bossFightController == null)
+        {
+            Debug.LogWarning("BossFightController not found in the scene!");
         }
 
         StartCoroutine(ChargeRoutine());
@@ -81,33 +90,33 @@ public class BossBehaviour : MonoBehaviour, IDamageable
         }
     }
 
-private IEnumerator ChargeRoutine()
-{
-    while (true)
+    private IEnumerator ChargeRoutine()
     {
-        float waitTime = Random.Range(5f, 10f);
-        yield return new WaitForSeconds(waitTime);
-
-        isCharging = false;
-        rb.linearVelocity = Vector2.zero;
-        yield return new WaitForSeconds(1f);
-
-        isCharging = true;
-
-        currentDirection = (player.position - transform.position).normalized;
-        float chargeDuration = chargeTime;
-
-        while (chargeDuration > 0f)
+        while (true)
         {
-            rb.linearVelocity = currentDirection * chargeSpeed;
-            chargeDuration -= Time.deltaTime;
-            yield return null;
-        }
+            float waitTime = Random.Range(5f, 10f);
+            yield return new WaitForSeconds(waitTime);
 
-        rb.linearVelocity = Vector2.zero;
-        isCharging = false;
+            isCharging = false;
+            rb.linearVelocity = Vector2.zero;
+            yield return new WaitForSeconds(1f);
+
+            isCharging = true;
+
+            currentDirection = (player.position - transform.position).normalized;
+            float chargeDuration = chargeTime;
+
+            while (chargeDuration > 0f)
+            {
+                rb.linearVelocity = currentDirection * chargeSpeed;
+                chargeDuration -= Time.deltaTime;
+                yield return null;
+            }
+
+            rb.linearVelocity = Vector2.zero;
+            isCharging = false;
+        }
     }
-}
 
 
     public void TakeDamage(int damage)
@@ -128,16 +137,9 @@ private IEnumerator ChargeRoutine()
     private void Die()
     {
         Debug.Log("Boss died!");
-
-        if (LootTable != null)
-        {
-            GameObject loot = LootTable.GetRandomLoot();
-            if (loot != null)
-            {
-                Instantiate(loot, transform.position, Quaternion.identity);
-            }
-        }
-
+        audioSource.PlayOneShot(deathAudio, deathVolume);
+        bossFightController.BossDefeated();
+        Time.timeScale = 0;
         Destroy(gameObject);
     }
 
